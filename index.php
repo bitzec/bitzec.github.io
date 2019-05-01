@@ -427,7 +427,7 @@ L::Load();
                 <a href="https://safe.trade/trading/btczbtc" target="_blank"><img src="<?php siteUrl(); ?>images/exchanges/safe-trade.png" class="exch_img"></a>
             </div>
             <div class="col-md-4">
-                <a href="https://cratex.io/index.php?pair=BTCZ/BTC" target="_blank"><img src="<?php siteUrl(); ?>images/exchanges/cratex.png" class="exch_img"></a>
+                <a href="https://cratex.io/index.php?pair=BZC/BTC" target="_blank"><img src="<?php siteUrl(); ?>images/exchanges/cratex.png" class="exch_img"></a>
             </div>
         </div>
 
