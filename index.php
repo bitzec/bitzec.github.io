@@ -49,7 +49,7 @@ L::Load();
     <meta property="og:image" content="/images/logo.png">
     <link rel="icon" href="/favicon.ico">
 
-    <title><?php L::W("Your Financial Freedom | Bitzec"); ?></title>
+    <title><?php L::W("Your BITZEC | Bitzec"); ?></title>
 
     <link rel="stylesheet" href="<?php siteUrl(); ?>css/stylelibs.css">
     <link rel="stylesheet" data-style="styles" href="<?php siteUrl(); ?>css/main.css">
