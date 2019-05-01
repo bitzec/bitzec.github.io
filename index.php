@@ -80,10 +80,10 @@ L::Load();
                 <li>
                     <a href="#" class="smooth-scroll"><?php L::W("Social"); ?></a>
                     <ul>
-						<li><a href="https://forum.btcz.rocks" target="_blank">Bitzec Forum</a></li>					
+						<li><a href="https://forum.btcz.rocks" target="_blank">Bitzec Forum</a></li>
                         <li><a href="https://www.facebook.com/BTCZCommunity/" target="_blank">Facebook</a></li>
                         <li><a href="https://slack.btcz.rocks/" target="_blank">Slack</a></li>
-                        <li><a href="https://twitter.com/BitzecTeam" target="_blank">Twitter</a></li>
+                        <li><a href="https://twitter.com/bitzecorg target="_blank">Twitter</a></li>
                         <li><a href="https://t.me/joinchat/CDzlaRGMvBm4P2Z76sNclQ" target="_blank">Telegram</a></li>
                         <li><a href="https://discordapp.com/invite/u3dkbFs" target="_blank">Discord</a></li>
                         <li><a href="https://www.reddit.com/r/BTCZCommunity/" target="_blank">Reddit</a></li>
@@ -219,7 +219,7 @@ L::Load();
                     <div class="content">
                         <h3><?php L::W("Important Details"); ?></h3>
                         <p>
-                            <?php L::W("- Backup your wallet in many locations<br>- Store big amount of coins in cold wallets in anonymous addresses<br>- Don't give / send anyone your private keys. Private keys needs to be secured. You can recover your wallets. If you give or send anyone your private key please consider it as a red flag and quickly move your coins to other address"); ?>
+                            <?php L::W("- Dont invest Money you may need soon in Crypto <br>- <br>- "); ?>
                         </p>
                     </div>
                 </div>
@@ -233,7 +233,7 @@ L::Load();
                     <div class="content">
                         <h3><?php L::W("Bitzec is <span>Zcash 2.0</span>"); ?></h3>
                         <p>
-                            <?php L::W("- Bitcoin technology<br>- Anonymous transactions (zk-SNARKs privacy)<br>- Bitcoin has all transactions publicly available.<br>- decentralized GPU mining (ASIC miners are banned, hardforks to prevent ASIC miners are allowed)<br>- Decentralized development / All contributors are volunteers<br>- Big blocks -> blocks are similar to BCH"); ?>
+                            <?php L::W("- Bitcoin code <br>- +  zk-SNARKs  <br>- Bitcoin is the King anyway .<br>- ASIC miners are welcome <br>-  <br>-  Blocks are similar to Zcash"); ?>
                         </p>
                     </div>
                 </div>
@@ -247,7 +247,7 @@ L::Load();
                     <div class="content">
                         <h3><?php L::W("Active <span>Community</span>"); ?></h3>
                         <p>
-                            <?php L::W("Our community is active and we are always developing. <br>You can follow us in social networks, on the forum, as well as Slack"); ?>
+                            <?php L::W(". <br>You can follow us in social networks, on the forum"); ?>
                         </p>
                     </div>
                 </div>
@@ -273,7 +273,7 @@ L::Load();
                         <a href="#">
                             <i class="pe-7s-graph"></i>
                             <h4><?php L::W("Max Supply"); ?></h4>
-                            <p><?php L::W("21,000,000,000 BTCZ"); ?></p>
+                            <p><?php L::W("7,000,000,001  BZC"); ?></p>
                         </a>
                     </li>
                     <li class="animated-service anim-shadow">
@@ -294,7 +294,7 @@ L::Load();
                         <a href="#">
                             <i class="pe-7s-map"></i>
                             <h4><?php L::W("Circulating Supply"); ?></h4>
-                            <p><?php L::W("12,500 coins every 2.5 minutes"); ?></p>
+                            <p><?php L::W("Monthly Blcokreward decreas"); ?></p>
                         </a>
                     </li>
                 </ul>
@@ -315,7 +315,7 @@ L::Load();
                     <div class="link-full">
                         <a href="https://bitcointalk.org/index.php?topic=3086664.0" target="_blank"><?php L::W("View Bitcointalk Forum Topic"); ?><i aria-hidden="true" class="fa fa-angle-right"></i></a>
                         &nbsp;&nbsp;&nbsp;
-                        <a href="https://forum.btcz.rocks" target="_blank"><?php L::W("View Forum"); ?><i aria-hidden="true" class="fa fa-angle-right"></i></a>
+                        <a href="https://forum.zcash" target="_blank"><?php L::W("View Forum"); ?><i aria-hidden="true" class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -365,8 +365,8 @@ L::Load();
                 <div class="icon-container">
                     <div class="icon icon-circle"><i class="pe-7s-graph1"></i></div>
                 </div>
-                <h3><?php L::W("Active price growth"); ?></h3>
-                <p><?php L::W("Bitzec is focused on organic growth."); ?></p>
+                <h3><?php L::W(""); ?></h3>
+                <p><?php L::W("Bitzec is focused on fast growth."); ?></p>
             </div>
             <!-- Edn items-->
         </div>
@@ -380,7 +380,7 @@ L::Load();
             <div class="col-md-3">
                 <div class="heading-title small-heading text-left">
                     <h2><?php L::W("Exchanges"); ?></h2>
-                    <p><?php L::W("Buy or sell your Bitzec coins"); ?></p>
+                    <p><?php L::W("Buy  but dont  sell your Bitzec coins"); ?></p>
                 </div>
             </div>
             <div class="col-md-5">
@@ -433,7 +433,7 @@ L::Load();
 
         <div class="heading-title small-heading center">
           <p><?php L::W("For informational purposes only. Trade at your own risk - never trade more than you can afford to lose."); ?></p>
-        </div>		
+        </div>
     </div>
 </section>
 
@@ -780,7 +780,7 @@ L::Load();
                 </div>
                 <div class="col-md-2">
                     <div class="item-carousel">
-                        <a href="https://twitter.com/BitzecTeam" target="_blank">
+                        <a href="https://twitter.com/bitzecorg target="_blank">
                             <img src="<?php siteUrl(); ?>images/social/twitter.png" alt="logo">
                         </a>
                     </div>
@@ -791,7 +791,7 @@ L::Load();
                             <img src="<?php siteUrl(); ?>images/social/discourse.png" alt="logo">
                         </a>
                     </div>
-                </div>				
+                </div>
 			</div>
         </div>
     </div>
