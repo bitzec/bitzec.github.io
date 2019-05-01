@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'domain' => 'btcz.rocks',
+    'domain' => 'bitzec.github.io',
     'work_path' => '/',
 ];
