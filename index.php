@@ -45,11 +45,11 @@ L::Load();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="<?php L::W("BitcoinZ is the future of cryptocurrency. Welcome to decentralization."); ?>"/>
+    <meta name="description" content="<?php L::W("Bitzec is the future of cryptocurrency. Welcome to decentralization."); ?>"/>
     <meta property="og:image" content="/images/logo.png">
     <link rel="icon" href="/favicon.ico">
 
-    <title><?php L::W("Your Financial Freedom | BitcoinZ"); ?></title>
+    <title><?php L::W("Your Financial Freedom | Bitzec"); ?></title>
 
     <link rel="stylesheet" href="<?php siteUrl(); ?>css/stylelibs.css">
     <link rel="stylesheet" data-style="styles" href="<?php siteUrl(); ?>css/main.css">
@@ -69,21 +69,21 @@ L::Load();
                 <li><a href="#benefits" class="smooth-scroll"><?php L::W("Benefits"); ?></a></li>
                 <li><a href="#exchange" class="smooth-scroll"><?php L::W("Exchange"); ?></a></li>
                 <li><a href="#wallets" class="smooth-scroll"><?php L::W("Wallets"); ?></a></li>
-                <li><a href="https://forum.btcz.rocks/t/pools-that-love-the-bitcoinz-community/51" target="_blank"><?php L::W("Pools"); ?></a></li>
+                <li><a href="https://forum.btcz.rocks/t/pools-that-love-the-bitzec-community/51" target="_blank"><?php L::W("Pools"); ?></a></li>
                 <li>
                     <a href="#"><?php L::W("Explorer"); ?></a>
                     <ul>
-                        <li><a href="https://explorer.btcz.rocks/" target="_blank">explorer.btcz.rocks</a></li>
-                        <li><a href="https://btczexplorer.blockhub.info/" target="_blank">btczexplorer.blockhub.info</a></li>
+                        <li><a href="http://explorer.bitzec.org/" target="_blank">explorer.btcz.rocks</a></li>
+                        <li><a href="http://explorer.bitzec.org" target="_blank">btczexplorer.blockhub.info</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#" class="smooth-scroll"><?php L::W("Social"); ?></a>
                     <ul>
-						<li><a href="https://forum.btcz.rocks" target="_blank">BitcoinZ Forum</a></li>					
+						<li><a href="https://forum.btcz.rocks" target="_blank">Bitzec Forum</a></li>					
                         <li><a href="https://www.facebook.com/BTCZCommunity/" target="_blank">Facebook</a></li>
                         <li><a href="https://slack.btcz.rocks/" target="_blank">Slack</a></li>
-                        <li><a href="https://twitter.com/BitcoinZTeam" target="_blank">Twitter</a></li>
+                        <li><a href="https://twitter.com/BitzecTeam" target="_blank">Twitter</a></li>
                         <li><a href="https://t.me/joinchat/CDzlaRGMvBm4P2Z76sNclQ" target="_blank">Telegram</a></li>
                         <li><a href="https://discordapp.com/invite/u3dkbFs" target="_blank">Discord</a></li>
                         <li><a href="https://www.reddit.com/r/BTCZCommunity/" target="_blank">Reddit</a></li>
@@ -125,19 +125,19 @@ L::Load();
                         <li><a href="#benefits" class="smooth-scroll"><?php L::W("Benefits"); ?></a></li>
                         <li><a href="#exchange" class="smooth-scroll"><?php L::W("Exchange"); ?></a></li>
                         <li><a href="#wallets" class="smooth-scroll"><?php L::W("Wallets"); ?></a></li>
-                        <li><a href="https://forum.btcz.rocks/t/pools-that-love-the-bitcoinz-community/51" target="_blank"><?php L::W("Pools"); ?></a></li>
+                        <li><a href="https://forum.btcz.rocks/t/pools-that-love-the-bitzec-community/51" target="_blank"><?php L::W("Pools"); ?></a></li>
 
                         <li class="menu-item-has-children current-menu-item">
                             <a href="#"><?php L::W("Explorer"); ?></a>
                             <ul class="sub-menu">
-                                <li><a href="https://explorer.btcz.rocks/" target="_blank">explorer.btcz.rocks</a></li>
-                                <li><a href="https://btczexplorer.blockhub.info/" target="_blank">btczexplorer.blockhub.info</a></li>
+                                <li><a href="http://explorer.bitzec.org/" target="_blank">explorer.btcz.rocks</a></li>
+                                <li><a href="http://explorer.bitzec.org" target="_blank">btczexplorer.blockhub.info</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children current-menu-item">
                             <a href="#" class="smooth-scroll"><?php L::W("Social"); ?></a>
                             <ul class="sub-menu">
-							    <li><a href="https://forum.btcz.rocks" target="_blank">BitcoinZ Forum</a></li>
+							    <li><a href="https://forum.btcz.rocks" target="_blank">Bitzec Forum</a></li>
                                 <li><a href="https://www.facebook.com/BTCZCommunity/" target="_blank">Facebook</a></li>
                                 <li><a href="https://slack.btcz.rocks/" target="_blank">Slack</a></li>
                                 <li><a href="https://twitter.com/BitcoinzTeam" target="_blank">Twitter</a></li>
@@ -168,7 +168,7 @@ L::Load();
                 <div class="container">
 			<div class="row">
 			    <div class="col-md-12">
-                            <div class="heading-title-big"><?php L::W("It's Your Coin"); ?><br><span><?php L::W("BitcoinZ: The true Bitcoin 2.0"); ?></span></div>
+                            <div class="heading-title-big"><?php L::W("It's Your Coin"); ?><br><span><?php L::W("Bitzec: The true Zcash 2.0"); ?></span></div>
                             <div class="description-slide"><?php L::W("Welcome to the decentralization"); ?></div>
                             <div class="buttons-section">
                                 <a href="<?php L::W("COMMUNITY_PAPER_URL"); ?>" target="_blank" class="btn dark-btn large-btn"><?php L::W("Community Paper"); ?></a>
@@ -231,7 +231,7 @@ L::Load();
                         <div class="bg-icon"><i class="pe-7s-help2"></i></div>
                     </div>
                     <div class="content">
-                        <h3><?php L::W("BitcoinZ is <span>Bitcoin 2.0</span>"); ?></h3>
+                        <h3><?php L::W("Bitzec is <span>Zcash 2.0</span>"); ?></h3>
                         <p>
                             <?php L::W("- Bitcoin technology<br>- Anonymous transactions (zk-SNARKs privacy)<br>- Bitcoin has all transactions publicly available.<br>- decentralized GPU mining (ASIC miners are banned, hardforks to prevent ASIC miners are allowed)<br>- Decentralized development / All contributors are volunteers<br>- Big blocks -> blocks are similar to BCH"); ?>
                         </p>
@@ -262,7 +262,7 @@ L::Load();
         <div class="row">
             <div class="col-md-8 col-md-push-2">
                 <div class="heading-title small-heading center">
-                    <h2><?php L::W("Benefits <span>BitcoinZ</span>"); ?></h2>
+                    <h2><?php L::W("Benefits <span>Bitzec</span>"); ?></h2>
                 </div>
             </div>
         </div>
@@ -303,7 +303,7 @@ L::Load();
                 <div id="tabs-1">
                     <div class="col-md-6">
                         <div class="head-service small-head text-left">
-                            <h2><?php L::W("Our goal is to port all best free software on the market to be able to use in BitcoinZ."); ?></h2>
+                            <h2><?php L::W("Our goal is to port all best free software on the market to be able to use in Bitzec."); ?></h2>
                         </div>
                         <?php L::W("<p>Immutable params:</p> <p>- max supply </p> <p>- inflation </p> <p>- only POW algo - we may change Zhash algo to other POW algo to prevent ASIC miners </p> <p>- new features are allowed to improve usage / scalability, but we will never change history (ETH/ETC case) </p>"); ?>
                     </div>
@@ -329,7 +329,7 @@ L::Load();
         <div class="row">
             <div class="col-md-8 col-md-push-2">
                 <div class="heading-title center">
-                    <h2><?php L::W("Why <span>BitcoinZ?</span>"); ?></h2>
+                    <h2><?php L::W("Why <span>Bitzec?</span>"); ?></h2>
                     <div class="small-desd"><?php L::W("We are a fully decentralized network"); ?></div>
                     <p><?php L::W("Here are some advantages"); ?></p>
                 </div>
@@ -366,7 +366,7 @@ L::Load();
                     <div class="icon icon-circle"><i class="pe-7s-graph1"></i></div>
                 </div>
                 <h3><?php L::W("Active price growth"); ?></h3>
-                <p><?php L::W("BitcoinZ is focused on organic growth."); ?></p>
+                <p><?php L::W("Bitzec is focused on organic growth."); ?></p>
             </div>
             <!-- Edn items-->
         </div>
@@ -380,7 +380,7 @@ L::Load();
             <div class="col-md-3">
                 <div class="heading-title small-heading text-left">
                     <h2><?php L::W("Exchanges"); ?></h2>
-                    <p><?php L::W("Buy or sell your BitcoinZ coins"); ?></p>
+                    <p><?php L::W("Buy or sell your Bitzec coins"); ?></p>
                 </div>
             </div>
             <div class="col-md-5">
@@ -447,11 +447,11 @@ L::Load();
                     <p><?php L::W("Linux, Windows and mobile wallets"); ?></p>
                 </div>
                 <div class="controls-portfolio center">
-                    <a href="https://github.com/bitcoinz-wallets/bitcoinz-copay-wallet/releases"><img src="<?php siteUrl(); ?>images/wallets/linux.png" alt="Linux" title="Linux" class="wallets_images"></a>
+                    <a href="https://github.com/bitzec/bitzec-copay/releases"><img src="<?php siteUrl(); ?>images/wallets/linux.png" alt="Linux" title="Linux" class="wallets_images"></a>
                     <a href="https://play.google.com/store/apps/details?id=com.btczcom.btcz"><img src="<?php siteUrl(); ?>images/wallets/android.png" alt="Android" title="Android" class="wallets_images"></a>
-                    <a href="https://github.com/bitcoinz-wallets/bitcoinz-copay-wallet/releases"><img src="<?php siteUrl(); ?>images/wallets/osx.png" alt="Mac OS" title="MacOS" class="wallets_images"></a>
-                    <a href="https://github.com/btcz/bitcoinz-wallet/releases"><img src="<?php siteUrl(); ?>images/wallets/windows.jpg" alt="Windows" title="Windows" class="wallets_images"></a>
-                    <a href="https://github.com/btcz/bitcoinz"><img src="<?php siteUrl(); ?>images/wallets/github.png" alt="github" title="Github" class="wallets_images"></a>
+                    <a href="https://github.com/bitzec/bitzec-copay/releases"><img src="<?php siteUrl(); ?>images/wallets/osx.png" alt="Mac OS" title="MacOS" class="wallets_images"></a>
+                    <a href="https://github.com/btcz/bitzec-wallet/releases"><img src="<?php siteUrl(); ?>images/wallets/windows.jpg" alt="Windows" title="Windows" class="wallets_images"></a>
+                    <a href="https://github.com/btcz/bitzec"><img src="<?php siteUrl(); ?>images/wallets/github.png" alt="github" title="Github" class="wallets_images"></a>
                 </div>
             </div>
         </div>
@@ -476,7 +476,7 @@ L::Load();
                     <div class="cd-timeline-block">
                         <div class="cd-timeline-img cd-green"></div>
                         <div class="cd-timeline-content">
-                            <h2 class="roadmapbox1lang"><?php L::W("BitcoinZ Core Client"); ?></h2>
+                            <h2 class="roadmapbox1lang"><?php L::W("Bitzec Core Client"); ?></h2>
                         </div>
                     </div>
                     <div class="cd-timeline-block">
@@ -556,7 +556,7 @@ L::Load();
         <div class="row">
             <div class="col-md-8 col-md-push-2">
                 <div class="heading-title center">
-                    <h2><?php L::W("why choose <span>BitcoinZ</span>"); ?></h2>
+                    <h2><?php L::W("why choose <span>Bitzec</span>"); ?></h2>
                     <div class="small-desd"><?php L::W("Here are a few <span>reasons</span>"); ?></div>
                     <p><?php L::W("WARNING: Always remember about the pitfalls and keep your backup keys in a safe place!"); ?></p>
                 </div>
@@ -620,7 +620,7 @@ L::Load();
                         <div class="bg-icon"><i class="pe-7s-graph1"></i></div>
                     </div>
                     <div class="content">
-                        <h3><?php L::W("BitcoinZ is <span>Bitcoin 2.0</span>"); ?></h3>
+                        <h3><?php L::W("Bitzec is <span>Zcash 2.0</span>"); ?></h3>
                         <p>
                             <?php L::W("21 billion coins! Everyone in the world can have at least one BTCZ!"); ?>
                         </p>
@@ -669,7 +669,7 @@ L::Load();
                     <div class="content">
                         <h3><?php L::W("Android and iOS <span>Wallet</span>"); ?></h3>
                         <p>
-                            <?php L::W("You can use BitcoinZ coins in your smartphones."); ?>
+                            <?php L::W("You can use Bitzec coins in your smartphones."); ?>
                         </p>
                     </div>
                 </div>
@@ -731,7 +731,7 @@ L::Load();
             <div id="clients-carousel" class="clients-carousel">
                 <div class="col-md-2">
                     <div class="item-carousel">
-                        <a href="https://github.com/btcz/bitcoinz" target="_blank">
+                        <a href="https://github.com/btcz/bitzec" target="_blank">
                             <img src="<?php siteUrl(); ?>images/social/github.png" alt="logo">
                         </a>
                     </div>
@@ -780,7 +780,7 @@ L::Load();
                 </div>
                 <div class="col-md-2">
                     <div class="item-carousel">
-                        <a href="https://twitter.com/BitcoinZTeam" target="_blank">
+                        <a href="https://twitter.com/BitzecTeam" target="_blank">
                             <img src="<?php siteUrl(); ?>images/social/twitter.png" alt="logo">
                         </a>
                     </div>
@@ -811,7 +811,7 @@ L::Load();
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p>&copy; <?php echo date('Y'); ?> <?php L::W("BitcoinZ Community. All rights reserved."); ?></p>
+                    <p>&copy; <?php echo date('Y'); ?> <?php L::W("Bitzec Community. All rights reserved."); ?></p>
                     <ul class="footer-menu">
                         <li><a href="#benefits" class="smooth-scroll"><?php L::W("Benefits"); ?></a></li>
                         <li><a href="#exchange" class="smooth-scroll"><?php L::W("Exchange"); ?></a></li>

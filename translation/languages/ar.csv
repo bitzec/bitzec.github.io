@@ -1,6 +1,6 @@
 English,Arabic
-Your Financial Freedom | BitcoinZ,مرحبا بكم في اللامركزية. BitcoinZ . هدية المجتمع إلى العالم
-BitcoinZ is the future of cryptocurrency. Welcome to decentralization.,BitcoinZ  انها عملة الخاص بك
+Your Financial Freedom | Bitzec,مرحبا بكم في اللامركزية. Bitzec . هدية المجتمع إلى العالم
+Bitzec is the future of cryptocurrency. Welcome to decentralization.,Bitzec  انها عملة الخاص بك
 COMMUNITY_PAPER_URL,https://drive.google.com/file/d/1aLuEcyHNKq215X4am2YQNXfQmPnV1pTt
 Home,الصفحة الرئيسية
 Community Paper,- تواصل اجتماعي ورقة
@@ -13,23 +13,23 @@ Explorer,مستكشف
 Social,اجتماعي
 Lang,لغة
 It's Your Coin,انها عملة الخاص بك
-BitcoinZ: The true Bitcoin 2.0,مرحبا بكم في اللامركزية. BitcoinZ . هدية المجتمع إلى العالم
+Bitzec: The true Zcash 2.0,مرحبا بكم في اللامركزية. Bitzec . هدية المجتمع إلى العالم
 Welcome to the decentralization,مرحبا بكم في اللامركزية
 Start Mining,بدء التعدين
 Latest News,أخبار
 Donate,تبرع
-About the <span>coin</span>,حولBitcoinZ
+About the <span>coin</span>,حولBitzec
 Important Details,تفاصيل مهمة
 - Backup your wallet in many locations<br>- Store big amount of coins in cold wallets in anonymous addresses<br>- Don't give / send anyone your private keys. Private keys needs to be secured. You can recover your wallets. If you give or send anyone your private key please consider it as a red flag and quickly move your coins to other address," تفاصيل هامة
  محفظتك في العديد من المواقع احفظ -
 خزن كميه كبيره من القطع النقدي في عنوان غير معروف في محفظتك -
 لا تعطي/ او ترس مفتاحك الخاص الى احد .المفتاح الخاص هو كل ما تحتاج لحصول العنوان المخزن فيه النقود في حال  المفتاح الى احد بلغط اسرع وانقل النقود الى عنوان اخر  اعطيت"
-BitcoinZ is <span>Bitcoin 2.0</span>,"BitcoinZ هو <span>Bitcoin 2.0</ span>"
+Bitzec is <span>Zcash 2.0</span>,"Bitzec هو <span>Zcash 2.0</ span>"
 "- Bitcoin technology<br>- Anonymous transactions (zk-SNARKs privacy)<br>- Bitcoin has all transactions publicly available.<br>- decentralized GPU mining (ASIC miners are banned, hardforks to prevent ASIC miners are allowed)<br>- Decentralized development / All contributors are volunteers<br>- Big blocks -> blocks are similar to BCH","بيتكوين لديه جميع المعاملات    ( زك-سناركس الخصوصية)  المعاملات المجهولة -
 متاح الى جميع التعدين اللامركزي غبو (يتم حظر عمال المناجم أسيك، ويسمح للأعمال الصلبة لمنع عمال المناجم أسيك)-"
 Active <span>Community</span>,مجتمع نشط
 "Our community is active and we are always developing. <br>You can follow us in social networks, on the forum, as well as Slack","مجتمع نشط: مجتمعنا نشط ونحن نطور دائما - يمكنك متابعتنا في الشبكات الاجتماعية، على المنتدى، وكذلك سلاك -"
-Benefits <span>BitcoinZ</span>,فائدة<span>BitcoinZ</span>
+Benefits <span>Bitzec</span>,فائدة<span>Bitzec</span>
 Max Supply,ماكس العرض
 "21,000,000,000 BTCZ","21,000,000,000 BTCZ"
 Algorithm,السهوله في البحس عنه
@@ -38,11 +38,11 @@ Fast Transactions,المعاملات السريعة
 2MB every 2.5 minutes,كل 2.5 دقيقة ~ بسك / بش = 8MB كل 10 دقيقة)
 Circulating Supply,التضخم -
 "12,500 coins every 2.5 minutes",يسمح الميزات الجديدة لتحسين الاستخدام / التدرجية، ولكننا لن تغير التاريخ (إيث / إتك حالة -
-Our goal is to port all best free software on the market to be able to use in BitcoinZ.,هدفنا هو ميناء كل أفضل البرمجيات الحرة في السوق لتكون قادرة على استخدامها في بيتكوينز 
+Our goal is to port all best free software on the market to be able to use in Bitzec.,هدفنا هو ميناء كل أفضل البرمجيات الحرة في السوق لتكون قادرة على استخدامها في بيتكوينز 
 "<p>Immutable params:</p> <p>- max supply </p> <p>- inflation </p> <p>- only POW algo - we may change Zhash algo to other POW algo to prevent ASIC miners </p> <p>- new features are allowed to improve usage / scalability, but we will never change history (ETH/ETC case) </p>","<p>المعلمات غير القابلة للتغيير: </p><p>- العرض الأقصى </p><p>- التضخم </p><p>- خوارزمية POW فقط - يجوز لنا تغيير خوارزمية Zhash إلى خوارزمية POW أخرى لمنع عمال مناجم ASIC </p><p>- يُسمح بميزات جديدة لتحسين الاستخدام / التدرج ، ولكننا لن نغير التاريخ أبدًا (حالة ETH / ETC) </p>"
 "<li>Algo: Zhash (always GPU mining - we promote decentralization in mining) </li> <li>Max supply 21B coins </li> <li>Current supply: 12,500 coins every 2.5 minutes</li> <li>Current block size is similar to BCH (BTCZ = 2MB every 2.5 mins ~ BCH = 8MB every 10 min)</li> </ul>","<li>إيبو ألغو - قد نغير إكيهاش ألغو لغيرهم من أسو ألغو لمنع أسيك مينرسنلاتيون </li> <li> يسمح الميزات الجديدة لتحسين الاستخدام / التدرجية، ولكننا لن تغير التاريخ (إيث / إتك حالة </li> <li> حجم كتلة الحالي يشبه بسك / بش (بتز = 2MB كل 2.5 دقيقة ~ بسك / بش = 8MB كل 10 دقيقة) "
 View Forum,عرض المنتدى
-Why <span>BitcoinZ?</span>,لماذا بيتسوينز ؟
+Why <span>Bitzec?</span>,لماذا بيتسوينز ؟
 We are a fully decentralized network,نحن شبكة ديسكراليزد تماما
 Here are some advantages,وهنا بعض المزايا
 Anonymity,إخفاء الاسم -
@@ -52,13 +52,13 @@ Support for different platforms,دعم منصات مختلفة
 Community,تواصل اجتماعي
 "We listen to our dear community, so we can succeed.","نستمع إلى مجتمعنا العزيز ، حتى ننجح."
 Active price growth,نمو السعر الفعال
-BitcoinZ is focused on organic growth.,يركز BitcoinZ على النمو العضوي.
+Bitzec is focused on organic growth.,يركز Bitzec على النمو العضوي.
 Exchanges,Exchanges
-Buy or sell your BitcoinZ coins,شراء أو بيع عملاتك الخاصة بـ BitcoinZ
+Buy or sell your Bitzec coins,شراء أو بيع عملاتك الخاصة بـ Bitzec
 Download <span>Wallet</span>,تنزيل <span> المحفظة</span>
 "Linux, Windows and mobile wallets","لينكس ، ويندوز ومحافظ المحمول"
 Road <span>Map</span>,الطريق <span>الخريطة</span>
-BitcoinZ Core Client,BitcoinZ Core Client
+Bitzec Core Client,Bitzec Core Client
 Block Explorer,كتلة إكسبلورر
 Mining Pools,Mining Pools
 GUI Wallet,GUI Wallet
@@ -70,7 +70,7 @@ Decentralization Packages,الحزم اللامركزية
 Game Development,تطوير اللعبة
 zk-SNARKs From Mobile,zk-SNARKs من الجوال
 Public Relations,علاقات عامة
-why choose <span>BitcoinZ</span>,"لماذا الاختيار <span>BitcoinZ</span>"
+why choose <span>Bitzec</span>,"لماذا الاختيار <span>Bitzec</span>"
 Here are a few <span>reasons</span>,هنا بضعة أسباب
 WARNING: Always remember about the pitfalls and keep your backup keys in a safe place!,تحذير: تذكر دائما عن المزالق والحفاظ على مفاتيح النسخ الاحتياطي الخاص بك في مكان آمن!
 Decentralized <span>Mining</span>,السهوله في البحس عنه
@@ -82,7 +82,7 @@ Our community is actively developing and growing every day.,مجتمعنا يت�
 Anonymous <span>Transactions</span>,معاملات سريه
 All transactions remain anonymous. So you do not have to worry about anonymity.,ولا تزال جميع المعاملات مجهولة المصدر. لذلك لم يكن لديك ما يدعو للقلق عدم الكشف عن هويته
 Android and iOS <span>Wallet</span>,محفظه على اندرويه وابل ستور
-You can use BitcoinZ coins in your smartphones.,يمكن استخدمه بتكونز في الهواتف الزكيه
+You can use Bitzec coins in your smartphones.,يمكن استخدمه بتكونز في الهواتف الزكيه
 Natural <span>Growth</span>,نموا طبيعي
 Your coin will grow and develop in a natural way.,العمله سوف تنموا و تتطور بشكل طبيعي
 Decentralized <span>Development</span>,التنمية اللامركزية
@@ -91,7 +91,7 @@ Only POW and <span>no POS</span>,و لا<span>POW>  فقط  </span>
 "The coin is calculated only for POW mining, and will never be changed to POS","سوف يتم احتسام العمله  وتنقب عنه في برنماج وبس وليس اخر"
 "View Bitcointalk Forum Topic","عرض المنتدى Bitcointalk الموضوع"
 "Bitcointalk Forum Topic","منتدى Bitcointalk الموضوع"
-"BitcoinZ Community. All rights reserved.","كل الحقوق محفوظة"
+"Bitzec Community. All rights reserved.","كل الحقوق محفوظة"
 "For informational purposes only. Trade at your own risk - never trade more than you can afford to lose.", "لأغراض إعلامية فقط. تداول على مسؤوليتك الخاصة - لا تتاجر أبداً بأكثر مما تستطيع أن تخسره."
 "introducing <span>txtZ</span>","نقدم لكم <span> txtZ</span>"
 "send and receive BTCZ using SMS text","إرسال واستقبال BTCZ باستخدام نص SMS"
