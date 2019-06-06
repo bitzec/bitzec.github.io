@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/blog/2018-security-audit-results-in-detail/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:30:23 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>2018 Security Audit Results in Detail - Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="index.html" hreflang="en"/>
+		<link rel="alternate" href="../../zh/blog/2018-security-audit-results-in-detail/index.html" hreflang="zh"/>
+<link rel="alternate" href="../../fr/blog/2018-security-audit-results-in-detail/index.html" hreflang="fr"/>
+<link rel="alternate" href="../../ja/blog/2018-security-audit-results-in-detail/index.html" hreflang="ja"/>
+<link rel="alternate" href="../../ko_KR/blog/2018-security-audit-results-in-detail/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../../pt/blog/2018-security-audit-results-in-detail/index.html" hreflang="pt"/>
+<link rel="alternate" href="../../ru/blog/2018-security-audit-results-in-detail/index.html" hreflang="ru"/>
+<link rel="alternate" href="../../es/blog/2018-security-audit-results-in-detail/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="2018 Security Audit Results in Detail - Zcash" />
+<meta property="og:description" content="Today we are announcing the security audit results from five expert security auditors who we contracted last year. We hired &hellip;" />
+<meta property="og:url" content="https://z.cash/blog/2018-security-audit-results-in-detail/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="article:tag" content="audit" />
+<meta property="article:tag" content="peer review" />
+<meta property="article:tag" content="security" />
+<meta property="article:tag" content="security audits" />
+<meta property="article:section" content="Technical" />
+<meta property="article:published_time" content="2019-01-31T12:00:24+00:00" />
+<meta property="article:modified_time" content="2019-04-23T13:09:33+00:00" />
+<meta property="og:updated_time" content="2019-04-23T13:09:33+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Today we are announcing the security audit results from five expert security auditors who we contracted last year. We hired [&hellip;]" />
+<meta name="twitter:title" content="2018 Security Audit Results in Detail - Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/zcashco"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/blog/2018-security-audit-results-in-detail/#webpage","url":"https://z.cash/blog/2018-security-audit-results-in-detail/","inLanguage":"en-US","name":"2018 Security Audit Results in Detail - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2019-01-31T12:00:24+00:00","dateModified":"2019-04-23T13:09:33+00:00"},{"@type":"Article","@id":"https://z.cash/blog/2018-security-audit-results-in-detail/#article","isPartOf":{"@id":"https://z.cash/blog/2018-security-audit-results-in-detail/#webpage"},"author":{"@id":"https://z.cash/blog/author/benjamin-winston/#author","name":"Benjamin Winston"},"publisher":{"@id":"https://z.cash/#organization"},"headline":"2018 Security Audit Results in Detail","datePublished":"2019-01-31T12:00:24+00:00","dateModified":"2019-04-23T13:09:33+00:00","commentCount":0,"mainEntityOfPage":"https://z.cash/blog/2018-security-audit-results-in-detail/#webpage","keywords":"audit,peer review,security,security audits","articleSection":"Technical"},{"@type":"Person","@id":"https://z.cash/blog/author/benjamin-winston/#author","name":"Benjamin Winston","image":{"@type":"ImageObject","@id":"https://z.cash/#personlogo","url":"https://secure.gravatar.com/avatar/5ee6636a8973e8298de8feb7c920cafa?s=96&d=mm&r=g","caption":"Benjamin Winston"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+
+<link rel='shortlink' href='../../index3a4d.html?p=6267' />
+<link rel="alternate" type="application/json+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2F2018-security-audit-results-in-detail%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2F2018-security-audit-results-in-detail%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="post-template-default single single-post postid-6267 single-format-standard">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../../index.html">
+              
+                <object type="image/svg+xml" data="../../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4059"><a class="dropdown-item" href="../../technology/index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3921"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ru/blog/2018-security-audit-results-in-detail/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../fr/blog/2018-security-audit-results-in-detail/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../zh/blog/2018-security-audit-results-in-detail/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../pt/blog/2018-security-audit-results-in-detail/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ko_KR/blog/2018-security-audit-results-in-detail/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ja/blog/2018-security-audit-results-in-detail/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../es/blog/2018-security-audit-results-in-detail/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+<div class="container">
+
+	<main id="primary" class="content-area" role="main">
+
+		
+<article id="post-6267">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="../index.html"><span class="notranslate">Electric Coin Company </span>Posts</a></div> / <div class="d-inline">2018 Security Audit Results in Detail</div></div>
+				
+				
+				<h1 class="entry-title">2018 Security Audit Results in Detail</h1><div class="entry-meta"><span class="notranslate"><a href="../author/benjamin-winston/index.html" title="Posts by Benjamin Winston" class="author url fn" rel="author">Benjamin Winston</a></span> and <span class="notranslate"><a href="../author/paige-peterson/index.html" title="Posts by Paige Peterson" class="author url fn" rel="author">Paige Peterson</a></span> <span class="meta-sep">|</span> <div class="d-inline">January <span class="notranslate">31, 2019</span></div></div><!-- .entry-meta -->			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				
+<p>Today we are announcing the security audit results from five expert security auditors who <a href="../2018-zcash-security-audit-details/index.html">we contracted last year</a>. We hired these experts to conduct comprehensive security and design audits in support of the <a href="../../upgrade/overwinter.html">Overwinter</a> and <a href="../../upgrade/sapling.html">Sapling</a> releases. The summary and implication of the results are available <a href="../2018-security-audit-results-overview/index.html">here</a> in addition to the result details, our reasoning and response below.</p>
+
+
+
+<h2>Least Authority, Part 1</h2>
+
+
+
+<p>Least Authority have <a href="https://leastauthority.com/blog/zcash-security-audit-reports" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">published their work</a>.</p>
+
+
+
+<h5>Issue A: pow leaks in windowed_exp</h5>
+
+
+
+<h5>&#8230; and &#8230;</h5>
+
+
+
+<h5>Issue B: Exponent leaks via power function</h5>
+
+
+
+<p>These issues correctly identify cache-snooping attacks that are exploitable by an attacker who is able to run code on the same core. Zcash is not intended to be safe to side-channel attacks in these scenarios, and this is listed <a href="https://github.com/zcash/zcash/blob/master/doc/security-warnings.md" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">in the security warnings in our repository</a>.</p>
+
+
+
+<h5>Issue C: Undefined behavior in ​crypto/common.h</h5>
+
+
+
+<p>We raised issue <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash/issues/1249" target="_blank">#1249</a> which was then later closed by <a href="https://github.com/zcash/zcash/pull/3181" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">PR 3181</a>, which includes a commit that clarifies the pointer size and number of points in a way that works on all platforms.</p>
+
+
+
+<h5>Issue D: Undefined behavior in CBaseDataStream::read</h5>
+
+
+
+<p>We raised issue <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash/issues/3182" target="_blank">#3182</a> which was then later closed by <a href="https://github.com/zcash/zcash/pull/3183" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">PR 3183</a> which added explicit checks for a NULL pointer value before the value gets used.</p>
+
+
+
+<h5>Issue E: CTxMemPool::check() does nothing when turned on</h5>
+
+
+
+<p>We raised issue <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash/issues/3134" target="_blank">#3134</a> which was then later closed by <a href="https://github.com/zcash/zcash/pull/3160" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">PR 3160</a> which adds an explicit cast as recommended in the issue, and also adds a test to <code>mempool_tests.cpp</code> to check for regressions in this issue.</p>
+
+
+
+<h5>Issue F: Transaction expiry reduces safety in reorgs</h5>
+
+
+
+<p>Since this issue was not listed as a vulnerability, no changes were made in response to this issue.</p>
+
+
+
+<h2>Coinspect</h2>
+
+
+
+<p>Coinspect have published their <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://coinspect.com/doc/CoinspectReportZcash2018.pdf" target="_blank">assessment of Overwinter</a>.</p>
+
+
+
+<p>The numbering of these issues is a continuation of the work that Coinspect did on Zcash in 2016.</p>
+
+
+
+<h5>ZEC-012: Transaction Expiry Enables Node Isolation Attack High </h5>
+
+
+
+<p>This attack describes the sequence of events that could use a combination of transaction expiry and network banning to isolate any node from the network.</p>
+
+
+
+<h5>ZEC-013: Transaction Expiry Enables Transaction Flooding at No Cost</h5>
+
+
+
+<p>We made modifications to our code to fix both these issues in <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash/pull/3144" target="_blank">PR 3144</a>.<br>Placeholder issues <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash/issues/3141" target="_blank">#3141</a> and <a href="https://github.com/zcash/zcash/issues/3142" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#3142</a> were used prior to the above implementation.</p>
+
+
+
+<h2>NCC Group</h2>
+
+
+
+<p>NCC have <a href="https://www.nccgroup.trust/us/our-research/zcash-overwinter-consensus-and-sapling-cryptography-review/?research=Public+Reports">published their work</a>.</p>
+
+
+
+<h3>Overwinter Issues</h3>
+
+
+
+<h5>NCC-2018-001: Asynchronous Chain Updates Can Lead To Network Bans</h5>
+
+
+
+<p>This issue is similar to those discovered by Coinspect and remediated there (see Coinspect audit results post). The report includes a retest of this issue, referring to the <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash/commit/473a1132419d05911933ac0095b207c4e2fc59f3" target="_blank">fix commit</a>&nbsp;which was included in <a href="https://github.com/zcash/zcash/pull/3148" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">PR 3148</a>&nbsp;and fixes both the Coinspect reported issues and this one to a level we are satisfied with.</p>
+
+
+
+<h5>NCC-2018-002: Mempool Not Properly Cleared if Connecting or Disconnecting Tips Fails</h5>
+
+
+
+<p>We decided to temporarily accept this small risk, and it ended up not causing a problem during activation of Overwinter or Sapling. We have raised issue <a href="https://github.com/zcash/zcash/issues/3797" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#3797</a> to track for future network upgrades.</p>
+
+
+
+<h3>Sapling Issues</h3>
+
+
+
+<p>These are ordered to match the report to make the task of correlating the findings in the report with our responses simpler.</p>
+
+
+
+<h5>NCC-2018-004: Curve BLS12-381 Security Is Less Than 128 Bits</h5>
+
+
+
+<p>As the issue rightly points out, the existing analysis of this curve puts a practical attack well beyond the foreseeable computing power available to humanity, although we will monitor the research situation as time progresses. </p>
+
+
+
+<p>The research mentioned in the issue was also referenced in our <a href="../new-snark-curve/index.html">blog post on curve selection</a>.</p>
+
+
+
+<p>We are satisfied that use of this curve strikes an appropriate balance between security and performance.</p>
+
+
+
+<h5>NCC-2018-009: RedDSA / RedJubjub Are Not Strongly Unforgeable With Re-Randomized Keys</h5>
+
+
+
+<p>This issue correctly identified an error in the construction of the RedDSA signature scheme relative to its claimed security properties. There are two relevant ways of formalizing unforgeability for signature schemes: “existential unforgeability” (sufficient for most uses) and “strong unforgeability” (also preventing some forms of malleability). The latter property was claimed but not met <em>in general</em> by the specified scheme, even though it was met (for a designed reason, not by accident) for its uses in Zcash. This error has been corrected in version <em>2018.0-beta-20</em> and later of the <a href="https://github.com/zcash/zips/blob/master/protocol/protocol.pdf" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">protocol specification</a>, so that the scheme is now conjectured (and provisionally proven, subject to further review of the proof) to meet the stronger property in general. The relevant change was to move responsibility for ensuring that the public key is included in the hash function input, from the protocol using RedDSA to the RedDSA scheme itself. This correction did not require any visible consensus rule change for Zcash, but it makes RedDSA more safely reusable in other protocols.</p>
+
+
+
+<h5>NCC-2018-010: Bit Ordering Convention Leads To Mismatches And Confusion</h5>
+
+
+
+<p>We took the point that the bit ordering was confusing and issued <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash-hackworks/sapling-crypto/pull/72" target="_blank">PR #72</a> in sapling-crypto to move the implementation to all little-endian and made changes to reflect this in the specification, which were logged in the changelog under version <em>2018.0-beta-15</em> of the <a href="https://github.com/zcash/zips/blob/master/protocol/protocol.pdf" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">protocol specification</a>.</p>
+
+
+
+<h5>NCC-2018-003: Private Key Decoding Has Limited Interoperability</h5>
+
+
+
+<p>We opened issue <a href="https://github.com/zcash/zcash/issues/3155" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#3155</a> to discuss this but since the issue is not exploitable, no changes have been made to the code in response.</p>
+
+
+
+<h5>NCC-2018-007: Discrepancies Between Specification and Circuit Implementation</h5>
+
+
+
+<p>We have harmonized the implementation and protocol by altering the definition in section 5.4.7.2 “Windowed Pederson commitments” to reflect the order of operations used in the circuit implementation.</p>
+
+
+
+<h5>NCC-2018-008: Typographical Inconsistencies in Zcash Specification</h5>
+
+
+
+<p>This finding was addressed in four parts:</p>
+
+
+
+<ol><li>We have modified the specification to match the order of the two commutative inputs for those definitions to provide clarity in the specification;</li><li>We have corrected the definition of Pederson hash chunking in the specification to bring it in line with the implementation;</li><li>We have corrected the typo, both words now read “RedDSA.RandomizePublic”;</li><li>We have added the definition used in the implementation.</li></ol>
+
+
+
+<p>The changes recommended in this issue were made in version <em>2018.0-beta-20</em> of the <a href="https://github.com/zcash/zips/blob/master/protocol/protocol.pdf" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">protocol specification</a> and are listed in the changelog for that version.</p>
+
+
+
+<h5>NCC-2018-011: Bias in Random Field Element Generators for Underlying Representation </h5>
+
+
+
+<p>This issue is listed as not exploitable and no changes have been made in response to this issue.</p>
+
+
+
+<h2>Least Authority, Part 2</h2>
+
+
+
+<p>Least Authority have <a href="https://leastauthority.com/blog/zcash-security-audit-reports" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">published their work</a>.</p>
+
+
+
+<h5>Issue A: Spec is inconsistent regarding fOverwintered</h5>
+
+
+
+<p>This was indeed a typo, as the issue text suggests, which was fixed in a later version. Additionally, we took their general advice to make consensus rules more clear and provided Sapling- and Overwinter-specific consensus changes in different colors for clarity.</p>
+
+
+
+<h5>Issue B: Transparent address encoding is compressed</h5>
+
+
+
+<p>This was a legitimate oversight on our part and the text has been updated in-line with the recommendation from Least Authority. Section 5.6.1 now reads “of ​<strong>a​ </strong>​<strong>compressed​ </strong>ECDSA key encoding”.</p>
+
+
+
+<h2>Kudelski Security</h2>
+
+
+
+<p>Kudelski Security have <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://research.kudelskisecurity.com/2019/01/31/audit-of-zcashs-sapling-update/" target="_blank">published a blog post on the work&nbsp;they&nbsp;did&nbsp;for&nbsp;us</a>. Their <a href="https://cybermashup.files.wordpress.com/2018/08/zcash-audit.pdf">official report</a> is available.</p>
+
+
+
+<h5>PAIRING-001: Unbounded exponent in exponentiation</h5>
+
+
+
+<p>The concern was that without an upper bound on the 64-bit integers passed into this part of the code, performance might be degraded to the point of causing a denial-of-service condition. In fact, the calling code ensures that such large numbers are never passed to this location, and we decided that adding a redundant check would incur an unacceptable performance penalty for no gain. Other users of this library should be sure to use it safely, too.</p>
+
+
+
+<h5>PAIRING-002: RNG choice delegated to callers</h5>
+
+
+
+<p>We deliberately left the choice of random number generators to the caller to improve testability of the code. In Zcash, we’re happy that the rng we pass to the library is appropriate.</p>
+
+
+
+<h5>BELLMAN-001: Outdated and unmaintained dependencies</h5>
+
+
+
+<p>While it’s true that these dependencies are marked as unmaintained, we do not currently believe them to be dangerous. Nevertheless we’ve added them to our list of dependencies to swap out and will do so at a more appropriate time.</p>
+
+
+
+<h5>BELLMAN-002: Lossy cast to usize</h5>
+
+
+
+<p>The use of this variable is defined as being limited to the scope of available memory, and so its use as a length is at least theoretically-valid; however, code changes were made to prevent an out-of-range value from being lost. Specifically the storage of that value is now 32-bit throughout. In practice this makes no appreciable difference since the elements are each 96 bytes long. Any error handling resulting from indexes that are too large to be stored in the array should be handled by the caller.</p>
+
+
+
+<p>These changes were merged into master of zkcrypto/bellman <a href="https://github.com/zkcrypto/bellman/pull/22/commits/6ec7272586a073e1b37417ff10c2818beda18d39" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">PR 22</a>.</p>
+
+
+
+<h5>BELLMAN-003: Potential DoS through user-controlled length argument</h5>
+
+
+
+<p>Although the length value might be user-controlled, each time the loop over <code>len</code> executes, it calls a generic reader interface provided by the caller (e.g. through <code>read_g1</code> to R) which should fail in such a way that the loop does not execute again when no more data is available, and so no attempt is made to address memory beyond the available values. It is the responsibility of the caller to prevent the DoS condition within this design pattern, and that is the case in Zcash.</p>
+
+
+
+<h2>QED-it</h2>
+
+
+
+<p>QED-it have published <a href="https://medium.com/qed-it/sapling-audit-9b531be9d30">a blog post on the work they did for us</a>. Their official report is <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://qed-it.com/sapling-audit-report.pdf" target="_blank">available from their site</a>.</p>
+
+
+
+<h3>Issues</h3>
+
+
+
+<p><strong>Incorrect assertion &#8211; Pedersen hash generators linear relation validation</strong> </p>
+
+
+
+<h5>&#8230; and &#8230;</h5>
+
+
+
+<p><strong>Window base patterns generation not matching the spec</strong></p>
+
+
+
+<p>These two issues refer to an <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash-hackworks/sapling-crypto/pull/75" target="_blank">unmerged pull request</a> to sapling-crypto. That PR has been closed and superseded by <a href="https://github.com/zcash-hackworks/sapling-crypto/pull/95" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">PR 95</a>, which only changes comments and does not have the mentioned issues.</p>
+
+
+
+<p><strong>jubjub::Fs usage is sometimes confusing regarding the prime subgroup</strong></p>
+
+
+
+<p>Fs is intended to represent scalars in the prime subgroup. It is not possible to make the Jubjub implementation only usable within the prime subgroup because the specification allows points outside the subgroup to appear in transaction fields, for performance reasons. We acknowledge that this requires extreme care; alternatives such as Ristretto were not sufficiently developed/understood at the time most of Sapling was designed, and have disadvantages for circuit efficiency.</p>
+
+
+
+<p>We filed issue <a href="https://github.com/zcash-hackworks/sapling-crypto/issues/89" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#89</a> to consider other approaches in future protocol upgrades.<br></p>
+
+
+
+<p><strong>Pedersen hash circuit implementation can not calculate inputs larger than 63*3*4</strong></p>
+
+
+
+<p>This does not affect correctness of the circuit for the input sizes used, but will be fixed. We filed issue <a href="https://github.com/zcash-hackworks/sapling-crypto/issues/90" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#90</a> to track this.</p>
+
+
+
+<p><strong>The bit unpacking between layers of the Merkle tree</strong></p>
+
+
+
+<p>In fact it does not reduce the concrete security of the Merkle tree, even by a fraction of a bit. Observe that in attempting to find a second-preimage authentication path for a given root, an adversary has a free choice of the sibling hashes in the path. The choice of congruency gives the adversary no additional power, since at each node in the path, varying the congruency would produce a different root hash in the same way as varying the sibling hash. This issue <a href="https://github.com/zcash/zcash/issues/2234#issuecomment-342149213" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">was considered in the design</a>. The only property needed of the Pedersen hash <em>MerkleCRH</em><sup><em>Sapling</em></sup>, in order for a different congruency to produce a different root hash, is that it is collision-resistant <sup>[*]</sup> on bit-sequence inputs. This tightly reduces to hardness of the DLP on the prime-order subgroup of Jubjub, assuming that <em>FindGroupHash</em> outputs generators that are randomly distributed on this subgroup.<br></p>
+
+
+
+<p><sup>[*]</sup> Collision-resistance of the hash function implies collision resistance of the Merkle tree, which in turn implies second-preimage resistance of the Merkle tree. In the general case, there are subtle technical obstacles to proving second-preimage resistance of the tree based only on second-preimage resistance of the hash (the heuristic of proving security for a keyed hash and extrapolating to an unkeyed hash does not work). In this context we have to assume hardness of DLP on the prime-order subgroup of Jubjub in any case for the rest of the Sapling protocol, so there would be no benefit to making a second-preimage assumption about <em>MerkleCRH</em><sup><em>Sapling</em></sup> (in fact, breaking DLP breaks second-preimage resistance as well as collision resistance of this hash, so the two assumptions are equivalent in strength).</p>
+
+
+
+<p><strong>Testing is done with another implementation of ConstraintSystem</strong></p>
+
+
+
+<p>Note that both implementations (<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash-hackworks/sapling-crypto/blob/827e85547e5aaf6bce2b984ee3a0e76da3034af2/src/circuit/test/mod.rs#L368" target="_blank">here</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zkcrypto/bellman/blob/96b2d3e41a22de4263ee967ab8a6c776c083a048/src/groth16/prover.rs#L99" target="_blank">here</a>) are very simple and short; they are essentially only keeping track of lists of auxiliary variables, inputs, and R1CS constraints. On the other hand, it does seem as though it might be possible to alleviate this concern for future reviews by sharing more code. This is filed as issue <a href="https://github.com/zcash-hackworks/sapling-crypto/issues/92" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#92</a>.<br></p>
+
+
+
+<p><strong>params.montgomery_2a doesn&#8217;t seem to be used anywhere</strong></p>
+
+
+
+<p>Indeed, it only seems to be used in <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/librustzcash/blob/e1c6232dd7a5368aa9342649d73db27522cc8d6e/sapling-crypto/src/jubjub/tests.rs#L311-L317" target="_blank">this test</a>. This issue is filed as issue <a href="https://github.com/zcash-hackworks/sapling-crypto/issues/93" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#93</a>.<br></p>
+
+
+
+<h3><span>Spec&nbsp;notation&nbsp;mismatches&nbsp;and&nbsp;missing&nbsp;parts</span></h3>
+
+
+
+<p>Most of these observations have merit, the most severe of them were fixed right away, and for the remainder we have filed issues: <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zips/issues/176" target="_blank">#176</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zips/issues/177" target="_blank">#177</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zips/issues/180" target="_blank">#180</a>, <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zips/issues/181" target="_blank">#181</a> and <a href="https://github.com/zcash/zips/issues/182" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#182</a>.</p>
+
+
+
+<p>In section A.3.3, Theorem A.3.3 is actually stated for any Montgomery curve, so it is was incorrect to reference <em>A</em>​<sub>𝕄</sub> or <em>B</em>​<sub>𝕄</sub> in the proof; it should have referenced just <em>A</em> and&nbsp;<em>B</em>. This is fixed in version <em>2018.0-beta-31</em>.</p>
+
+
+
+<p>In respect to Theorem A.3.2, the intended condition was “<em>u</em>&nbsp;=&nbsp;0 or 1&nbsp;−&nbsp;<em>v</em>&nbsp;=&nbsp;0”. That there are also no other points in the subgroup with <em>v</em>&nbsp;=&nbsp;0 is true, but not needed. This is fixed in version <em>2018.0-beta-31</em> (the correction to the proof requires a property of complete twisted Edwards curves that was not previously mentioned, so it wasn’t entirely trivial).</p>
+
+
+
+<p>We filed issue <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zips/issues/183" target="_blank">#183</a> for the specification and issue <a href="https://github.com/zcash-hackworks/sapling-crypto/issues/91" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#91</a> for the sapling-crypto implementation.</p>
+
+
+
+<h2>Least Authority, Part 3</h2>
+
+
+
+<p>Least Authority have <a href="https://leastauthority.com/blog/zcash-security-audit-reports" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">published their work</a>.</p>
+
+
+
+<h5>Issue A: RPC HTTP Server is Vulnerable to DNS-Rebinding Attacks</h5>
+
+
+
+<p>We have a password mechanism in place, and even recently selectively incorporated Bitcoin&#8217;s auth cookies in the case where you haven&#8217;t set a password. Nevertheless, in response to this finding we have updated our documentation on the use of passwords in the RPC interface, and have raised issue <a href="https://github.com/zcash/zcash/issues/3791" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#3791</a> to look at further defense-in-depth measures.</p>
+
+
+
+<p><strong>Issue B: Instance of Undefined Behavior </strong></p>
+
+
+
+<p>This is a useful finding, and we have raised issue <a href="https://github.com/zcash/zcash/issues/3792" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#3792</a> to fix it. Note that it is Low impact and requires RPC authentication to access.</p>
+
+
+
+<p><strong>Issue C: Transaction Details Disclosure Vector </strong></p>
+
+
+
+<p>This is a useful finding, and we have raised issue <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash/issues/3793" target="_blank">#3793</a> to discuss possible changes to improve this situation. Note that users should never run zcashd on the same computer that adversarial users can execute code on, because of <a href="https://zcash.readthedocs.io/en/english-docs/security-warnings.html" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">known weakness to side-channel attacks</a>. </p>
+
+
+
+<p><strong>Issue D: Address Interpretation Surprise </strong></p>
+
+
+
+<p>Bech32 encoding is not accepted for Sapling addresses, however we have opened issue <a href="https://github.com/zcash/zcash/issues/3794" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#3794</a> and plan to add tests that confirm this to be the case on a continuous basis.</p>
+
+
+
+<p><strong>Issue E: Unclear Transaction Interpretation </strong></p>
+
+
+
+<p>We have opened issue <a href="https://github.com/zcash/zcash/issues/3795" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#3795</a> for this issue to remove the ambiguity here so that users don&#8217;t get surprised.</p>
+
+
+
+<p><strong>Suggestion1: Strengthen the wallet password system</strong></p>
+
+
+
+<p>We have opened issue <a href="https://github.com/zcash/zcash/issues/3796" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#3796</a> to discuss the ways we could improve the wallet encryption experience for users.</p>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+			<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				<footer class="entry-footer"><span class="cat-tags-links"><div class="cat-links"><span class="screen-reader-text notranslate"></span><div class="d-inline"><a href="../category/technical/index.html" rel="category tag">Technical</a></div></div><div class="tags-links"><span class="screen-reader-text notranslate">#</span><div class="d-inline"><a href="../tag/audit/index.html" rel="tag">audit</a></div>, <div class="d-inline"><a href="../tag/peer-review/index.html" rel="tag">peer review</a></div>, <div class="d-inline"><a href="../tag/security/index.html" rel="tag">security</a></div>, <div class="d-inline"><a href="../tag/security-audits/index.html" rel="tag">security audits</a></div></span></footer> <!-- .entry-footer -->			</div>
+		</div>
+	
+</article><!-- #post-## -->
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10">
+		
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../people-behind-zcash-technology-daira-hopwood-engineer-and-protocol-designer/index.html" rel="prev"><span class="nav-title">People Behind Zcash Technology:  Daira Hopwood, Engineer and Protocol Designer</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../2018-security-audit-results-overview/index.html" rel="next"><span class="nav-title">2018 Security Audit Results Overview</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
+    </nav>			</div>
+		</div>
+		
+	</main><!-- #main -->
+
+</div> <!-- end .container -->
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Zcash Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Electric Coin Company</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3922"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/zcashco" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/zcashco"><img class="alignnone size-medium wp-image-3444" src="../../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../../privacy-policy.html">Privacy Policy</a>  |  <a href="../../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 ELECTRIC COIN COMPANY</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/blog/2018-security-audit-results-in-detail/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:30:25 GMT -->
+</html>

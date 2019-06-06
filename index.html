@@ -1,586 +1,379 @@
-<!DOCTYPE html>
-<html>
+
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from z.cash/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 May 2019 02:35:09 GMT -->
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28037043-7"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Binary Digit Zero knowledge Electronic Currency | Bitzec</title>
 
-        function gtag() {
-            window.dataLayer.push(arguments)
-        }
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="index.html" hreflang="en"/>
+		<link rel="alternate" href="zh/index.html" hreflang="zh"/>
+<link rel="alternate" href="fr/index.html" hreflang="fr"/>
+<link rel="alternate" href="ja/index.html" hreflang="ja"/>
+<link rel="alternate" href="ko_KR/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="pt/index.html" hreflang="pt"/>
+<link rel="alternate" href="ru/index.html" hreflang="ru"/>
+<link rel="alternate" href="es/index.html" hreflang="es"/>
 
-        gtag('js', new Date());
-        gtag('config', 'UA-28037043-7');
-    </script>
-<!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="the binary digit zero knowledge electronic currency. Bitzec." />
-<meta property="og:image" content="/images/logo.png">
-<link rel="icon" href="https://image.flaticon.com/icons/png/512/36/36628.png">
-<title>BITZEC | BZC</title>
-<link rel="stylesheet" href="/css/stylelibs.css">
-<link rel="stylesheet" data-style="styles" href="/css/main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/css/flag-icon.min.css">
-</head>
-<body>
-<header id="top-nav" class="top-nav page-header">
-<div class="container">
-<a href="/" class="logo smooth-scroll">
-<img width="85" height="420" src="/images/bitcoinking.png" alt="logo" class="logo-white">
-<img src="/images/bitcoinking.png" alt="logo" class="logo-dark">
-</a>
-<nav class="top-menu">
-<ul class="sf-menu">
-<li><a href="/">Home</a></li>
-<li><a href="https://github.com/bitzec/bitzec-patched-account-labeling/blob/master/protocol-bitzec.pdf" target="_blank">Protocol</a></li>
-<li><a href="#features" class="smooth-scroll">Features</a></li>
-<li><a href="#exchange" class="smooth-scroll">Exchange</a></li>
-<li><a href="#wallets" class="smooth-scroll">Wallets</a></li>
-<li><a href="https://miningpoolstats.stream/bitzec" target="_blank">Pools</a></li>
-<li>
-<a href="#">Explorer</a>
-<ul>
-<li><a href="http://explorer.bitzec.org/" target="_blank">explorer.bitzec.org</a></li>
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Bitzec is a digital currency with strong privacy features. Transact efficiently and safely, with nears 0 fees, while ensuring digital transactions remain private. Selectively disclose address and transaction details for information sharing, auditing or regulatory compliance."/>
+<link rel="canonical" href="index.html" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Privacy-protecting digital currency | Zcash" />
+<meta property="og:description" content="Zcash is a digital currency with strong privacy features. Transact efficiently and safely, with low fees, while ensuring digital transactions remain private. Selectively disclose address and transaction details for information sharing, auditing or regulatory compliance." />
+<meta property="og:url" content="https://z.cash/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="og:image" content="https://z.cash/wp-content/uploads/2019/03/zcash-logo-horizontal-fullcolor-fb.png" />
+<meta property="og:image:secure_url" content="https://z.cash/wp-content/uploads/2019/03/zcash-logo-horizontal-fullcolor-fb.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Zcash is a digital currency with strong privacy features. Transact efficiently and safely, with low fees, while ensuring digital transactions remain private. Selectively disclose address and transaction details for information sharing, auditing or regulatory compliance." />
+<meta name="twitter:title" content="Privacy-protecting digital currency | Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:image" content="https://z.cash/wp-content/uploads/2019/03/zcash-logo-horizontal-fullcolor-twitter.png" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/bitzecorg"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/#webpage","url":"https://z.cash/","inLanguage":"en-US","name":"Privacy-protecting digital currency | Zcash","isPartOf":{"@id":"https://z.cash/#website"},"about":{"@id":"https://z.cash/#organization"},"image":{"@type":"ImageObject","@id":"https://z.cash/#primaryimage","url":"https://z.cash/wp-content/uploads/2018/09/home-z-092118_2x.gif","width":420,"height":420},"primaryImageOfPage":{"@id":"https://z.cash/#primaryimage"},"datePublished":"2018-08-24T10:03:07+00:00","dateModified":"2019-03-15T16:31:29+00:00","description":"Zcash is a digital currency with strong privacy features. Transact efficiently and safely, with low fees, while ensuring digital transactions remain private. Selectively disclose address and transaction details for information sharing, auditing or regulatory compliance."}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed" href="404.html?url=https%3A%2F%2Fz.cash%2F" />
+<link rel="alternate" type="text/xml+oembed" href="404.html?url=https%3A%2F%2Fz.cash%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="home page-template page-template-page-templates page-template-homepage page-template-page-templateshomepage-php page page-id-3918">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="index.html">
+
+                <object type="image/svg+xml" data="wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="wp-content/uploads/2018/08/bitzec-logo.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-3918 current_page_item nav-item nav-item-4698"><a href="index.html" class="nav-link align-self-center active">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
 </ul>
 </li>
-<li>
-<a href="#" class="smooth-scroll">Social</a>
-<ul>
-<li><a href="https://bitcointalk.org/index.php?topic=5045890.0" target="_blank"> Forum</a></li>
-<li><a href="https://discord.gg/VeBJW3H" target="_blank">Discord</a></li>
-<li><a href="https://twitter.com/bitzecorg/" target="_blank">Twitter</a></li>
- </ul>
-</li>
-<li class="menu-item-has-children current-menu-item">
-
-<ul class="sub-menu">
-<li><a href="/?lang=ar"><span class="flag-icon-background flag-icon-arabic"></span> ???? (Arabic)</a></li><li><a href="/?lang=en"><span class="flag-icon-background flag-icon-us"></span> English (English)</a></li><li><a href="/?lang=jp"><span class="flag-icon-background flag-icon-jp"></span> ??? (Japanese)</a></li><li><a href="/?lang=nl"><span class="flag-icon-background flag-icon-nl"></span> Nederlands (Dutch)</a></li><li><a href="/?lang=ro"><span class="flag-icon-background flag-icon-ro"></span> Rom�na (Romanian)</a></li><li><a href="/?lang=sr"><span class="flag-icon-background flag-icon-rs"></span> Srpski (Serbian)</a></li><li><a href="/?lang=tr"><span class="flag-icon-background flag-icon-tr"></span> T�rk�e (Turkish)</a></li><li><a href="/?lang=ru"><span class="flag-icon-background flag-icon-ru"></span> P?????? (Russian)</a></li><li><a href="/?lang=si"><span class="flag-icon-background flag-icon-si"></span> Sloven�cina (Slovenian)</a></li><li><a href="/?lang=fr"><span class="flag-icon-background flag-icon-fr"></span> Fran�ais (French)</a></li><li><a href="/?lang=in"><span class="flag-icon-background flag-icon-in"></span> Indonesia (Indonesian)</a></li><li><a href="/?lang=it"><span class="flag-icon-background flag-icon-it"></span> Italiana (Italian)</a></li> </ul>
-</li>
-</ul>
-</nav>
-
-
-<a href="#" class="toggle-mnu"><span></span></a>
-<div id="mobile-menu">
-<div class="inner-wrap">
-<nav>
-<ul class="nav_menu">
-<li class="menu-item-has-children current-menu-item">
-
-<ul class="sub-menu">
-<li><a href="/?lang=ar"><span class="flag-icon-background flag-icon-arabic"></span> ???? (Arabic)</a></li><li><a href="/?lang=en"><span class="flag-icon-background flag-icon-us"></span> English (English)</a></li><li><a href="/?lang=jp"><span class="flag-icon-background flag-icon-jp"></span> ??? (Japanese)</a></li><li><a href="/?lang=nl"><span class="flag-icon-background flag-icon-nl"></span> Nederlands (Dutch)</a></li><li><a href="/?lang=ro"><span class="flag-icon-background flag-icon-ro"></span> Romania (Romanian)</a></li><li><a href="/?lang=sr"><span class="flag-icon-background flag-icon-rs"></span> Srpski (Serbian)</a></li><li><a href="/?lang=tr"><span class="flag-icon-background flag-icon-tr"></span> Turk (Turkish)</a></li><li><a href="/?lang=ru"><span class="flag-icon-background flag-icon-ru"></span> P?????? (Russian)</a></li><li><a href="/?lang=si"><span class="flag-icon-background flag-icon-si"></span> Sloven (Slovenian)</a></li><li><a href="/?lang=fr"><span class="flag-icon-background flag-icon-fr"></span> Franc (French)</a></li><li><a href="/?lang=in"><span class="flag-icon-background flag-icon-in"></span> Indonesia (Indonesian)</a></li><li><a href="/?lang=it"><span class="flag-icon-background flag-icon-it"></span> Italiana (Italian)</a></li> </ul>
-</li>
-<li><a href="https://github.com/bitzec/bitzec-patched-account-labeling/blob/master/protocol-bitzec.pdf" target="_blank">Protocol</a></li>
-<li><a href="#features" class="smooth-scroll">Features</a></li>
-<li><a href="#exchange" class="smooth-scroll">Exchange</a></li>
-<li><a href="#wallets" class="smooth-scroll">Wallets</a></li>
-<li><a href="https://miningpoolstats.stream/bitzec" target="_blank">Pools</a></li>
-<li class="menu-item-has-children current-menu-item">
-<a href="#">Explorer</a>
-<ul class="sub-menu">
-<li><a href="http://explorer.bitzec.org/" target="_blank">Explorer</a></li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4059"><a class="dropdown-item" href="technology/index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
 </ul>
 </li>
-<li class="menu-item-has-children current-menu-item">
-<a href="#" class="smooth-scroll">Social</a>
-<ul class="sub-menu">
-<li><a href="https://bitcointalk.org/index.php?topic=5045890.0" target="_blank"> Forum</a></li>
-<li><a href="https://twitter.com/bitzecorg/" target="_blank">Twitter</a></li>
-<li><a href="https://forum.zcashcommunity.com/t/copypaste-of-zcash-bitzec-bzc/32209"" target="_blank"> Zcashforum</a></li>
-<li><a href="https://discord.gg/VeBJW3H" target="_blank">Discord</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="index.html">English</a></li>
 
-</div>
-</header>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
 
-<div id="top" class="slider">
-<div id="preloader">
-<div id="status"></div>
-</div>
-<div class="full-slider intro">
+				<main id="primary" class="content-area" role="main">
 
-<div data-image="/images/backgrounds/mountains.jpg" class="slide bg-mask background-image full-vh">
-<div class="container-slide vertical-align center head-desc">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="heading-title-big">The Binary Digit Zero - Knowledge Electronic Currency<br><span> [BZC]  Bitzec</span></div>
-<div class="description-slide">Welcome to the Speculation</div>
-<div class="buttons-section">
-<a href="https://github.com/bitzec/bitzec-patched-account-labeling/blob/master/protocol-bitzec.pdf" target="_blank" class="btn dark-btn large-btn">Protocol</a>
-<a href="https://miningpoolstats.stream/bitzec" target="_blank" class="btn dark-btn large-btn">Start Mining</a>
-<a href="https://github.com/bitzec/bitzec/" class="btn dark-btn large-btn" target="_blank">Latest Code</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="particles-js" class="canvas-background"></div>
-</div>
-</div>
+<header class="entry-header home-header single-column-header" style='background-color:#61AF08;'>
+  <div class="container">
+    <!-- split header layout -->
+        <!-- single column header -->
+    <div class="row text-center justify-content-center justify-content-md-start">
+			<div class="col-md-2 d-none d-md-flex header-icons">
+        <div class="align-self-center w-100 justify-content-left">
+          <div class="w-50">
+	          <p><a href="wallets/index.html"><img class="alignnone size-full wp-image-3884" src="wp-content/uploads/2018/09/icon-wallet-2.png" alt="" width="25" height="25" /> <span>Get a wallet</span></a></p>
+<p><a href="exchanges/index.html"><img class="alignnone size-medium wp-image-3885" src="wp-content/uploads/2018/09/icon-exchange-2.png" alt="" width="17" height="19" /> <span>Find an exchange</span></a></p>          </div>
+        </div>
+			</div>
+      <div class="col-11 col-sm-12 col-md-8">
+                <div class="row justify-content-center">
+          <div class="col-12 col-sm-7 col-md-6 col-lg-5 col-xl-4" style="background-image: url('')">
+              <img width="420" height="420" src="wp-content/uploads/2018/08/bitzec2.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" />            </div>
+          </div>
+        </div>
+                <div class="row header-content justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+            <h1>The Binary Digit Zero-Knowledge Electronic Currency. Bitzec BZC.</h1>
+<p><a class="btn btn-primary" href="get-started/index.html">Get started</a></p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end single column header -->
+  </div> <!-- end .container -->
+</header><!-- .entry-header -->
 
-<div id="dots-control-full-slider" class="dots-control-carousel"></div>
+<main id="post-3918" class="post-3918 page type-page status-publish has-post-thumbnail hentry">
+	<code>
+			</code>
+	<div class="entry-content">
+    		<section class="press-section">
+    <h2 class="h3">Blockreward Code</h2>
+<img src="wp-content/uploads/2018/09/blockreward.png">
+<iframe src="https://coinpaprika.com/coin/bzc-bitzec/embed/?interval=0&modules[]=market_details&modules[]=chart&nightMode=false&primaryCurrency=USD&updateActive=false" width="350" height="300" frameborder="0"></iframe>
+			<div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-4">
+			<div class="container">
+			<div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-4">
+           </div>
+         </div>
+           <div class="row slider-wrap no-gutter">
+             <div class="col-1 align-self-center text-center slider-nav">
+               <img class="slider-prev invisible" src="wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" />
+             </div>
+             <div class="col-10 slider">
+               <div class="row justify-content-md-center align-items-center text-center">
+                          						<div class="col-md-3 repeatable-item d-flex">
+                       <div class="flex-fill">
+           							<div class="item-desc col">
+           								<a href="http://fortune.com/2017/12/18/jp-morgan-bitcoin-zcash-wilcox/" target="_blank"><img src="wp-content/uploads/2018/09/press-fortune.png" /></a>
+           							</div>
+                       </div>
+         						</div>
+         						         						<div class="col-md-3 repeatable-item d-flex">
+                       <div class="flex-fill">
+           							<div class="item-desc col">
+           								<a href="http://www.economist.com/news/finance-and-economics/21709329-another-crypto-currency-born-known-unknown" target="_blank"><img src="wp-content/uploads/2018/09/press-TheEconomist.png" /></a>
+           							</div>
+                       </div>
+         						</div>
+         						         						<div class="col-md-3 repeatable-item d-flex">
+                       <div class="flex-fill">
+           							<div class="item-desc col">
+           								<a href="http://www.radiolab.org/story/ceremony/" target="_blank"><img src="wp-content/uploads/2018/09/press-radiolab.png" /></a>
+           							</div>
+                       </div>
+         						</div>
+         						         						<div class="col-md-3 repeatable-item d-flex">
+                       <div class="flex-fill">
+           							<div class="item-desc col">
+           								<a href="https://www.forbes.com/sites/laurashin/2017/05/22/jpmorgan-chase-to-integrate-zcash-technology-to-its-enterprise-blockchain-platform/#5f678ec87a33" target="_blank"><img src="wp-content/uploads/2018/09/press-forbes.png" /></a>
+           							</div>
+                       </div>
+         						</div>
+         						         						<div class="col-md-3 repeatable-item d-flex">
+                       <div class="flex-fill">
+           							<div class="item-desc col">
+           								<a href="https://www.businessinsider.com/zcash-price-zec-gemini-mining-what-you-need-to-know-2018-5" target="_blank"><img src="wp-content/uploads/2018/09/press-businessinsider-1.png" /></a>
+           							</div>
+                       </div>
+         						</div>
+         						               </div> <!-- .row -->
+             </div>
+             <div class="col-1 align-self-center text-center slider-nav">
+               <img class="slider-next" src="wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" />
+             </div>
+           </div> <!-- .slider-wrap -->
+			</div> <!-- end .container -->
+		</section>
+    				<section class="video-section text-white" style="background-image: url('wp-content/uploads/2018/09/home-video-bg-2.min_.jpg')">
+			<div class="container">
+  				<div class="row justify-content-md-center">
+  					<div class="col col-lg-4">
+  						<h2 class="h3">The future of Bitcoin forks.</h2>
+  					</div>
+  				</div>
+				<div class="row justify-content-md-center">
+					<div class="col col-lg-6 mx-auto text-center">
+						<div class="play-btn" class="col-md-2 mx-auto">
+							<img src="wp-content/themes/zcash-wordpress-theme-2018/assets/images/home-play.png" />
+						</div>
+						<div class="embed-responsive invisible position-absolute">
+              <div style="width: 640px;" class="wp-video"><!--[if lt IE 9]><script>document.createElement('video');</script><![endif]-->
+<video class="wp-video-shortcode" id="video-3918-1" width="640" height="360" preload="metadata" controls="controls"><source type="video/youtube" src="https://www.youtube.com/watch?v=LszOt51OjXU" /><a href="https://www.youtube.com/watch?v=LszOt51OjXU">https://www.youtube.com/watch?v=LszOt51OjXU</a></video></div>						</div>
+					</div>
+				</div>
+			</div> <!-- end .container -->
+		</section>
 
-<div id="control-full-slider" class="prev-next-block-rotate opacity-control">
-<div class="wrap-prev">
-<div class="prev"><i aria-hidden="true" class="fa fa-angle-left"></i></div>
-</div>
-<div class="wrap-next">
-<div class="next"><i aria-hidden="true" class="fa fa-angle-right"></i></div>
-</div>
-</div>
-<a href="#about" class="smooth-scroll btn-down"><i aria-hidden="true" class="fa fa-angle-down"></i></a>
-</div>
-
-
-<section id="about" class="about-us">
-<div class="container">
-<div class="row">
-<div class="col-md-8 col-md-push-2">
-<div class="heading-title center">
-<h2>to the   <span>moon</span>
-  <img src="/images/blockrewardw.png" style="max-width:100%">
-
-</h2>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-4">
-<div class="item-about">
-<div class="icon">
-<i class="pe-7s-moon"></i>
-<div class="bg-icon"><i class="pe-7s-moon"></i></div>
-</div>
-<div class="content">
-<h3>Important Details</h3>
-<p>
-- Dont invest money you may need soon.<br>- Get free airdrops. </p>
-</div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="item-about">
-<div class="icon">
-<i class="pe-7s-leaf"></i>
-<div class="bg-icon"><i class="pe-7s-leaf"></i></div>
-</div>
-<div class="content">
-<h3>Bitzec is an  <span>Zcash 2.0 Fork</span></h3>
-<p>
-- Bitcoin code.<br>- Untraceable transactions with zk-SNARKs.</p>
-</div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="item-about">
-<div class="icon">
-<i class="pe-7s-key"></i>
-<div class="bg-icon"><i class="pe-7s-key"></i></div>
-</div>
-<div class="content">
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="features" class="services-section background-image bg-dark-section">
-<div class="container">
-<div class="row">
-<div class="col-md-8 col-md-push-2">
-<div class="heading-title small-heading center">
-<h2>Bitzec <span>Feature </span></h2>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="tabs services-tabs">
-<ul class="services-carousel">
-<li class="animated-service anim-shadow">
-<a href="#">
-<i class="pe-7s-credit"></i>
-<h4>Max Supply</h4>
-<p>7,000,000,001 BZC</p>
-</a>
-</li>
-<li class="animated-service anim-shadow">
-<a href="#">
-<i class="pe-7s-science"></i>
-<h4>Algorithm</h4>
-<p>Equihash Asic</p>
-</a>
-</li>
-<li class="animated-service anim-shadow">
-<a href="#">
-<i class="pe-7s-calculator"></i>
-<h4>Transactions</h4>
-<p>2MB every 2.5 minutes</p>
-</a>
-</li>
-<li class="animated-service anim-shadow">
-<a href="#">
-<i class="pe-7s-star"></i>
-<h4>Circulating Supply</h4>
-<p>Monthly Blockreward Decreas</p>
-</a>
-</li>
-</ul>
-<div id="dots-control-tabs" class="dots-control-carousel"></div>
-
-<div id="tabs-1">
-<div class="col-md-6">
-<div class="head-service small-head text-left">
-<h2> Bitzec is meant for Airdrops .</h2>
-</div>
-<p>Immutable params:</p> <p>- max supply </p> <p>- inflation </p> </div>
-
-<div class="col-md-5 col-md-push-1">
-<ul class="list"> <li>Algo: Equihash 200 9 ASIC </li> <li>Max supply 7B coins </li> <li>Supply: Monthly Blockreward Decreas</li> <li>Blocksize is identical with Zcash (2MB every 2.5 mins)</li> </ul> </div>
-</div>
-<div class="col-md-12">
-<div class="link-full">
-<a href="https://bitcointalk.org/index.php?topic=5045890.0" target="_blank">View Bitcointalk Forum Topic<i aria-hidden="true" class="fa fa-angle-right"></i></a>
-&nbsp;&nbsp;&nbsp;
-<a href="https://bitcointalk.org/index.php?topic=5045890.0" target="_blank">View Forum<i aria-hidden="true" class="fa fa-angle-right"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section-how-we-work bg-white-section background-image">
-<div class="container">
-<div class="row">
-<div class="col-md-8 col-md-push-2">
-<div class="heading-title center">
-<h2>Why <span>Bitzec?</span></h2>
-<div class="small-desd">We skipped zcash's first mpc and sprout code</div>
-<p>Why Not</p>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-</section>
-
-<section id="wallets" class="section-portfolio bg-white-section background-image">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="heading-title center">
-<h2>Download <span>Wallet</span></h2>
-<p>Linux, Windows, MacOS and mobile wallets</p>
-</div>
-<div class="controls-portfolio center">
-<h2 class="animated fadeInDown" <h4><a href="https://github.com/bitzec/bitzec/releases" target="_blank"><img src="/images/pics.png" style="max-width:100%" />
-
-<h4><a href="https://github.com/bitzec/bitzec/releases" target="_blank">LINUX</a></h4>
-<h4><a href="https://play.google.com/store/apps/details?id=com.supernet.agama" target="_blank">ANDROID</a></h4>
-<h4><a href="https://snowgem.org/resources/modern-wallet" target="_blank">MODERN WALLET /MULTI <img src="https://snowgem.org/images/logos/snowgem-logotop.png" a=""></a>
-</h4>
-<h4><a href="https://github.com/bitzec/bitzec/releases" target="_blank">WINDOWS</a></h4>
-<h4><a href="https://github.com/bitzec/bitzec/releases" target="_blank">GITHUB</a></h4>
-</div>
-</div>
-</div>
-</div>
-</section>
+				<section class="bottom-section text-white">
+			<div class="container">
+				<h2 class="h3">Welcome to the Speculation</h2>
+				<div class="row align-items-center justify-content-center">
+					<div class="featured-image col-11 col-md-6 col-lg-5 text-center">
+						<img src="wp-content/uploads/2018/09/home-animation.gif" />
+					</div>
+					<div class="col-11 col-md-6 col-lg-5">
+						<p>Shielded Bitzec transactions are completely private.</p>
+<p>Like Bitcoin, Bitzec transaction data is posted to a public blockchain; but unlike Bitcoin, Bitzec ensures your personal and transaction data remain completely confidential. Zero-knowledge proofs allow transactions to be verified without revealing the sender, receiver or transaction amount. Selective disclosure features within Bitzec allow a user to share some transaction details, for purposes of compliance or audit.</p>
+<p>Bitzec also allows for transparent transactions, to accommodate for wallets and exchanges that don’t support private transactions.</p>					</div>
+				</div>
+				<div class="row text-center mt-3">
+					<div class="col">
+						<p><a class="btn btn-primary" href="technology/index.html">How it works</a></p>					</div>
+				</div>
+			</div> <!-- end .container -->
+		</section>
+			</div><!-- .entry-content -->
+</main>
+		</main><!-- #main -->
 
 
-<section class="section-how-we-work bg-white-section background-image" id="moon map">
-<div class="container">
 
-<div class="row">
-<div class="col-sm-12">
-<div class="heading-title center">
-<h2>Moon <span>Map</span></h2>
-<p> to be written </p>
-<script type="text/javascript" src="https://unpkg.com/@coinpaprika/widget-currency/dist/widget.min.js"></script><div class="coinpaprika-currency-widget" data-primary-currency="usd" data-currency="bzc-bitzec" data-modules='["market_details","chart"]' data-update-active="false"></div>
-</div>
-</section>
-<section class="section-choose-us">
-<div class="container">
-<div class="row">
-<div class="col-md-8 col-md-push-2">
-<div class="heading-title center">
-<h2>why choose <span>Bitzec</span></h2>
-<div class="small-desd">bitzec <span>speculation</span></div>
-<p>WARNING: Bitzec is a full zcash 2.0 copy paste project on the sapling MPC </p>
-<p><h4><a href="https://z.cash/technology/paramgen/" target="_blank">Sapling MPC information<img width="71" src="https://z.cash/wp-content/uploads/2018/09/zcash-sapling-vertical-fullcolor-2x.png" a=""></a></h4> </p>
-
-
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-md-8 col-md-push-2">
-<div class="heading-title center">
-<h2>Introducing <span>BZC</span></h2>
-
-<div class="small-desd">Send and receive Shielded Bitzec transactions are completely untraceable.
-Like Bitcoin, Bitzec transaction data is posted to a public blockchain; but unlike Bitcoin, Bitzec ensures your personal and transaction data remain completely confidential.
-Zero-knowledge proofs allow transactions to be verified without revealing the sender, receiver or transaction amount.
-Selective disclosure features within Bitzec allow a user to share some transaction details, for purposes of compliance or audit.
-Bitzec also allows for transparent transactions, just like the king of crypto Bitcoin. </div>
-<img width="600" src="https://cryptowise.com/wp-content/uploads/2018/10/zksnarks-768x365.png" a="">
-<h4><a href="https://z.cash/technology/zksnarks/" target="_blank">Click for more information on shielding</a></h4>
-<div class="txtz-wrapper">
-<ul>
-<li> </li>
-<li> </li>
-<li> </li>
-
-</ul>
-</div>
-<h2 class="animated fadeInDown" <h4><a href="https://www.youtube.com/watch?v=S6qOj9ap6RM" target="_blank">What`s zk-SNARKs? <img width="400" src="/images/btcshield3.png" a=""></a>
-
-
-</h4>
-</div>
-</div>
-</div>
-<div class="row">
-
-
-<div class="col-md-4">
-<div class="item-about item-choose">
-<div class="icon">
-<i class="pe-7s-diamond"></i>
-<div class="bg-icon"><i class="pe-7s-diamond"></i></div>
-</div>
-<div class="content">
-<h3>Asic <span>Mining</span></h3>
-<p>
-Mine with Asics<br>Gpu mineable<br>Equihash 200 9 algorithm.<br>  hodl harder </p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="item-about item-choose">
-<div class="icon">
-<i class="pe-7s-plane"></i>
-<div class="bg-icon"><i class="pe-7s-plane"></i></div>
-</div>
-<div class="content">
-<h3>Self <span>funding</span></h3>
-<p>
-20% devfund from daily mining reward. No direct pre-mine. </p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="item-about item-choose">
-<div class="icon">
-<i class="pe-7s-credit"></i>
-<div class="bg-icon"><i class="pe-7s-credit"></i></div>
-</div>
-<div class="content">
-<h3>Bitzec is an fork of <span>Zcash 2.0</span></h3>
-<p>
-7 billion Max Supply! get BZC from Airdrops! </p>
-</div>
-</div>
-</div>
-</div>
-<div class="row">
-
-<div class="col-md-4">
-<div class="item-about item-choose">
-<div class="icon">
-<i class="pe-7s-leaf"></i>
-<div class="bg-icon"><i class="pe-7s-leaf"></i></div>
-</div>
-<div class="content">
-<h3>Untraceable <span>Transactions</span></h3>
-<p>
-You can choose between transactions to remain fully untraceable or complete transparent. </p>
-</div>
-</div>
-</div>
-<p>
-the binary digit zero knowledge electronic currency BZC. </p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="item-about item-choose">
-<div class="icon">
-<i class="pe-7s-hammer"></i>
-<div class="bg-icon"><i class="pe-7s-hammer"></i></div>
- </div>
-<div class="content">
-<h3>Only POW and <span>no POS</span></h3>
-<p>
-Only Proof of Work</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="our-clients">
-<div class="container">
-<div class="row">
-<div id="clients-carousel" class="clients-carousel">
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://github.com/bitzec/bitzec" target="_blank">
-<img src="/images/social/github.png" alt="logo">
-</a>
-</div>
-</div>
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://bitcointalk.org/index.php?topic=5045890.msg46638698#msg46638698" target="_blank">
-<img src="/images/social/bitcointalk.png" alt="logo">
-</a>
-</div>
-</div>
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://www.twitter.com/bitzecorg/" target="_blank">
-<img src="/images/social/slack.png" alt="logo">
-</a>
-</div>
-</div>
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://www.twitter.com/bitzecorg/" target="_blank">
-<img src="/images/social/reddit.png" alt="logo">
-</a>
-</div>
-</div>
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://discordapp.com/invite/VeBJW3H" target="_blank">
-<img src="/images/social/discord.png" alt="logo">
-</a>
-</div>
-</div>
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://twitter.com/bitzecorg/" target="_blank">
-<img src="/images/social/facebook.png" alt="logo">
-</a>
-</div>
-</div>
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://discordapp.com/invite/VeBJW3H" target="_blank">
-<img src="/images/social/telegram.png" alt="logo">
-</a>
-</div>
-</div>
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://twitter.com/bitzecorg" target="_blank">
-<img src="/images/social/twitter.png" alt="logo">
-</a>
-</div>
-</div>
-<div class="col-md-2">
-<div class="item-carousel">
-<a href="https://discordapp.com/invite/VeBJW3H" target="_blank">
-<img src="/images/social/discourse.png" alt="logo">
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="control-clients" class="prev-next-block-rotate">
-<div class="wrap-prev">
-<div class="prev"><i aria-hidden="true" class="fa fa-angle-left"></i></div>
-</div>
-<div class="wrap-next">
-<div class="next"><i aria-hidden="true" class="fa fa-angle-right"></i></div>
-</div>
-</div>
-</div>
-<section id="exchange" class="section-work-progress background-image bg-dark-section">
-<div class="container">
-<div class="row">
-<div class="col-md-3">
-<div class="heading-title small-heading text-left">
-<h2 class="animated fadeInDown" style="opacity: 1;">Exchanges</h2>
-<p class="animated fadeInUp" style="opacity: 1;">dont sell your BZC </p>
-</div>
-</div>
-<div class="col-md-5">
-    <a href="https://cratex.io/index.php?pair=BZC/BTCZ" target="_blank"><img width="400" height="420" src="https://static1.squarespace.com/static/5899c98cbe65949bde4ac188/t/5ad0331403ce64b96ac3820c/1523594012460/Binance-ApplicationInProgress.png" class="exch_img"></a>
-
-<div class="col-md-4">
-<a href="https://cratex.io/index.php?pair=BZC/BTCZ" target="_blank"><img src="https://www.arbitrage.expert/p_client/blog/article/images/6/img1.png" class="exch_img"></a>
-</div>
-</div>
-<div class="row">
-<div class="col-md-3">
-<a href="https://bisq.network/markets/?currency=bzc_btc" target="_blank"><img src="https://bisq.network/images/bisq-logo.svg" class="exch_img"></a>
-</div>
-<div class="col-md-5">
-</div>
-<div class="col-md-4">
-<a hr<="" div="">
-</a><div class="col-md-4"><a hr<="" div="">
-</a><a href="https://cratex.io/index.php?pair=BZC/BTC" target="_blank"><img src="/images/exchanges/cratex.png" class="exch_img"></a>
-</div>
-</div>
-<div class="heading-title small-heading center">
-<p class="animated fadeInUp" style="opacity: 1;">hodl harder.</p>
-</div>
-</div>
-</div></div></section>
-<footer>
-<div class="down-footer">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<p>&copy; 2019 Bitzec. All rights reserved.</p>
-
-</ul>
-</div>
-</div>
-<div id="google_translate_element"></div><script>
-
-function googleTranslateElementInit() {
-
-new google.translate.TranslateElement({
-
-pageLanguage: 'en'
-
-}, 'google_translate_element');
-
-}
-
-</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</div
-</div>
+<footer class="entry-footer" id="footer-boxes" style="background-color: transparent;
+">
+  <div class="container">
+    <div class="row justify-content-center">
+            <div class="col-1 d-none d-md-flex"></div>
+      <div class="col col-12 col-sm-10 align-self-center col-md-8 col-lg-6 col-xl-5">
+        <h2>Built on rigorous science</h2>
+<p>Bitzec was developed and launched by copypasters in late  2018. The underlying protocol is based on the research of scientists from MIT, Technion, Johns Hopkins, Tel Aviv University and UC Berkeley.</p>
+<p><a class="btn btn-primary" href="technology/zksnarks/index.html">Learn about zk-SNARKs</a></p>      </div>
+      <div class="col-1 d-none d-md-flex d-md-flex"></div>
+        </div>
+  </div>
 </footer>
-<div class="top icon-down to-top-from-bottom"><a href="#" class="smooth-scroll"><i class="pe-7s-angle-up"></i></a></div>
-<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/libs.js.pagespeed.ce.Av_NAtkm4V.js"></script>
-<script type="text/javascript" src="/js/common.js.pagespeed.ce.hW1NRi6zyn.js"></script>
-</body>
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Bitzec Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://discord.gg/yc77eWZ" class="nav-link align-self-center">Bitzec Foundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://discord.gg/yc77eWZ" class="nav-link align-self-center">Bitzec Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://bitcointalk.org/index.php?topic=5045890.0" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://discord.gg/yc77eWZ" class="nav-link align-self-center">Discord</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+
+<p class="h5">Bitzec</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3922"><a href="blog/index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/bitzecorg" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="download/index.html" class="nav-link align-self-center">Download Node</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center"> Orginal Fork Documentation</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/bitzecorg"><img class="alignnone size-medium wp-image-3444" src="wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="privacy-policy.html">Privacy Policy</a>  |  <a href="sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019  Bitzec </span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+
+    <link rel='stylesheet' id='mediaelement-css'  href='wp-includes/js/mediaelement/mediaelementplayer-legacy.min45a0.css?ver=4.2.6-78496d1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='wp-includes/js/mediaelement/wp-mediaelement.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<script type='text/javascript' src='../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript'>
+var mejsL10n = {"language":"en","strings":{"mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen-off":"Turn off Fullscreen","mejs.fullscreen-on":"Go Fullscreen","mejs.download-video":"Download Video","mejs.fullscreen":"Fullscreen","mejs.time-jump-forward":["Jump forward 1 second","Jump forward %1 seconds"],"mejs.loop":"Toggle Loop","mejs.play":"Play","mejs.pause":"Pause","mejs.close":"Close","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.time-skip-back":["Skip back 1 second","Skip back %1 seconds"],"mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.mute-toggle":"Mute Toggle","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.ad-skip":"Skip ad","mejs.ad-skip-info":["Skip in 1 second","Skip in %1 seconds"],"mejs.source-chooser":"Source Chooser","mejs.stop":"Stop","mejs.speed-rate":"Speed Rate","mejs.live-broadcast":"Live Broadcast","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script type='text/javascript' src='wp-includes/js/mediaelement/mediaelement-and-player.min45a0.js?ver=4.2.6-78496d1'></script>
+<script type='text/javascript' src='wp-includes/js/mediaelement/mediaelement-migrate.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-includes/js/mediaelement/wp-mediaelement.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='wp-includes/js/mediaelement/renderers/vimeo.min45a0.js?ver=4.2.6-78496d1'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 May 2019 02:35:42 GMT -->
 </html>

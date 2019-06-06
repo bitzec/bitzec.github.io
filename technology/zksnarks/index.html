@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/technology/zksnarks/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 19 May 2019 23:58:24 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>What are zk-SNARKs? | Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="index.html" hreflang="en"/>
+		<link rel="alternate" href="../../zh/technology/zksnarks/index.html" hreflang="zh"/>
+<link rel="alternate" href="../../fr/technology/zksnarks/index.html" hreflang="fr"/>
+<link rel="alternate" href="../../ja/technology/zksnarks/index.html" hreflang="ja"/>
+<link rel="alternate" href="../../ko_KR/technology/zksnarks/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../../pt/technology/zksnarks/index.html" hreflang="pt"/>
+<link rel="alternate" href="../../ru/technology/zksnarks/index.html" hreflang="ru"/>
+<link rel="alternate" href="../../es/technology/zksnarks/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="zk-SNARKs are a novel form of zero-knowledge cryptography which allow for private Zcash transactions. These transactions can be fully encrypted on the blockchain, yet still be verified by zK-SNARKs as valid under the network’s consensus rules."/>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What are zk-SNARKs? | Zcash" />
+<meta property="og:description" content="zk-SNARKs are a novel form of zero-knowledge cryptography which allow for private Zcash transactions. These transactions can be fully encrypted on the blockchain, yet still be verified by zK-SNARKs as valid under the network’s consensus rules." />
+<meta property="og:url" content="https://z.cash/technology/zksnarks/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="og:image" content="https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
+<meta property="og:image:secure_url" content="https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="zk-SNARKs are a novel form of zero-knowledge cryptography which allow for private Zcash transactions. These transactions can be fully encrypted on the blockchain, yet still be verified by zK-SNARKs as valid under the network’s consensus rules." />
+<meta name="twitter:title" content="What are zk-SNARKs? | Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:image" content="https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/zcashco"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/technology/zksnarks/#webpage","url":"https://z.cash/technology/zksnarks/","inLanguage":"en-US","name":"What are zk-SNARKs? | Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2018-09-21T17:15:17+00:00","dateModified":"2018-12-14T16:29:25+00:00","description":"zk-SNARKs are a novel form of zero-knowledge cryptography which allow for private Zcash transactions. These transactions can be fully encrypted on the blockchain, yet still be verified by zK-SNARKs as valid under the network\u2019s consensus rules."}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+
+<link rel='shortlink' href='../../index9716.html?p=4108' />
+<link rel="alternate" type="application/json+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Ftechnology%2Fzksnarks%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Ftechnology%2Fzksnarks%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="page-template page-template-page-templates page-template-page-like-post page-template-page-templatespage-like-post-php page page-id-4108 page-child parent-pageid-3459">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../../index.html">
+              
+                <object type="image/svg+xml" data="../../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor nav-item nav-item-4059"><a class="dropdown-item" href="../index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3921"><a href="../../blog/index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ru/technology/zksnarks/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../fr/technology/zksnarks/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../zh/technology/zksnarks/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../pt/technology/zksnarks/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ko_KR/technology/zksnarks/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ja/technology/zksnarks/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../es/technology/zksnarks/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+						<div class="container">
+			<main id="primary" class="content-area" role="main">
+				
+<article id="post-4108">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				
+				
+				<h1 class="entry-title">What are zk-SNARKs?</h1>			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				
+<p>Zcash is the first widespread application of zk-SNARKs, a novel form of zero-knowledge cryptography. The strong privacy guarantee of Zcash is derived from the fact that shielded transactions in Zcash can be fully encrypted on the blockchain, yet still be verified as valid under the network’s consensus rules by using zk-SNARK proofs.</p>
+<p>The acronym zk-SNARK stands for “Zero-Knowledge Succinct Non-Interactive Argument of Knowledge,” and refers to a proof construction where one can prove possession of certain information, e.g. a secret key, without revealing that information, and without any interaction between the prover and verifier.</p>
+<p>“Zero-knowledge” proofs allow one party (the prover) to prove to another (the verifier) that a statement is true, without revealing any information beyond the validity of the statement itself. For example, given the hash of a random number, the prover could convince the verifier that there indeed exists a number with this hash value, without revealing what it is.</p>
+<p>In a zero-knowledge &#8220;Proof of Knowledge&#8221; the prover can convince the verifier not only that the number exists, but that they in fact know such a number &#8211; again, without revealing any information about the number. The difference between &#8220;Proof&#8221; and &#8220;Argument&#8221; is quite technical and we don&#8217;t get into it here.</p>
+<p>“Succinct” zero-knowledge proofs can be verified within a few milliseconds, with a proof length of only a few hundred bytes even for statements about programs that are very large. In the first zero-knowledge protocols, the prover and verifier had to communicate back and forth for multiple rounds, but in “non-interactive” constructions, the proof consists of a single message sent from prover to verifier. Currently, the most efficient known way to produce zero-knowledge proofs that are non-interactive and short enough to publish to a block chain is to have an initial setup phase that generates a common reference string shared between prover and verifier. We refer to this common reference string as the public parameters of the system.</p>
+<p>If someone had access to the secret randomness used to generate these parameters, they would be able to create false proofs that would look valid to the verifier. For Zcash, this would mean the malicious party could create counterfeit coins. To prevent this from ever happening, Zcash generated the public parameters through an elaborate, multi-party ceremony. To learn more about our parameter generation ceremony and see the precautions we’ve taken to prevent the secret randomness essential to Zcash from being exposed (e.g. computers being blowtorched), visit our <a class="reference external" href="../paramgen.html">Paramgen page</a>. To learn more about the math behind the parameter generation protocol, read our <a class="reference external" href="../../blog/generating-zcash-parameters.html">blog post</a> or whitepapers (<a class="reference external" href="https://github.com/zcash/mpc/blob/master/whitepaper.pdf">1</a>, <a class="reference external" href="https://eprint.iacr.org/2017/1050">2</a>) on the topic.</p>
+<div id="how-zk-snarks-are-constructed-in-zcash" class="section">
+<h2>How zk-SNARKs are constructed in Zcash</h2>
+<p>In order to have zero-knowledge privacy in Zcash, the function determining the validity of a transaction according to the network’s consensus rules must return the answer of whether the transaction is valid or not, without revealing any of the information it performed the calculations on. This is done by encoding some of the network&#8217;s consensus rules in zk-SNARKs. At a high level, zk-SNARKs work by first turning what you want to prove into an equivalent form about knowing a solution to some algebraic equations. In the following section, we give a brief overview of how the rules for determining a valid transaction get transformed into equations that can then be evaluated on a candidate solution without revealing any sensitive information to the parties verifying the equations.</p>
+<p><strong>Computation → Arithmetic Circuit → R1CS → QAP → zk-SNARK</strong></p>
+<p>The first step in turning our transaction validity function into a mathematical representation is to break down the logical steps into the smallest possible operations, creating an “arithmetic circuit”. Similar to a boolean circuit where a program is compiled down to discrete, single steps like AND, OR, NOT, when a program is converted to an arithmetic circuit, it’s broken down into single steps consisting of the basic arithmetic operations of addition, subtraction, multiplication, and division (although in our particular case, we will avoid using division).</p>
+<p>Here is an example of what an arithmetic circuit looks like for computing the expression (a+b)*(b*c) :</p>
+</div>
+
+
+
+<figure class="wp-block-image is-resized post-thumbnail"><img src="../../wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" alt="" class="wp-image-4653" width="527" height="228" srcset="https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png 1054w, https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-300x130.png 300w, https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-768x332.png 768w, https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-1024x443.png 1024w" sizes="(max-width: 527px) 100vw, 527px" /></figure>
+
+
+
+<p>Looking at such a circuit, we can think of the input values a, b, c as &#8220;traveling&#8221; left-to-right on the wires towards the output wire. Our next step is to build what is called a Rank 1 Constraint System, or R1CS, to check that the values are “traveling correctly”. In this example, the R1CS will confirm, for instance, that the value coming out of the multiplication gate where b and c went in is b*c.</p>
+<p>In this R1CS representation, the verifier has to check many constraints — one for almost every wire of the circuit. (For technical reasons, it turns out we only have a constraint for wires coming out of multiplication gates.) In a 2012 <a class="reference external" href="https://eprint.iacr.org/2012/215.pdf">paper on the topic</a>, Gennaro, Gentry, Parno and Raykova presented a nice way to “bundle all these constraints into one”. This method uses a representation of the circuit called a Quadratic Arithmetic Program (QAP). The single constraint that needs to be checked is now between polynomials rather than between numbers. The polynomials can be quite large, but this is alright because when an identity does not hold between polynomials, it will fail to hold at most points. Therefore, you only have to <a class="reference external" href="../../blog/snark-explain2.html">check that the two polynomials match at one randomly chosen point</a> in order to correctly verify the proof with high probability.</p>
+<p>If the prover knew in advance which point the verifier would choose to check, they might be able to craft polynomials that are invalid, but still satisfy the identity at that point. With zk-SNARKs, sophisticated mathematical techniques such as <a class="reference external" href="https://en.wikipedia.org/wiki/Homomorphic_encryption">homomorphic encryption</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Pairing-based_cryptography">pairings</a> of elliptic curves are used to evaluate polynomials “blindly” &#8211; i.e. without knowing which point is being evaluated. The public parameters described above are used to determine which point will be checked, but in encrypted form so that neither the prover nor the verifier know what it is.</p>
+<p>The description so far has mainly addressed how to get the S and N in “SNARKs” — how to get a short, non-interactive, single message proof — but hasn’t addressed the “zk” (zero-knowledge) part which allows the prover to maintain the confidentiality of their secret inputs. It turns out that at this stage, the “zk” part can be easily added by having the prover use “random shifts” of the original polynomials that still satisfy the required identity.</p>
+<p>For a step-by-step, in-depth explanation of key concepts behind zk-SNARKs in Zcash, see our SNARKs Explainer series with posts on:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../blog/snark-explain.html">Homomorphic Hiding</a></li>
+<li><a class="reference external" href="../../blog/snark-explain2.html">Blind Evaluation of Polynomials</a></li>
+<li><a class="reference external" href="../../blog/snark-explain3.html">The Knowledge of Coefficient Test and Assumption</a></li>
+<li><a class="reference external" href="../../blog/snark-explain4.html">How to make Blind Evaluation of Polynomials Verifiable</a></li>
+<li><a class="reference external" href="../../blog/snark-explain5.html">From Computations to Polynomials</a></li>
+<li><a class="reference external" href="../../blog/snark-explain6.html">The Pinocchio Protocol</a></li>
+<li><a class="reference external" href="../../blog/snark-explain7.html">Pairings of Elliptic Curves</a></li>
+</ol>
+<p>Zcash uses <a href="https://github.com/zcash/librustzcash/tree/master/bellman" target="_blank">bellman</a>, a Rust-language library for zk-SNARKs. Before the Sapling upgrade, Zcash used a fork of the C++ library, <a href="https://github.com/scipr-lab/libsnark" target="_blank">libsnark</a>. For a deeper dive into the protocols used for Zcash’s zk-SNARKs, refer to the paper on the <a class="reference external" href="https://eprint.iacr.org/2013/279.pdf">Pinocchio protocol</a>, which was used until the Sapling upgrade, and <a class="reference external" href="https://eprint.iacr.org/2016/260.pdf">Jens Groth&#8217;s zk-SNARK</a> which is used currently.</p>
+
+<div id="how-zk-snarks-are-applied-to-create-a-shielded-transaction" class="section">
+<h2>How zk-SNARKs are applied to create a shielded transaction</h2>
+<p>In Bitcoin, transactions are validated by linking the sender address, receiver address, and input and output values on the public blockchain. Zcash uses zk-SNARKs to prove that the conditions for a valid transaction have been satisfied without revealing any crucial information about the addresses or values involved. The sender of a shielded transaction constructs a proof to show that, with high probability:</p>
+<ul class="simple">
+<li>the input values sum to the output values for each shielded transfer.</li>
+<li>the sender proves that they have the private spending keys of the input notes, giving them the authority to spend.</li>
+<li>The private spending keys of the input notes are cryptographically linked to a signature over the whole transaction, in such a way that the transaction cannot be modified by a party who did not know these private keys.</li>
+</ul>
+<p>In addition, shielded transactions must satisfy some other conditions that are described below.</p>
+<p>Bitcoin tracks unspent transaction outputs (UTXOs) to determine what transactions are spendable. In Zcash, the shielded equivalent of a UTXO is called a “commitment”, and spending a commitment involves revealing a “nullifier”. Zcash nodes keep lists of all the commitments that have been created, and all the nullifiers that have been revealed. Commitments and nullifiers are stored as hashes, to avoid disclosing any information about the commitments, or which nullifiers relate to which commitments.</p>
+<p>For each new note created by a shielded payment, a commitment is published which consists of a hash of: the address to which the note was sent, the amount being sent, a number “rho” which is unique to this note (later used to derive the nullifier), and a random nonce.</p>
+<p><em>Commitment = HASH(recipient address, amount, rho, r)</em></p>
+<p>When a shielded transaction is spent, the sender uses their spending key to publish a nullifier which is the hash of the secret unique number (&#8220;rho&#8221;) from an existing commitment that has not been spent, and provides a zero-knowledge proof demonstrating that they are authorized to spend it. This hash must not already be in the set of nullifiers tracking spent transactions kept by every node in the blockchain.</p>
+<p><em>Nullifier = HASH(spending key, rho)</em></p>
+<p>The zero-knowledge proof for a shielded transaction verifies that, in addition to the conditions listed above, the following assertions are also true:</p>
+<ul class="simple">
+<li>For each input note, a revealed commitment exists.</li>
+<li>The nullifiers and note commitments are computed correctly.</li>
+<li>It is infeasible for the nullifier of an output note to collide with the nullifier of any other note.</li>
+</ul>
+<p>In addition to the spending keys used to control addresses, Zcash uses a set of proving and verifying keys to create and check proofs. These keys are generated in the public parameter ceremony discussed above, and shared among all participants in the Zcash network. For each shielded transaction, the sender uses their proving key to generate a proof that their inputs are valid. Miners check that the shielded transaction follows consensus rules by checking the prover’s computation with the verifying key. The way that Zcash’s proof generation is designed requires the prover to do more work up-front, but it simplifies verifying, so that the major computational work is offloaded to the creator of the transaction (this is why creating a shielded Zcash transaction can take up to 40 seconds, while verifying that a transaction is valid only takes milliseconds).</p>
+<p>The privacy of Zcash’s shielded transactions relies upon standard, tried-and-tested cryptography (hash functions and stream ciphers), but it&#8217;s the addition of zk-SNARKs, applied with the system of commitments and nullifiers, that allows senders and receivers of shielded transactions to prove that encrypted transactions are valid. Other methods of providing privacy for cryptocurrencies rely upon obscuring the linkage between transactions, but the fact that Zcash transactions can be stored on the blockchain fully encrypted opens up <a class="reference external" href="../../blog/encrypted-memo-field.html">new possibilities for cryptocurrency applications</a>. Encrypted transactions allow parties to enjoy the benefits of public blockchains, while still protecting their privacy. Planned future upgrades will allow users to selectively disclose information about shielded transactions at their discretion. See our <a class="reference external" href="../../blog/the-near-future-of-zcash.html">Near Future of Zcash</a> blog post on future plans for Zcash.</p>
+<p>For a more in-depth explanation of how shielded transactions are constructed in Zcash, see our blog post on <a class="reference external" href="../../blog/zcash-private-transactions.html">How Transactions Between Shielded Addresses Work</a>. For full details on the current Zcash protocol, refer to our <a class="reference external" href="https://github.com/zcash/zips/blob/master/protocol/protocol.pdf">protocol specification</a>.</p>
+</div>
+<div id="future-applications-of-zk-snarks" class="section">
+<h2>Future applications of zk-SNARKs</h2>
+<p>Creating shielded transactions in Zcash is only one example out of many possible applications of zk-SNARKs. Theoretically, you can use a zk-SNARK to verify any relation without disclosing inputs or leaking information. Generating proofs for complex functions is still too computationally intensive to be practical for many applications, but the <a class="reference external" href="../../team.html">Zcash team</a> is pushing the boundaries for optimizing zk-SNARKs, and is already breaking new ground with more efficient implementations.</p>
+<p>As it currently stands, Zcash&#8217;s implementation of zk-SNARKs can be added to any existing distributed ledger solution as a <a class="reference external" href="../../blog/zsl.html">Zero-knowledge Security Layer</a> for enterprise use cases. The scientists on the <a class="reference external" href="../../team.html#scientists">Zcash team</a> are among the most knowledgeable researchers of zk-SNARKs in the world, and are constantly working on coming up with new applications and improving the efficiency of zero-knowledge protocols. If you have a business need that could benefit from the application of zero-knowledge proofs or blockchain solutions with robust privacy, <a class="reference external" href="../../contact.html">get in touch</a> with our business development team.</p>
+</div>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+	
+</article><!-- #post-## -->
+			</main><!-- #main -->
+		</div> <!-- end .container -->
+		
+
+<footer class="entry-footer" id="footer-links" >
+  <div class="container">
+    <div class="h5">Additional Information</div>
+    <div class="row">
+      <div class="col-10  col-sm-5 col-xl-4">
+        <p><strong>Reference</strong><br /><a href="../../the-basics/index.html">The Basics</a><br /><a href="../zksnarks.html">What are zk-SNARKS?</a><br /><a href="https://github.com/zcash/zips/blob/master/protocol/protocol.pdf">Protocol Specification</a></p>
+<p><strong>Papers</strong><br /><a href="http://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf">Original Zerocash paper</a><br /><a href="https://eprint.iacr.org/2013/879.pdf">Succinct Non-Interactive Zero-Knowledge Proofs</a><br /><a href="https://www.ieee-security.org/TC/SP2015/papers-archived/6949a287.pdf">Multi-Party Protocol Parameter Generation</a></p>
+<p><strong>Sapling</strong><br /><a href="../jubjub.html">What is JubJub?</a><br /><a href="../../blog/tag/sapling/index.html">Sapling blog series</a></p>
+<p><strong>Zcash Ceremony</strong><br /><a href="../paramgen.html">Parameter Generation Info</a><br /><a href="https://www.youtube.com/watch?v=D6dY-3x3teM&amp;feature=youtu.be">Paramgen Video Explainer</a></p>      </div>
+              <div class="col-sm-1">
+        </div>
+        <div class="col-10 col-sm-5 col-xl-4">
+          <p><strong>Science Projects</strong><br />
+<a href="http://oblivm.com/hawk/">HAWK: Private Smart Contracts</a><br />
+<a href="../../blog/bolt-private-payment-channels.html">BOLT: Private Payment Channels</a><br />
+<a href="../history-of-hash-function-attacks.html">History of Attacks on Secure Hash Functions</a><br />
+<a href="../cryptocurrency-ux-challenges.html">Cryptocurrency UX research</a></p>
+
+<p><strong>Technical Blog Posts</strong><br />
+<a href="https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/">Matt Green: Zero-Knowledge Proofs</a><br />
+<a href="../../blog/anatomy-of-zcash.html">Anatomy of a Zcash Transaction</a><br />
+<a href="../../blog/zcash-private-transactions.html">How Private Transactions Work</a><br />
+<a href="../../blog/generating-zcash-parameters.html">How Zcash Parameters Are Generated</a><br />
+<a href="../../blog/encrypted-memo-field.html">The Encrypted Memo Field</a><br />
+<a href="../../blog/pairing-cryptography-in-rust.html">Pairing Cryptography in Rust</a></p>        </div>
+          </div>
+  </div>
+</footer>
+
+
+		
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Zcash Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Electric Coin Company</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3922"><a href="../../blog/index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/zcashco" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/zcashco"><img class="alignnone size-medium wp-image-3444" src="../../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../../privacy-policy.html">Privacy Policy</a>  |  <a href="../../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 ELECTRIC COIN COMPANY</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/technology/zksnarks/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 19 May 2019 23:58:38 GMT -->
+</html>

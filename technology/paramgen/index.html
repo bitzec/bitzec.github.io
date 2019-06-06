@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/technology/paramgen/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:17:05 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Parameter Generation - Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="index.html" hreflang="en"/>
+		<link rel="alternate" href="../../zh/technology/paramgen/index.html" hreflang="zh"/>
+<link rel="alternate" href="../../fr/technology/paramgen/index.html" hreflang="fr"/>
+<link rel="alternate" href="../../ja/technology/paramgen/index.html" hreflang="ja"/>
+<link rel="alternate" href="../../ko_KR/technology/paramgen/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../../pt/technology/paramgen/index.html" hreflang="pt"/>
+<link rel="alternate" href="../../ru/technology/paramgen/index.html" hreflang="ru"/>
+<link rel="alternate" href="../../es/technology/paramgen/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Parameter Generation - Zcash" />
+<meta property="og:description" content="Background Zcash&#8217;s zero-knowledge proofs rely on a set of public parameters which allow users to construct and verify private transactions. &hellip;" />
+<meta property="og:url" content="https://z.cash/technology/paramgen/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="og:image" content="https://z.cash/wp-content/uploads/2018/09/paramgen-ceremony.png" />
+<meta property="og:image:secure_url" content="https://z.cash/wp-content/uploads/2018/09/paramgen-ceremony.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Background Zcash&#8217;s zero-knowledge proofs rely on a set of public parameters which allow users to construct and verify private transactions. [&hellip;]" />
+<meta name="twitter:title" content="Parameter Generation - Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:image" content="https://z.cash/wp-content/uploads/2018/09/paramgen-ceremony.png" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/zcashco"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/technology/paramgen/#webpage","url":"https://z.cash/technology/paramgen/","inLanguage":"en-US","name":"Parameter Generation - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2018-09-21T20:44:32+00:00","dateModified":"2018-12-14T16:28:25+00:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+
+<link rel='shortlink' href='../../indexb765.html?p=4142' />
+<link rel="alternate" type="application/json+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Ftechnology%2Fparamgen%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Ftechnology%2Fparamgen%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="page-template page-template-page-templates page-template-page-like-post page-template-page-templatespage-like-post-php page page-id-4142 page-child parent-pageid-3459">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../../index.html">
+              
+                <object type="image/svg+xml" data="../../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor nav-item nav-item-4059"><a class="dropdown-item" href="../index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3921"><a href="../../blog/index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ru/technology/paramgen/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../fr/technology/paramgen/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../zh/technology/paramgen/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../pt/technology/paramgen/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ko_KR/technology/paramgen/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ja/technology/paramgen/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../es/technology/paramgen/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+						<div class="container">
+			<main id="primary" class="content-area" role="main">
+				
+<article id="post-4142">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				
+				
+				<h1 class="entry-title">Parameter Generation</h1>			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				<div id="background" class="section">
+<h2>Background</h2>
+<p>Zcash&#8217;s zero-knowledge proofs rely on a set of <em>public parameters</em> which allow users to construct and verify private transactions. Due to cryptographic limitations, these parameters must be generated in a setup phase: some random numbers are sampled (which we refer to as the &#8220;toxic waste&#8221;) which are then used to construct the parameters.</p>
+<p>After the setup phase, the toxic waste must be destroyed to prevent counterfeiting of Zcash. (Note that user privacy is still protected even if the setup phase fails or the toxic waste is not destroyed.)</p>
+</div>
+<div id="multi-party-computation-ceremonies" class="section">
+<h2>Multi-party Computation Ceremonies</h2>
+<p>In order to ensure the toxic waste does not come into existence, our team designed multi-party computation (MPC) protocols which allow multiple independent parties to collaboratively construct the parameters. These protocols have the property that, in order to compromise the final parameters, <em>all</em> of the participants would have to be compromised or dishonest.</p>
+<p>To this date, Zcash has created two distinct sets of public parameters. The first ceremony happened in October 2016 just before the launch of Zcash Sprout. The second was generated in 2018 anticipating the Sapling network upgrade later that year.</p>
+<p>In the <a class="reference internal" href="#sprout-mpc">Sprout MPC</a>, all participants needed to commit to their share of the “toxic waste” in advance in order to protect against adaptive attacks. This meant that all of the participants needed to be available for the entire duration of the protocol, and nobody could abort without causing the entire protocol to abort. Participants needed to maintain custody of their hardware throughout the process, so this meant the ceremony could not scale beyond a handful of people.</p>
+<p>The <a class="reference internal" href="#sapling-mpc">Sapling MPC</a> allows participants to join the protocol, do their part and leave immediately. This allows the ceremony to scale to a large number of participants and take place over a longer period of time. It also decreases the surface area of attack for participants and avoids the need for expensive synchronization.</p>
+</div>
+<div id="sapling" class="section">
+<p>&nbsp;</p>
+<h2>Sapling</h2>
+<p>For Zcash&#8217;s second set of public parameters, there are two distinct phases referred to as <cite>Powers of Tau</cite> and <cite>Sapling MPC</cite>.</p>
+<div id="powers-of-tau" class="section">
+<h3>Powers of Tau</h3>
+<p>In November 2017, The Zcash Foundation <a class="reference external" href="https://z.cash.foundation/blog/powers-of-tau/" target="_blank" rel="noopener">announced Powers of Tau</a>, a multi-party computation ceremony which <a class="reference external" href="https://z.cash.foundation/blog/conclusion-of-powers-of-tau/" target="_blank" rel="noopener">reached its conclusion</a> in early 2018. In this ceremony, a total of 87 participants took turns performing computations to be used in the generation of new zk-SNARK parameters. The ceremony was coordinated on a <a class="reference external" href="https://lists.z.cash.foundation/mailman/listinfo/zapps-wg" target="_blank" rel="noopener">public mailing list</a> where participants submitted their <a class="reference external" href="https://github.com/ZcashFoundation/powersoftau-attestations/" target="_blank" rel="noopener">attestations</a> upon completion.</p>
+</div>
+<div id="id1" class="section">
+<h3>Sapling MPC</h3>
+<p>The Zcash Company hosted the MPC for constructing Sapling&#8217;s final zk-SNARK parameters. We <a class="reference external" href="../../blog/sapling-mpc/index.html">announced</a> the ceremony in May 2018 and accepted contributions through early August 2018. In all, this ceremony accepted <a class="reference external" href="https://github.com/zcash-hackworks/sapling-mpc/wiki" target="_blank" rel="noopener">over 90 contributions</a> and after <a class="reference external" href="../../blog/completion-of-the-sapling-mpc/index.html">completion of the Sapling MPC</a>, the final parameters were included in the 2.0.0 release of Zcash.</p>
+</div>
+</div>
+<div id="sprout" class="section">
+<p>&nbsp;</p>
+<h2>Sprout</h2>
+<p>Zcash&#8217;s first set of public parameters were generated in a ceremony that took place on October 21-23, 2016. The ceremony involved six participants, each in their own location, each with their own hardware:</p>
+<ol class="arabic simple">
+<li>Andrew Miller</li>
+<li>Peter Van Valkenburgh</li>
+<li>John Dobbertin (pseudonym)</li>
+<li>Zooko Wilcox</li>
+<li>Derek Hinch</li>
+<li>Peter Todd</li>
+</ol>
+<p>During the ceremony, Sean Bowe (one of the engineers of the MPC software) coordinated the execution of the ceremony.</p>
+<p>In addition, Morgen Peck (a journalist writing for IEEE Spectrum), Nat Kramer (a videographer) and Daniel Cooper (a production assistant) were invited to Zooko&#8217;s station to document and observe the process.</p>
+<div id="video-explainer" class="section">
+<h3>Video Explainer</h3>
+<p>Watch our <a class="reference external" href="https://www.youtube.com/watch?v=D6dY-3x3teM&amp;feature=youtu.be" target="_blank" rel="noopener">video</a> explainer of the ceremony.</p>
+<p><a href="https://www.youtube.com/watch?v=D6dY-3x3teM&amp;feature=youtu.be" target="_blank" rel="noopener"><img style="width: 600px;" src="../../wp-content/uploads/2018/09/paramgen-ceremony.png"></a></p>
+</div>
+<div id="radiolab-podcast-the-ceremony" class="section">
+<h3>Radiolab Podcast: The Ceremony</h3>
+<p>Listen to the <a class="reference external" href="http://www.radiolab.org/story/ceremony/" target="_blank" rel="noopener">Radiolab podcast</a> report of the ceremony.</p>
+</div>
+<div id="overview-of-ceremony-design" class="section">
+<h3>Overview of Ceremony Design</h3>
+<p>All of the participants have a similar role: their machines randomly sample a &#8220;shard&#8221; of the toxic waste and use this shard to perform computations. Participants must communicate with each other during the ceremony, but none of the communication is considered sensitive, and all of it is available in a public transcript.</p>
+<p>Participants do not directly communicate with each other. There is a <em>coordinator server</em> which acts as a bridge between the participants, and performs some deterministic initialization steps and other expensive computations. It is not a privileged part of the ceremony; all of the computations performed by the coordinator can be verified by the public using the same public transcript mentioned before. The coordinator server records procotol communication to the public transcript, which is used later to verify protocol execution.</p>
+<p>The participants themselves are responsible for obtaining secure hardware specifically for the ceremony, maintaining custody of that hardware until their role is finished, and destroying their shard of the toxic waste by powering their machine down. At their discretion, participants can physically destroy or forensically examine the hardware afterward.</p>
+</div>
+<div id="hardware-used-in-the-ceremony" class="section">
+<h3>Hardware used in the Ceremony</h3>
+<p>In order to reduce the surface area of attack, each participant isolated their toxic waste shard from the network by possessing two machines that are air gapped from each other: a <em>network node</em> which communicates with the coordinator server, and a <em>compute node</em> which has the toxic waste shard in memory. This creates an air gap that we chose to bridge using append-only DVDs. The DVDs additionally serve as an auditable record of protocol communication.</p>
+<p>Participants were encouraged to obtain their <em>compute node</em> from a random computer store. They were also instructed to remove the wireless networking adapters (wifi, bluetooth) and hard disk drives from the machine before powering them on.</p>
+<p>The hardware runs open source software we have developed. In particular, we reproducibly generated boot ISOs for the participants to boot their machines with.</p>
+</div>
+<div id="preparations-for-the-ceremony" class="section">
+<h3>Preparations for the Ceremony</h3>
+</div>
+<div id="dress-rehearsals" class="section">
+<h3>Dress rehearsals</h3>
+<p>In preparation for the ceremony, multiple dress rehearsals took place over the previous month.</p>
+<p><strong>First dress rehearsal:</strong> This involved Andrew Miller, Peter Van Valkenburgh and Sean Bowe. The DVD drive used by Andrew’s compute node had a fault which was unrecoverable. The software was modified to make recovery from drive failure possible.</p>
+<p><strong>Second dress rehearsal:</strong> This also involved Andrew Miller, Peter Van Valkenburgh and Sean Bowe. (Nat Kramer also documented the process at Sean Bowe&#8217;s station.) There was a networking issue on Andrew’s network node. Sean Bowe was able to recover from this by having Andrew manually splice the contents of a DVD and providing it to the coordinator server. Andrew’s network node re-established a connection with the coordinator server and the ceremony continued to completion. The software was modified to better recover from network disruptions.</p>
+<p><strong>Third dress rehearsal:</strong> This involved Zooko Wilcox, Derek Hinch, and Andrew Miller. (Morgen Peck also observed the process over video chat.) Zooko’s compute node could not properly dismount the boot disc due to a race condition during boot. The software was modified for Zooko’s compute node to make this race condition less likely. The ceremony continued, and nearly completed, but due to a strict access control policy, it was not possible to recover from a drive failure that happened to occur in the last stage, also on Zooko’s compute node. The software was modified so that participants could manually intervene if access control policies disrupted the ceremony.</p>
+</div>
+<div id="final-changes-and-preparations-october-21-2016" class="section">
+<h3>Final changes and preparations (October 21, 2016)</h3>
+<p>Participants were given a <a class="reference external" href="https://docs.google.com/document/d/1GJwBAxZ3eEdcjPn4iSpKcWXXrl5YxWSMX8I0K2wiSsM" target="_blank" rel="noopener">set of instructions</a> which directed them to purchase hardware, to boot the software on this hardware and perform built-in diagnostics that tested the DVD drive and ensured the ceremony could safely begin.</p>
+<p>After the disclosure of a Linux privilege escalation vulnerability (Dirty COW, CVE-2016-5195) the compute and network node software was updated with the recently released Linux kernel 4.4.26, and the final boot ISOs were provided to the participants.</p>
+<p>The code used for the ceremony was tagged as <a class="reference external" href="https://github.com/zcash/mpc/releases/tag/finalmpc2" target="_blank" rel="noopener">finalmpc2</a>.</p>
+<p>The boot ISOs provided to participants:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://s3.amazonaws.com/zcashfinalmpc/finalmpc2-network.iso" target="_blank" rel="noopener">Network node ISO</a> (SHA256: 375550be4c64ebc68a9306421bb71ad3556bc73f156a231503084f923900f4cb)</li>
+<li><a class="reference external" href="https://s3.amazonaws.com/zcashfinalmpc/finalmpc2-compute.iso" target="_blank" rel="noopener">Compute node ISO</a> (SHA256: 5f43aa1244a01b3cf9da4abeadde9e34b954a873565fc56b58c10780f3ce0e4c)</li>
+</ul>
+<p>These ISOs can be reproducibly generated using <a class="reference external" href="https://github.com/zcash/mpc/blob/master/build-iso.sh" target="_blank" rel="noopener">a script</a> we have provided. The timestamps will differ, but the contents of the binaries should not. A tool such as <a class="reference external" href="https://diffoscope.org/" target="_blank" rel="noopener">diffoscope</a> can be used to compare them.</p>
+<p>In the original coordinator software, the first participant to connect is also the first to begin acting and the first to complete their role in the ceremony. Scheduling conflicts meant that some participants would need to finish earlier on October 23. The coordinator software was modified so that the order of participants could be changed before the ceremony began, in the event that participants connected in the wrong order. (After the protocol begins, the ordering cannot be changed.)</p>
+</div>
+<div id="ceremony-october-22-23-2016" class="section">
+<h3>Ceremony (October 22-23, 2016)</h3>
+<p>On the morning of October 22, Sean Bowe initialized the coordinator server. The server was a 128-core EC2 instance. Participants were instructed to begin their roles: the network node would connect to the coordinator server and prompt the user to enter a commitment that the compute nodes would produce, binding their participation to the transcript.</p>
+<p>Due to a misunderstanding, John Dobbertin reinitialized their network node, resupplying the commitment to the coordinator. This is not encouraged because the coordinator software uses randomly generated peer IDs to distinguish users. This was manually corrected before the protocol began.</p>
+<p>Zooko Wilcox did not have an Ethernet connection available at his location, and so required wireless communication with the coordinator server. However, the network node boot image did not contain any wireless infrastructure, so Zooko was given the network node software to compile and run on his personal laptop. (This does not disturb our threat model, because the network node is already considered compromised merely by connecting to the Internet. The network node boot image is only given to participants to make the process simpler and reduce the risk of failures.)</p>
+<p>The final ordering of the participants in the ceremony was:</p>
+<ol class="arabic simple">
+<li>Andrew Miller</li>
+<li>Peter Van Valkenburgh</li>
+<li>John Dobbertin (pseudonym)</li>
+<li>Zooko Wilcox</li>
+<li>Derek Hinch</li>
+<li>Peter Todd</li>
+</ol>
+</div>
+<div id="commitment-phase" class="section">
+<h3>Commitment phase</h3>
+<p>Each participant&#8217;s compute node will randomly generate their toxic waste shard. The user is asked to supply additional entropy to augment Linux&#8217;s random number generator. After the toxic waste shard is generated, a special kind of &#8220;public key&#8221; is constructed which is used to verify the protocol evaluation and bind the participant to the ceremony.</p>
+<p>This &#8220;public key&#8221; is not immediately revealed. All of the participants manually transcribe the public key&#8217;s hash (the &#8220;commitment&#8221;) from the compute node to the network node. The coordinator server will enter all of the commitments into the public transcript.</p>
+</div>
+<div id="stage-1" class="section">
+<h3>Stage 1</h3>
+<p>During these stages, a &#8220;round robin protocol&#8221; takes place: the coordinator (deterministically) initializes the initial state, and each participant performs a transformation on this state which is passed to the next participant.</p>
+<p>Stage 1 (also sometimes referred to as &#8220;powers of tau&#8221;) will have each participant receive a &#8220;disc A&#8221; on their network node. The network node burns this disc A and transfers it to the compute node. The compute node reads this disc and, before deserializing and processing its contents, displays a hash of the disc that the participant is asked to record.</p>
+<p>The compute node then proceeds to perform an expensive transformation of the state that takes over half an hour. Afterward, the compute node will print a hash of the disc it is about to burn (&#8220;disc B&#8221;), which the participant is also asked to record. The disc that is burned is transferred to the network node, which sends the contents to the coordinator.</p>
+<p>In total, it takes roughly an hour for each participant to perform their role in this stage. During this stage only, each participant sends their &#8220;public key&#8221; and a NIZK used for later validation.</p>
+</div>
+<div id="fft" class="section">
+<h3>FFT</h3>
+<p>After stage 1, the coordinator takes the result of stage 1 and performs an expensive computation that takes over an hour to complete. This computation is deterministic. The result is used to initialize stage 2.</p>
+</div>
+<div id="stage-2" class="section">
+<h3>Stage 2</h3>
+<p>Stage 2 began on the evening of October 22. Stage 2 behaves similarly to stage 1, except that the computation takes much longer. Each participant received a disc &#8220;C&#8221; and produced a disc &#8220;D&#8221; in a similar fashion as before. In total, it takes about two hours for each participant to complete their role in the second stage.</p>
+</div>
+<div id="stage-3" class="section">
+<h3>Stage 3</h3>
+<p>Stage 3 began in the morning on October 23. This stage behaves similarly to the previous stages, except that the computation is inexpensive. Each participant receives a disc &#8220;E&#8221; and produces a disc &#8220;F&#8221;. In total, it takes about 40 minutes for each participant to complete their role in this stage.</p>
+<p>After the participant has completed their part in stage 3, their role in the protocol is finished. They are instructed to turn their compute node off at this point, to destroy their toxic waste shard. They are instructed to keep their DVDs safe for archival and analysis.</p>
+</div>
+<div id="ceremony-completion" class="section">
+<h3>Ceremony Completion</h3>
+<p>The ceremony was completed in the evening of October 23, approximately 27 hours after the protocol began. After the ceremony completed, the verifier was ran on the transcript, producing the Zcash public parameters. The following is the output of the transcript verifier.</p>
+<table class="table table-responsive table-borderless">
+<tbody>
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre>
+</div>
+</td>
+<td class="code">
+<div class="codehilite">
+<pre>Number of players: 6
+Player 1 commitment: 2iQQBkf7k4K9aigJm4uHHufaSB8rXLLaRTMmTerK7dx6RCqNc9
+Player 2 commitment: 6yV3Ji7zuVWVCQEfkhQ6Vfv51t5VfQHQVaLDGH6zkeunKmohr
+Player 3 commitment: 6mGvvMFMKJNwKFmHXUwcCQMk7iu92bSqhtRabX3nkdnadEKte
+Player 4 commitment: VGyYjzYc39em9TithdWFySSUwATMgcXcLtQ7ias7i4SkNdS4G
+Player 5 commitment: 2YrFsjMadFukhdkQpn8oFgET2EQd9WnDW3AzYqNc3kELU45p7t
+Player 6 commitment: 2B2HXuZAKayqgJpxojuUU9RN78pTv2gLvEDmEbWRBWEJ6Z1LS
+Player 1 hash of disk A: 2oX6hBNiQxiZYZgDbSkgk3mhBACXmoGCfdhfZrSquNztZuZaqt
+Player 1 hash of disk B: 2T2ceUDomnrCVCtJw2SwtYAeHCfnAhM9HBdzVkq6BdZ59nST5m
+Player 2 hash of disk A: 2axdkGL6QzngjvY9jRBX5AqhSokukji8eQuYUfJwhp7sxcXvPr
+Player 2 hash of disk B: 2RymyNbAWaBVDuzW4m1iKA72MsmZFnwMhNvqxxXDwugLTa62wc
+Player 3 hash of disk A: YAQs9PiruKxfTwMTdTUHkYgt9QRvjpkF95cJRbNP8WLqPqjLW
+Player 3 hash of disk B: 2omA7bsepmmxeygQzNBbodhdXTyhuK1i2KCRH9esB3azunwZPn
+Player 4 hash of disk A: EDEtkk1PUhu4BQbTzx5yPSSpyqB6kV9g39p6sNt1ERGRG3APQ
+Player 4 hash of disk B: 2fvnbP22XWHVD1DstGQ5FsHNaBLiZQg4MBVKmWf7sWCYg5A9L7
+Player 5 hash of disk A: 2oQgZxPLAL2f8xkvm71RqwKK6dCFQSrazESXci32M2LZeG7nxe
+Player 5 hash of disk B: UBjr6UU8oJ4ZzpsTU3vRHmzZmuN7TjX3eLsmdRhw4dW6dEbvH
+Player 6 hash of disk A: rnMAJE2bxMbCT6yRvufD2ww17kmP9qaKnipxrvZTWXe27d6GW
+Player 6 hash of disk B: 27Em5cp6QSGVsJsAcvZLW7CoMkKv5Ybi3LAGPPeGwqCF7Diex
+Player 1 hash of disk C: 29PLu7dtT9BjJhtoAzxpSxvrp4tE15xjJufL1ANHGwkwieyxMo
+Player 1 hash of disk D: 2YVAELKtHdufKRPTzT5ZpHFgxrcro6JmBKkYz4GEQqcXbQdViM
+Player 2 hash of disk C: 2qSQhJvQLjmXfQWHKMCR5EukSWU9BQ3KwdPSqkPUCSRzwmxowM
+Player 2 hash of disk D: 2uAxySzeptYhEowKuBRGituPnc1U4BU1GMuL4Hfbyvtgq7x4Qn
+Player 3 hash of disk C: 2DZ3pnkZcTMfAa28KfJpD5fQbnkQZZG5mFnFqvHHUDXJquSJAX
+Player 3 hash of disk D: 2tfcauKUDBirJFSo8jbyEenLfHULThsQjVdN8FY3hJGn3dC2JP
+Player 4 hash of disk C: 2gH6XJ8BeA5yXZL95ThSp9ucicwAoevaDK6xNBck9QUxXF1gEE
+Player 4 hash of disk D: VFXKdDoYrA58evyJUrvkocGCHVvYF2h8HVLmuEtFkDfZY6EHk
+Player 5 hash of disk C: 2RvKUp94tXE5b1qhyLpGPTXeWpS7FdNDvCG5MJPmZiccNuRYcw
+Player 5 hash of disk D: ApPFWMqGBMemE3sTAuMRnwbmGonsPoXYC4r45HBMdmiRWLXqH
+Player 6 hash of disk C: 2wGGYBXaeQdbLHvViArnLkGRERhztVk5qZmreSKwxEcFjMBNMC
+Player 6 hash of disk D: 2g3rMWwyCL5wgKYHiVHR6EdnBc9Q5dPc1RW6tWwvwyJnx6AKq9
+Player 1 hash of disk E: 2Zbrd1XhYKvZqeNcGQPVrusx1rRjxaQjFfzWcn64wCfTnEGTMg
+Player 1 hash of disk F: 27ZzVxLTxXpjeTo86sdQ9kKU83UfNHLyGPuQ4CCV9ZRJ4g84jC
+Player 2 hash of disk E: YWKCeTeYiKUNnd4aJBYcd8ZwBxscibmtDa4pxbz52fpYX2H9S
+Player 2 hash of disk F: 2o1wWJHYzCirDmijHmnGFQ4pSfoYTkEKdPinag22eYonKf8EGC
+Player 3 hash of disk E: 2jquuLB8omrtWV1GnXvghRN1A3MWMouyBSwEKD5fCMwk5SvktP
+Player 3 hash of disk F: 2jrEGwnSyX9oX8UUGYhpEiPaLmGmrbhfFtcciXt3o5N7nPh63A
+Player 4 hash of disk E: AY1Vm8dDSxDdpNhac8Mr7GkS18vomvXaoreg1mVcXyApmgbu8
+Player 4 hash of disk F: 2RVi4vpjXtzD6gPLsFDSVrtX545HbVnNBhjAJVUTXpG22oLDD5
+Player 5 hash of disk E: CFEWpN9STr4iVM8NLGcSUyoaEDr94FEp7VWR9HhQQYhuwUu7f
+Player 5 hash of disk F: 2vohW4tyybTEZyf3ZarX5R1CgsUehQfwASExZQ86EWNd8ByC6a
+Player 6 hash of disk E: chZdF1yRVDTsaD14KdaFv6N7e8ZPkMnxr9CpXkzq8JzonhLPx
+Player 6 hash of disk F: 2HjRqGyKjPxDSbhP8KgyYtKpWCwrGt3v4ZEUZHsZpJHbJ2V9QL
+</pre>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>(The hashes are base58check encoded to make manual transcription easier for the participants during the ceremony.)</p>
+<p>Zcash&#8217;s public parameters consist of two &#8220;keys&#8221;:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://s3.amazonaws.com/zcashfinalmpc/sprout-proving.key" target="_blank" rel="noopener">Proving key</a> (SHA256: 8bc20a7f013b2b58970cddd2e7ea028975c88ae7ceb9259a5344a16bc2c0eef7)</li>
+<li><a class="reference external" href="https://s3.amazonaws.com/zcashfinalmpc/sprout-verifying.key" target="_blank" rel="noopener">Verifying key</a> (SHA256: 4bd498dae0aacfd8e98dc306338d017d9c08dd0918ead18172bd0aec2fc5df82)</li>
+</ul>
+<p>The full output of the coordinator log can <a class="reference external" href="https://s3.amazonaws.com/zcashfinalmpc/log3" target="_blank" rel="noopener">be found here</a>.</p>
+</div>
+<div id="public-verification-of-the-ceremony" class="section">
+<h3>Public verification of the Ceremony</h3>
+<p>The general public is invited to improve confidence in the ceremony in a variety of ways:</p>
+<ol class="arabic simple">
+<li>The protocol used during the ceremony was designed specifically for Zcash. The design is specified alongside a cryptographic proof in our <a class="reference external" href="https://github.com/zcash/mpc/blob/master/whitepaper.pdf" target="_blank" rel="noopener">MPC whitepaper</a>. It should be reviewed by the public for mistakes.</li>
+<li>The protocol used during the ceremony was implemented by Sean Bowe and Ariel Gabizon. It is available <a class="reference external" href="https://github.com/zcash/mpc" target="_blank" rel="noopener">open source</a>. It should be reviewed for bugs that may have impacted the ceremony.</li>
+<li>The software that participants ran on their machines was generated using <a class="reference external" href="https://github.com/zcash/mpc/blob/master/build-iso.sh" target="_blank" rel="noopener">a script</a> which the public can also use to reproduce <a class="reference external" href="https://github.com/zcash/mpc#assets" target="_blank" rel="noopener">the ISOs</a>. People can use tools such as <cite>diffoscope</cite> to analyze the differences.</li>
+<li>The public <a class="reference external" href="https://github.com/zcash/mpc#assets" target="_blank" rel="noopener">transcript</a> (SHA256: 7da0c07a4bec04fbe4ae99ebd62d4ce7e1710b1f7a1f317345b0a48feec984d3) is used to verify the protocol&#8217;s evaluation and produce the public parameters. It should be verified using our <a class="reference external" href="https://github.com/zcash/mpc#transcript-verification" target="_blank" rel="noopener">verification tool</a>, which will produce the same hashes of discs, commitments and the public parameters that are used in Zcash.</li>
+<li>The participants of the protocol each disclosed a commitment that binds them to the ceremony, and hashes of the files burned to their discs. These should be checked against the output of the verifier tool.</li>
+<li>The <a class="reference external" href="https://github.com/zcash/mpc#assets" target="_blank" rel="noopener">R1CS constraint system</a> used by the protocol should be compared against what is actually used in Zcash.</li>
+</ol>
+<div id="outside-reports" class="section">
+<h4>Outside Reports</h4>
+<p>Read reports about the ceremony from outside participants or witnesses.</p>
+<p><strong>Andrew Miller, participant:</strong> <a class="reference external" href="https://www.youtube.com/watch?v=RfFLvtkzau8" target="_blank" rel="noopener">https://www.youtube.com/watch?v=RfFLvtkzau8</a>, <a class="reference external" href="https://twitter.com/socrates1024/status/790252887658168320" target="_blank" rel="noopener">https://twitter.com/socrates1024/status/790252887658168320</a></p>
+<p><strong>Peter Van Valkenburgh, participant:</strong> <a class="reference external" href="https://gist.github.com/valkenburgh/8cf1d1e0a93daff5f051def361d9722d" target="_blank" rel="noopener">https://gist.github.com/valkenburgh/8cf1d1e0a93daff5f051def361d9722d</a></p>
+<p><strong>Peter Todd, participant:</strong> <a class="reference external" href="https://petertodd.org/2016/cypherpunk-desert-bus-zcash-trusted-setup-ceremony" target="_blank" rel="noopener">https://petertodd.org/2016/cypherpunk-desert-bus-zcash-trusted-setup-ceremony</a></p>
+<p><strong>Morgen Peck, journalist:</strong> <a class="reference external" href="http://spectrum.ieee.org/tech-talk/computing/networks/the-crazy-security-behind-the-birth-of-zcash" target="_blank" rel="noopener">http://spectrum.ieee.org/tech-talk/computing/networks/the-crazy-security-behind-the-birth-of-zcash</a></p>
+</div>
+</div>
+</div>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+	
+</article><!-- #post-## -->
+			</main><!-- #main -->
+		</div> <!-- end .container -->
+		
+
+<footer class="entry-footer" id="footer-links" >
+  <div class="container">
+    <div class="h5">Additional Information</div>
+    <div class="row">
+      <div class="col-10  col-sm-5 col-xl-4">
+        <p><strong>Reference</strong><br /><a href="../../the-basics/index.html">The Basics</a><br /><a href="../zksnarks.html">What are zk-SNARKS?</a><br /><a href="https://github.com/zcash/zips/blob/master/protocol/protocol.pdf">Protocol Specification</a></p>
+<p><strong>Papers</strong><br /><a href="http://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf">Original Zerocash paper</a><br /><a href="https://eprint.iacr.org/2013/879.pdf">Succinct Non-Interactive Zero-Knowledge Proofs</a><br /><a href="https://www.ieee-security.org/TC/SP2015/papers-archived/6949a287.pdf">Multi-Party Protocol Parameter Generation</a></p>
+<p><strong>Sapling</strong><br /><a href="../jubjub.html">What is JubJub?</a><br /><a href="../../blog/tag/sapling/index.html">Sapling blog series</a></p>
+<p><strong>Zcash Ceremony</strong><br /><a href="../paramgen.html">Parameter Generation Info</a><br /><a href="https://www.youtube.com/watch?v=D6dY-3x3teM&amp;feature=youtu.be">Paramgen Video Explainer</a></p>      </div>
+              <div class="col-sm-1">
+        </div>
+        <div class="col-10 col-sm-5 col-xl-4">
+          <p><strong>Science Projects</strong><br /><a href="http://oblivm.com/hawk/">HAWK: Private Smart Contracts</a><br /><a href="../../blog/bolt-private-payment-channels.html">BOLT: Private Payment Channels</a><br /><a href="../history-of-hash-function-attacks.html">History of Attacks on Secure Hash Functions</a><br /><a href="../cryptocurrency-ux-challenges.html">Cryptocurrency UX research</a></p>
+<p><strong>Technical Blog Posts</strong><br /><a href="https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/">Matt Green: Zero-Knowledge Proofs</a><br /><a href="../../blog/anatomy-of-zcash.html">Anatomy of a Zcash Transaction</a><br /><a href="../../blog/zcash-private-transactions.html">How Private Transactions Work</a><br /><a href="../../blog/generating-zcash-parameters.html">How Zcash Parameters Are Generated</a><br /><a href="../../blog/encrypted-memo-field.html">The Encrypted Memo Field</a><br /><a href="../../blog/pairing-cryptography-in-rust.html">Pairing Cryptography in Rust</a></p>        </div>
+          </div>
+  </div>
+</footer>
+
+
+		
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Zcash Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Electric Coin Company</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3922"><a href="../../blog/index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/zcashco" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/zcashco"><img class="alignnone size-medium wp-image-3444" src="../../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../../privacy-policy.html">Privacy Policy</a>  |  <a href="../../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 ELECTRIC COIN COMPANY</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/technology/paramgen/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:17:08 GMT -->
+</html>

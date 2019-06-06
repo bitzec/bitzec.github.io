@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/blog/transaction-linkability/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:26:01 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Transaction Linkability - Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="index.html" hreflang="en"/>
+		<link rel="alternate" href="../../zh/blog/transaction-linkability/index.html" hreflang="zh"/>
+<link rel="alternate" href="../../fr/blog/transaction-linkability/index.html" hreflang="fr"/>
+<link rel="alternate" href="../../ja/blog/transaction-linkability/index.html" hreflang="ja"/>
+<link rel="alternate" href="../../ko_KR/blog/transaction-linkability/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../../pt/blog/transaction-linkability/index.html" hreflang="pt"/>
+<link rel="alternate" href="../../ru/blog/transaction-linkability/index.html" hreflang="ru"/>
+<link rel="alternate" href="../../es/blog/transaction-linkability/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Transaction Linkability - Zcash" />
+<meta property="og:description" content="Having the two types of addresses within Zcash (transparent and shielded) is an advantage which allows users to have more &hellip;" />
+<meta property="og:url" content="https://z.cash/blog/transaction-linkability/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="article:tag" content="explainers" />
+<meta property="article:tag" content="privacy" />
+<meta property="article:tag" content="transactions" />
+<meta property="article:section" content="General" />
+<meta property="article:published_time" content="2017-01-25T00:00:00+00:00" />
+<meta property="og:image" content="https://z.cash/wp-content/uploads/2017/01/t-vs-z-links.png" />
+<meta property="og:image:secure_url" content="https://z.cash/wp-content/uploads/2017/01/t-vs-z-links.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Having the two types of addresses within Zcash (transparent and shielded) is an advantage which allows users to have more [&hellip;]" />
+<meta name="twitter:title" content="Transaction Linkability - Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:image" content="https://z.cash/wp-content/uploads/2017/01/t-vs-z-links.png" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/zcashco"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/blog/transaction-linkability/#webpage","url":"https://z.cash/blog/transaction-linkability/","inLanguage":"en-US","name":"Transaction Linkability - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2017-01-25T00:00:00+00:00","dateModified":"2017-01-25T00:00:00+00:00"},{"@type":"Article","@id":"https://z.cash/blog/transaction-linkability/#article","isPartOf":{"@id":"https://z.cash/blog/transaction-linkability/#webpage"},"author":{"@id":"https://z.cash/blog/author/paige-peterson/#author","name":"Paige Peterson"},"publisher":{"@id":"https://z.cash/#organization"},"headline":"Transaction Linkability","datePublished":"2017-01-25T00:00:00+00:00","dateModified":"2017-01-25T00:00:00+00:00","commentCount":0,"mainEntityOfPage":"https://z.cash/blog/transaction-linkability/#webpage","keywords":"explainers,privacy,transactions","articleSection":"General"},{"@type":"Person","@id":"https://z.cash/blog/author/paige-peterson/#author","name":"Paige Peterson","image":{"@type":"ImageObject","@id":"https://z.cash/#personlogo","url":"https://secure.gravatar.com/avatar/517cc1a9cb1b4b0ca874f2ab25e443b3?s=96&d=mm&r=g","caption":"Paige Peterson"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+
+<link rel='shortlink' href='../../index509c.html?p=4965' />
+<link rel="alternate" type="application/json+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Ftransaction-linkability%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Ftransaction-linkability%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="post-template-default single single-post postid-4965 single-format-standard">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../../index.html">
+              
+                <object type="image/svg+xml" data="../../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4059"><a class="dropdown-item" href="../../technology/index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3921"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ru/blog/transaction-linkability/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../fr/blog/transaction-linkability/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../zh/blog/transaction-linkability/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../pt/blog/transaction-linkability/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ko_KR/blog/transaction-linkability/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ja/blog/transaction-linkability/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../es/blog/transaction-linkability/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+<div class="container">
+
+	<main id="primary" class="content-area" role="main">
+
+		
+<article id="post-4965">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="../index.html"><span class="notranslate">Electric Coin Company </span>Posts</a></div> / <div class="d-inline">Transaction Linkability</div></div>
+				
+				
+				<h1 class="entry-title">Transaction Linkability</h1><div class="entry-meta"><span class="notranslate"><a href="../author/paige-peterson/index.html" title="Posts by Paige Peterson" class="author url fn" rel="author">Paige Peterson</a></span> <span class="meta-sep">|</span> <div class="d-inline">January <span class="notranslate">25, 2017</span></div></div><!-- .entry-meta -->			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				<p>Having the two types of addresses within Zcash (transparent and shielded) is an advantage which allows users to have more flexibility with how they store and transact ZEC. The dynamic between transparent and shielded addresses, however, presents a level of increased complexity for transactions containing both types (i.e. shielding ZEC by sending from a transparent to a shielded address or deshielding ZEC by sending from a shielded to a transparent address).</p>
+<p>If all Zcash transactions used shielded addresses (which we hope will someday become the norm), then the complexities introduced with the two types of addresses disappear and privacy would strengthen for everyone in the ecosystem. Until then, understanding privacy implications such as transaction linking will be helpful for users interested in maintaining maximum control over the visibility of their transaction details.</p>
+<p>This post will outline some privacy considerations while using Zcash with its current support for both transparent and shielded addresses and some solutions users can employ in such situations.</p>
+<div class="section" id="where-does-zcash-introduce-linkability">
+<h2>Where does Zcash introduce linkability?</h2>
+<div class="section" id="transparent-addresses">
+<h3>Transparent Addresses</h3>
+<p>Knowing that transparent addresses publicly disclose transaction details on the Zcash blockchain, we can assume a degree of linkability between a string of transactions using this type of address, similar to the linkability seen in bitcoin transactions.</p>
+<p>But what happens when shielded addresses are sprinkled into the mix? Thankfully, shielded addresses in Zcash indeed break linkability when used properly.</p>
+<div class="figure align-center">
+<img alt="Comparing transaction series: three transparent addresses vs a shielded address sandwiched between two transparent addresses" class="center-image high-res-image" src="../../wp-content/uploads/2017/01/t-vs-z-links.png"/></p>
+<p class="caption">Shielded addresses can de-link transparent addresses <a class="footnote-reference" href="#id4" id="id1">[1]</a></p>
+</div>
+<p>The mere use of shielded addresses by merchants accepting ZEC payments and by your friends provides an increased level of privacy for you, too! In the above example, the transaction series where Bob uses a shielded address (b) breaks the link between Alice and Carol. To help understand these properties, we created the following transactions which mimic the examples above: <a class="reference external" href="https://explorer.zcha.in/transactions/548a0ee2d59821624a13abe841c6a86eec85fec101eabe152254aa565a3abe9f">Alice sends 15 ZEC (minus fee) to transparent Bob</a> and <a class="reference external" href="https://explorer.zcha.in/transactions/ca69d489c5f1df34f4143d898284ade9f7a8df1f50955d6c77628c82b1702085">transparent Bob sends 10 ZEC to Carol</a> compared with <a class="reference external" href="https://explorer.zcha.in/transactions/7bf9d70ba43624c7fc88319b1caf9281b400ad5b3607024fb14e234fedb85854">Alice sends 15 ZEC (minus fee) to shielded Bob</a> and <a class="reference external" href="https://explorer.zcha.in/transactions/87570f1d30841ea41ea4cbf5a85f1eb6a6879b5fbc0c1d9c6e360702e0af0e45">shielded Bob sends 10 ZEC to Carol</a>.</p>
+<p>So even if you or your friends must use transparent addresses for one reason or another, others using shielded addresses (whether they mean to or not) break down the direct linkability that would otherwise exist with exclusively transparent addresses.</p>
+</div>
+<div class="section" id="linking-values">
+<h3>Linking Values</h3>
+<p>The above method where Bob de-links Alice and Carol simply by using a shielded address isn’t 100% reliable for every situation, however.</p>
+<p>To explain why, let’s first highlight a property of transactions which include both address types: when transparent addresses shield ZEC (t → z) or when shielded addresses deshield ZEC (z → t), the values sent to or received from transparent addresses are public even though those values are masked in the shielded address part of the transaction. We can observe this property in the transaction series above where Bob uses a shielded address but the transparent addresses used by Alice and Carol still reveal the value sent and received.</p>
+<div class="figure align-center">
+<img alt="A diagram showing the possibile value linkability in a transaction series even when a shielded address is used in between transparent addresses" class="center-image high-res-image" src="../../wp-content/uploads/2017/01/z-linkability.png"/></p>
+<p class="caption">A shielded address might not protect against value linkability in some cases</p>
+</div>
+<p>Now, let’s consider the condition where Bob sends the full balance received from Alice to Carol and therefore has no change output. If Alice’s public output X and Carol’s public input Y are equal (or X equals Y minus two standard transaction fees) and that value is unique enough to other public values stored in the Zcash blockchain, there is a degree of association between Alice and Carol. You can see this example in the following transactions: <a class="reference external" href="https://explorer.zcha.in/transactions/20d2742d56ab03012ea92d1521db22b8224ff5fe52218686e1cee3fda609bcde">Alice sends 15 ZEC (minus .0001 ZEC fee) to shielded Bob</a> and <a class="reference external" href="https://explorer.zcha.in/transactions/12255ca035f59e2373ba16b820763de788536a73812b2b025df11e46757e96f3">shielded Bob sends 14.9999 ZEC (minus .0001 ZEC fee) to Carol</a>.</p>
+<p>Further, this association increases the closer in blocktime Alice’s public output and Carol’s public input are recorded.  For example, in the above transactions, Alice sends ZEC to Bob in block number 50374 and Bob sends ZEC to Carol in block number 50378. This makes it easier to link the values than if Bob instead transacted with Carol in block number 111583.</p>
+<p>To mitigate this, Bob should be aware when deshielding a value equal to one recently received from a transparent address. Zcash wallets might even consider implementing a feature to allow automatic detection of potential of linking past and future transactions when deshielding ZEC. <a class="footnote-reference" href="#id5" id="id2">[2]</a></p>
+</div>
+<div class="section" id="unique-transaction-fees">
+<h3>Unique Transaction Fees</h3>
+<p>Another linking possibility regards the use of transaction fees. Most wallets use a standard fee to pay miners (.0001 ZEC). In a previous post covering basic <a class="reference external" href="../anatomy-of-zcash/index.html">Zcash transaction anatomy</a>, we showed how fee outputs are always transparent even with shielded addresses. While this doesn’t reveal much to the public if a standard fee value is used, addresses which consistently pay unique fees could be linked.</p>
+<p>The solution here is to simply use standard transaction fees!</p>
+</div>
+</div>
+<div class="section" id="reducing-linkability-by-reducing-complexity">
+<h2>Reducing Linkability By Reducing Complexity</h2>
+<p>While the advantages of supplying both transparent and shielded addresses to users allows for more options <a class="footnote-reference" href="#id6" id="id3">[3]</a>, there is no doubt that sending ZEC between them introduces complexities which affect individual’s financial privacy. The most concrete solution to avoiding transaction linkability is simply using and requesting others use shielded addresses, which in turn strengthens the community’s overall privacy. The Zcash core development team has priorities to support growth in shielded address use and call on third party services to consider ways which make shielded addresses easier to use as well. We’re just at the beginning of this exciting new ecosystem and are looking forward to seeing privacy for all strengthen over time.</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup>
+<col class="label"/>
+<col/></colgroup>
+<tbody valign="top">
+<tr>
+<td class="label"><a class="fn-backref" href="#id1">[1]</a></td>
+<td>In transaction series <em>b</em>, we use a question mark to indicate the value received by Bob&#8217;s shielded address even though it seems exactly 14.9999 ZEC would have been received. This is because it&#8217;s possible that an additional shielded input and/or output was included in the transfer but we would not be able to see this on the blockchain.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup>
+<col class="label"/>
+<col/></colgroup>
+<tbody valign="top">
+<tr>
+<td class="label"><a class="fn-backref" href="#id2">[2]</a></td>
+<td>This value linkability is much more likely in situations where users are sending between their own addresses rather than between different users. In the example used, Alice and Bob might actually be the same person sending between their own transparent and shielded addresses.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup>
+<col class="label"/>
+<col/></colgroup>
+<tbody valign="top">
+<tr>
+<td class="label"><a class="fn-backref" href="#id3">[3]</a></td>
+<td>While <a class="reference external" href="../zcash-private-transactions/index.html">shielded addresses</a> offer the privacy features which distinguish Zcash from purely public blockchain networks, the transparent addresses provide (at least for now) a relief in <a class="reference external" href="../software-usability-and-hardware-requirements/index.html">resource requirements</a> along with familiar functionality to previously launched cryptocurrencies.</td>
+</tr>
+</tbody>
+</table>
+</div>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+			<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				<footer class="entry-footer"><span class="cat-tags-links"><div class="cat-links"><span class="screen-reader-text notranslate"></span><div class="d-inline"><a href="../category/general/index.html" rel="category tag">General</a></div></div><div class="tags-links"><span class="screen-reader-text notranslate">#</span><div class="d-inline"><a href="../tag/explainers/index.html" rel="tag">explainers</a></div>, <div class="d-inline"><a href="../tag/privacy/index.html" rel="tag">privacy</a></div>, <div class="d-inline"><a href="../tag/transactions/index.html" rel="tag">transactions</a></div></span></footer> <!-- .entry-footer -->			</div>
+		</div>
+	
+</article><!-- #post-## -->
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10">
+		
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../new-release-1-0-5/index.html" rel="prev"><span class="nav-title">New Release: 1.0.5</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../new-release-1-0-6/index.html" rel="next"><span class="nav-title">New Release: 1.0.6</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
+    </nav>			</div>
+		</div>
+		
+	</main><!-- #main -->
+
+</div> <!-- end .container -->
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Zcash Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Electric Coin Company</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3922"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/zcashco" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/zcashco"><img class="alignnone size-medium wp-image-3444" src="../../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../../privacy-policy.html">Privacy Policy</a>  |  <a href="../../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 ELECTRIC COIN COMPANY</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/blog/transaction-linkability/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:26:06 GMT -->
+</html>

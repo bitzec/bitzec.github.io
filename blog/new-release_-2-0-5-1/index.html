@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/blog/new-release:-2-0-5-1/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:43:26 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>New Release: 2.0.5-1 - Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="index.html" hreflang="en"/>
+		<link rel="alternate" href="../../zh/blog/new-release_-2-0-5-1/index.html" hreflang="zh"/>
+<link rel="alternate" href="../../fr/blog/new-release_-2-0-5-1/index.html" hreflang="fr"/>
+<link rel="alternate" href="../../ja/blog/new-release_-2-0-5-1/index.html" hreflang="ja"/>
+<link rel="alternate" href="../../ko_KR/blog/new-release_-2-0-5-1/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../../pt/blog/new-release_-2-0-5-1/index.html" hreflang="pt"/>
+<link rel="alternate" href="../../ru/blog/new-release_-2-0-5-1/index.html" hreflang="ru"/>
+<link rel="alternate" href="../../es/blog/new-release_-2-0-5-1/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="../new-release-2-0-5-1/index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="New Release: 2.0.5-1 - Zcash" />
+<meta property="og:description" content="Note: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users &hellip;" />
+<meta property="og:url" content="https://z.cash/blog/new-release-2-0-5-1/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="article:tag" content="bugs" />
+<meta property="article:tag" content="consensus" />
+<meta property="article:tag" content="migration tool" />
+<meta property="article:tag" content="releases" />
+<meta property="article:tag" content="Sapling" />
+<meta property="article:tag" content="sprout" />
+<meta property="article:section" content="Technical" />
+<meta property="article:published_time" content="2019-05-08T13:05:58+00:00" />
+<meta property="article:modified_time" content="2019-05-08T19:55:30+00:00" />
+<meta property="og:updated_time" content="2019-05-08T19:55:30+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Note: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users [&hellip;]" />
+<meta name="twitter:title" content="New Release: 2.0.5-1 - Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/zcashco"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/blog/new-release-2-0-5-1/#webpage","url":"https://z.cash/blog/new-release-2-0-5-1/","inLanguage":"en-US","name":"New Release: 2.0.5-1 - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2019-05-08T13:05:58+00:00","dateModified":"2019-05-08T19:55:30+00:00"},{"@type":"Article","@id":"https://z.cash/blog/new-release-2-0-5-1/#article","isPartOf":{"@id":"https://z.cash/blog/new-release-2-0-5-1/#webpage"},"author":{"@id":"https://z.cash/blog/author/electric-coin-co/#author","name":"Electric Coin Company"},"publisher":{"@id":"https://z.cash/#organization"},"headline":"New Release: 2.0.5-1","datePublished":"2019-05-08T13:05:58+00:00","dateModified":"2019-05-08T19:55:30+00:00","commentCount":0,"mainEntityOfPage":"https://z.cash/blog/new-release-2-0-5-1/#webpage","keywords":"bugs,consensus,migration tool,releases,Sapling,sprout","articleSection":"General,Technical"},{"@type":"Person","@id":"https://z.cash/blog/author/electric-coin-co/#author","name":"Electric Coin Company","image":{"@type":"ImageObject","@id":"https://z.cash/#personlogo","url":"https://secure.gravatar.com/avatar/66ea8c1c988e6bba0a97cde0ecbe5559?s=96&d=mm&r=g","caption":"Electric Coin Company"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+
+<link rel='shortlink' href='../../indexdf6e.html?p=7562' />
+<link rel="alternate" type="application/json+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Fnew-release-2-0-5-1%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Fnew-release-2-0-5-1%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="post-template-default single single-post postid-7562 single-format-standard">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../../index.html">
+              
+                <object type="image/svg+xml" data="../../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4059"><a class="dropdown-item" href="../../technology/index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3921"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ru/blog/new-release_-2-0-5-1/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../fr/blog/new-release_-2-0-5-1/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../zh/blog/new-release_-2-0-5-1/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../pt/blog/new-release_-2-0-5-1/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ko_KR/blog/new-release_-2-0-5-1/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ja/blog/new-release_-2-0-5-1/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../es/blog/new-release_-2-0-5-1/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+<div class="container">
+
+	<main id="primary" class="content-area" role="main">
+
+		
+<article id="post-7562">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="../index.html"><span class="notranslate">Electric Coin Company </span>Posts</a></div> / <div class="d-inline">New Release: 2.0.5-1</div></div>
+				
+				
+				<h1 class="entry-title">New Release: 2.0.5-1</h1><div class="entry-meta"><span class="notranslate"><a href="../author/electric-coin-co/index.html" title="Posts by Electric Coin Company" class="author url fn" rel="author">Electric Coin Company</a></span> <span class="meta-sep">|</span> <div class="d-inline">May <span class="notranslate">8, 2019</span></div></div><!-- .entry-meta -->			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				
+<p><strong>Note</strong>: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users who built v2.0.5 from source. Shortly after tagging v2.0.5, we became aware of an issue that caused nodes running Sprout-to-Sapling migrations to occasionally crash. Zcashd v2.0.5-1 fixes the issue. Users who normally upgrade via Debian package repository or tarball download were not exposed to v2.0.5.</p>
+
+
+
+<p>The v2.0.5 release added the Sprout-to-Sapling migration tool, introduced a new consensus rule on mainnet to reject blocks that violate turnstiles and adds 64-bit ARMv8 support. Zcashd v2.0.5-1 will be supported until block 593762, expected to arrive around 28th August 2019, at which point the software will end-of-support halt and shut down.</p>
+
+
+
+<h1>Notable Changes</h1>
+
+
+
+<h2>Sprout-to-Sapling Migration Tool</h2>
+
+
+
+<p>This release includes the addition of a tool that will enable users to migrate shielded funds from the Sprout pool to the Sapling pool while minimizing information leakage.</p>
+
+
+
+<p>The migration can be enabled using the RPC&nbsp;<code>z_setmigration</code>&nbsp;or by including&nbsp;<code>-migration</code>&nbsp;in the&nbsp;<code>zcash.conf</code>&nbsp;file. Unless otherwise specified funds will be migrated to the wallet&#8217;s default Sapling address; it is also possible to set the receiving Sapling address using the&nbsp;<code>-migrationdestaddress</code>&nbsp;option in&nbsp;<code>zcash.conf</code>.</p>
+
+
+
+<p>See the <a href="../sprout-to-sapling-migration-tool.html">blog post</a>, <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/sapling_turnstile.html#migration-tool">documentation</a> and <a href="https://github.com/zcash/zips/blob/master/zip-0308.rst">ZIP 308</a> for more details.</p>
+
+
+
+<h2>New consensus rule: Reject blocks that violate turnstile</h2>
+
+
+
+<p>In the 2.0.4 release, the consensus rules were changed on testnet to enforce a new rule which marks blocks as invalid if they would lead to a turnstile violation in the Sprout or Shielded value pools. <strong>This release enforces the consensus rule change on mainnet.</strong></p>
+
+
+
+<p>The motivations and deployment details can be found in <a href="https://github.com/zcash/zips/blob/master/zip-0209.rst">ZIP 209</a> and <a href="https://github.com/zcash/zcash/pull/3968">PR 3968</a>.</p>
+
+
+
+<p>Developers can use a new experimental feature&nbsp;<code>-developersetpoolsizezero</code>&nbsp;to test Sprout and Sapling turnstile violations. See&nbsp;<a href="https://github.com/zcash/zcash/pull/3964">PR 3964</a>&nbsp;for more details.</p>
+
+
+
+<h2>64-bit ARMv8 support</h2>
+
+
+
+<p>Added ARMv8 (AArch64) support. This enables users to build zcash on even more devices.</p>
+
+
+
+<p>For information on how to build see the&nbsp;<a href="https://zcash.readthedocs.io/en/latest/rtd_pages/user_guide.html#build">User Guide</a></p>
+
+
+
+<p>Users on the Zcash forum have reported successes with both the Pine64 Rock64Pro and Odroid C2, which contain 4GB and 2GB of RAM respectively.</p>
+
+
+
+<p>Just released, the Odroid N2 looks like a great solution with 4GB of RAM. The newly released Jetson Nano Developer Kit from Nvidia (also 4GB of RAM) is also worth a look. The NanoPC-T3 Plus is another option but for the simplest/best experience choose a board with 4GB of RAM. Just make sure before purchase that the CPU supports the 64-bit ARMv8 architecture.</p>
+
+
+
+<h1>Summary of the Changes</h1>
+
+
+
+<h2>v2.0.5</h2>
+
+
+
+<ol><li>Sprout-to-Sapling migration (<a href="https://github.com/zcash/zcash/pull/3848">#3848</a>, <a href="https://github.com/zcash/zcash/pull/3888">#3888</a>, <a href="https://github.com/zcash/zcash/pull/3967">#3967</a>, <a href="https://github.com/zcash/zcash/pull/3973">#3973</a>, <a href="https://github.com/zcash/zcash/pull/3977">#3977</a>)</li><li>Activate turnstile on mainnet (<a href="https://github.com/zcash/zcash/pull/3968">#3968</a>)</li><li>Update boost to v1.70.0 to eliminate build warning (<a href="https://github.com/zcash/zcash/pull/3951">#3951</a>)</li><li>Fix new HD seed generation for previously-encrypted wallets (<a href="https://github.com/zcash/zcash/pull/3940">#3940</a>)</li><li>Fix enable-debug build DB_COINS undefined (<a href="https://github.com/zcash/zcash/pull/3907">#3907</a>)</li><li>Update &#8220;Zcash Company&#8221; to &#8220;Electric Coin Company&#8221; (<a href="https://github.com/zcash/zcash/pull/3901">#3901</a>)</li><li>Support additional cross-compilation targets in Rust (<a href="https://github.com/zcash/zcash/pull/3505">#3505</a>)</li></ol>
+
+
+
+<h2>v2.0.5-1</h2>
+
+
+
+<ol><li>We fixed an issue that would cause the Zcashd to crash when calling <code>z_getmigrationstatus</code> while a wallet&#8217;s migration transactions were in the mempool. (<a href="https://github.com/zcash/zcash/pull/3987">#3987</a>)</li><li>We fixed an issue where the wallet would incorrectly calculate the amount to migrate and would not send as many migration transactions as it could each round of migration. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li><li>We fixed an issue that could cause Zcashd to crash while generating migration transactions if a wallet had a large number of sprout notes. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li></ol>
+
+
+
+<p>For a more complete list of changes, please see the&nbsp;<a href="https://github.com/zcash/zcash/pulls?q=is%3Apr+milestone%3Av2.0.5+is%3Aclosed">2.0.5</a>&nbsp;milestone.</p>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+			<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				<footer class="entry-footer"><span class="cat-tags-links"><div class="cat-links"><span class="screen-reader-text notranslate"></span><div class="d-inline"><a href="../category/general/index.html" rel="category tag">General</a></div>, <div class="d-inline"><a href="../category/technical/index.html" rel="category tag">Technical</a></div></div><div class="tags-links"><span class="screen-reader-text notranslate">#</span><div class="d-inline"><a href="../tag/bugs/index.html" rel="tag">bugs</a></div>, <div class="d-inline"><a href="../tag/consensus/index.html" rel="tag">consensus</a></div>, <div class="d-inline"><a href="../tag/migration-tool/index.html" rel="tag">migration tool</a></div>, <div class="d-inline"><a href="../tag/releases/index.html" rel="tag">releases</a></div>, <div class="d-inline"><a href="../tag/sapling/index.html" rel="tag">Sapling</a></div>, <div class="d-inline"><a href="../tag/sprout/index.html" rel="tag">sprout</a></div></span></footer> <!-- .entry-footer -->			</div>
+		</div>
+	
+</article><!-- #post-## -->
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10">
+		
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../zcash-empowers-charitable-giving/index.html" rel="prev"><span class="nav-title">Zcash Empowers Charitable Giving</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../sprout-to-sapling-migration-tool/index.html" rel="next"><span class="nav-title">Sprout-to-Sapling Migration Tool</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
+    </nav>			</div>
+		</div>
+		
+	</main><!-- #main -->
+
+</div> <!-- end .container -->
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Zcash Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Electric Coin Company</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3922"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/zcashco" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/zcashco"><img class="alignnone size-medium wp-image-3444" src="../../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../../privacy-policy.html">Privacy Policy</a>  |  <a href="../../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 ELECTRIC COIN COMPANY</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/blog/new-release:-2-0-5-1/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:43:26 GMT -->
+</html>

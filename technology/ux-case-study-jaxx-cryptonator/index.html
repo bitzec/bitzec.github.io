@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/technology/ux-case-study-jaxx-cryptonator/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:16:58 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>A usability evaluation of the Jaxx and Cryptonator cryptocurrency wallets - Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="index.html" hreflang="en"/>
+		<link rel="alternate" href="../../zh/technology/ux-case-study-jaxx-cryptonator/index.html" hreflang="zh"/>
+<link rel="alternate" href="../../fr/technology/ux-case-study-jaxx-cryptonator/index.html" hreflang="fr"/>
+<link rel="alternate" href="../../ja/technology/ux-case-study-jaxx-cryptonator/index.html" hreflang="ja"/>
+<link rel="alternate" href="../../ko_KR/technology/ux-case-study-jaxx-cryptonator/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../../pt/technology/ux-case-study-jaxx-cryptonator/index.html" hreflang="pt"/>
+<link rel="alternate" href="../../ru/technology/ux-case-study-jaxx-cryptonator/index.html" hreflang="ru"/>
+<link rel="alternate" href="../../es/technology/ux-case-study-jaxx-cryptonator/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A usability evaluation of the Jaxx and Cryptonator cryptocurrency wallets - Zcash" />
+<meta property="og:description" content="by Linda Lee, 2017-08-21 Summary A cryptocurrency wallet (or crypto wallet) enables users to feasibly send, receive, and monitor their &hellip;" />
+<meta property="og:url" content="https://z.cash/technology/ux-case-study-jaxx-cryptonator/" />
+<meta property="og:site_name" content="Zcash" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="by Linda Lee, 2017-08-21 Summary A cryptocurrency wallet (or crypto wallet) enables users to feasibly send, receive, and monitor their [&hellip;]" />
+<meta name="twitter:title" content="A usability evaluation of the Jaxx and Cryptonator cryptocurrency wallets - Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/zcashco"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/technology/ux-case-study-jaxx-cryptonator/#webpage","url":"https://z.cash/technology/ux-case-study-jaxx-cryptonator/","inLanguage":"en-US","name":"A usability evaluation of the Jaxx and Cryptonator cryptocurrency wallets - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2018-09-22T10:13:52+00:00","dateModified":"2018-12-14T16:26:52+00:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+
+<link rel='shortlink' href='../../indexe399.html?p=4217' />
+<link rel="alternate" type="application/json+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Ftechnology%2Fux-case-study-jaxx-cryptonator%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Ftechnology%2Fux-case-study-jaxx-cryptonator%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="page-template page-template-page-templates page-template-page-like-post page-template-page-templatespage-like-post-php page page-id-4217 page-child parent-pageid-3459">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../../index.html">
+              
+                <object type="image/svg+xml" data="../../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor nav-item nav-item-4059"><a class="dropdown-item" href="../index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3921"><a href="../../blog/index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ru/technology/ux-case-study-jaxx-cryptonator/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../fr/technology/ux-case-study-jaxx-cryptonator/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../zh/technology/ux-case-study-jaxx-cryptonator/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../pt/technology/ux-case-study-jaxx-cryptonator/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ko_KR/technology/ux-case-study-jaxx-cryptonator/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ja/technology/ux-case-study-jaxx-cryptonator/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../es/technology/ux-case-study-jaxx-cryptonator/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+						<div class="container">
+			<main id="primary" class="content-area" role="main">
+				
+<article id="post-4217">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				
+				
+				<h1 class="entry-title">A usability evaluation of the Jaxx and Cryptonator cryptocurrency wallets</h1>			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				
+<p>by Linda Lee, 2017-08-21</p>
+<div class="subtitle">
+	<a class="subtitle-link" href="#summary"><i class="fa fa-link" aria-hidden="true"></i></a>
+	<div class="subtitle-text">
+		<h2 id="summary">Summary</h2>
+	</div>
+</div>
+<p>A cryptocurrency wallet (or crypto wallet) enables users to feasibly send, receive, and monitor their digital currency by storing private and public keys and interacting with various blockchain components. If you want to use Zcash or any other cryptocurrency, you will need to have a digital wallet.</p>
+<p>We recommend both Jaxx and Cryptonator as great crypto wallet options. The reason why evaluated Jaxx and Cryptonator is because we wanted to make them even better. Most crypto wallets are in early phases of implementation and adoption, so we suspect that any issues found here with Jaxx and Cryptonator are likely present in other crypto wallets as well. If you’re a developer for another crypto wallet, recommend reading this case study, and checking that these issues are addressed in your wallet!</p>
+<p>Both crypto wallets enable the user to send, receive, and exchange Zcash in an intuitive way. We found that Jaxx (v. 1.2.17) onboards its users well and is easy to setup and use, but is missing some user feedback when transactions fail. Cryptonator (v. 2.0.3) has lots of security measures such as email verification, device verification, and PIN, but this makes it hard to set up and navigate.</p>
+<div class="subtitle">
+	<a class="subtitle-link" href="#evaluation-testing"><i class="fa fa-link" aria-hidden="true"></i></a>
+	<div class="subtitle-text">
+		<h2 id="evaluation-testing">Evaluation and testing</h2>
+	</div>
+</div>
+<p>We first examined the application and its interface from a user experience designer’s standpoint, and give out evaluation of each screen:</p>
+<table class="table table-responsive">
+	<thead>
+		<tr>
+			<th scope="col">Screen</th>
+			<th scope="col">Cryptonator</th>
+			<th scope="col">Jaxx</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+		<th scope="row">Landing screen</th>
+		<td class="yellow">It shows you a list of your wallets and your balances (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_ZV81SVhkX2RVdWc" target="_blank">image</a>). To send transactions, you need to go back a couple screens and find the appropriate menu.</td>
+		<td class="green">It sends you to one of your wallets directly, and shows your balance, transactions, and allows you to send and receive transactions in one click. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_b0NxWnlSQTNPbjg" target="_blank">image</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Send payment screen</th>
+			<td class="green">Intuitive UI, showing all the necessary fields.(<a href="https://drive.google.com/open?id=0B36YkvDtVNK_NXhjMnJhNXU5NUk" target="_blank">image</a>)</td>
+			<td class="green">Intuitive UI, showing all the necessary fields.(<a href="https://drive.google.com/open?id=0B36YkvDtVNK_X2F2QkR5MVdubUk" target="_blank">image</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Request payment screen</th>
+			<td class="yellow">N/A</td>
+			<td class="green">Allows you to copy your address, or input an amount to generate a QR code (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_eU8zY240ckNLbnM" target="_blank">image</a>), a sample QR code that encodes address and send amount. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_dUtEYXNqRGl3dVU" target="_blank">image</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Exchange payment screen</th>
+			<td class="red">Not screenshot-able, but it looks okay&#8211;similar looking  to the send payment screen.  Doesn’t show the conversion rate or fees associated with this action.</td>
+			<td class="green">Intuitive UI, showing conversion rates, and minimum and maximum exchange values. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_RnpLaHV3cE9XeGs" target="_blank">image</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Sent transaction details</th>
+			<td class="green">Has information about the transaction and provides a space to annotate what the transaction is for. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_ZmdWSGd0Z01SM1ks" target="_blank">image</a>)</td>
+			<td class="yellow">Has the information you need, but no space for annotations. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_Znc0a1I5S3NKU2M" target="_blank">image</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Received transaction details</th>
+			<td class="green">Has information about the transaction and provides a space to annotate what the transaction is for. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_NXp3ZEstWjQ5MWs" target="_blank">image</a>)</td>
+			<td class="yellow">Has the information you need, but no space for annotations. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_QlZ1amh2RkFXR00" target="_blank">image</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Transaction fee details</th>
+			<td class="green">Transaction fees are listed as a separate transaction, but has minimal information about the fee. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_OGxkYWhaaXM4d0U" target="_blank">image</a>)</td>
+			<td class="green">Transaction fee details are included in the sent transaction and not separately, which reduces visual clutter.</td>
+		</tr>
+	</tbody></table>
+
+<p>We tested how easy it was to complete certain tasks, assuming a first time user who is trying their best to complete the task correctly:</p>
+<table class="table table-responsive">
+	<thead>
+		<tr>
+			<th scope="col">Task</th>
+			<th scope="col">Cryptonator</th>
+			<th scope="col">Jaxx</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+		<th scope="row">Installation and setup</th>
+		<td class="dark-red">Requires a signup account and  too many user tasks&#8211;plus it was hard to verify email, account, set up pin, etc. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_ZWgyZ2MtNlU1Wkk" target="_blank">video</a>)</td>
+		<td class="dark-green">Near flawless! Minimal options, easy, and quick. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_WW1vVERGdWRFY3c" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Sending payment</th>
+			<td class="green">Easy to find where it is, and can send payments easily. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_RU1HZ2I3bXhZUXc" target="_blank">video</a>)</td>
+			<td class="green">Easy to find where it is, and can send payments easily. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_Znc0a1I5S3NKU2M" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Receiving payment</th>
+			<td class="red">No push notification that a transaction was received (although there is for sending one) and no notification in app&#8211;just a balance update.  (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_elF0RHhxU05ET3c" target="_blank">video</a>)</td>
+			<td class="red">No push notification of receiving payment, no in-app notification of receiving payment&#8211;just a balance update. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_RTlBV2F3RTNKVWM" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Exchanging currencies</th>
+			<td class="yellow">Relatively easy to exchange (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_VUx0VHpWang5eUE" target="_blank">video</a>), but if you miss the leading zero in a small number (.02 rather than 0.02), it errors out. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_UjZSdlhRRW1JdkU" target="_blank">video</a>)</td>
+			<td class="red">It was unclear that you could exchange payment if you didn’t know what shapshift was (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_LUswSmVsZUEzREk" target="_blank">video</a>, <a href="https://drive.google.com/open?id=0B36YkvDtVNK_ckl3VzVVc3M4M0U" target="_blank">video</a>, <a href="https://drive.google.com/open?id=0B36YkvDtVNK_djA1ZlcyNU56a28" target="_blank">video</a>), but otherwise okay. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_TWE5OHY5VkJhSkk" target="_blank">video</a>)</td>
+		</tr>
+	</tbody></table>
+
+<p>Since we also wanted to see how the crypto wallets respond to users who are not successful at completing the above tasks, we manually input and toggled settings to trigger errors, and found that:</p>
+<table class="table table-responsive">
+	<thead>
+		<tr>
+			<th scope="col">Test</th>
+			<th scope="col">Cryptonator</th>
+			<th scope="col">Jaxx</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+		<th scope="row">Address input filtering</th>
+		<td class="red">Does not filter for inputs not used for addresses. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_eU5WS3BfWEdXU0U" target="_blank">video</a>)</td>
+		<td class="red">Does not filter for inputs not used for addresses. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_QnFrdG9RdkZsVnM" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Address input length limit</th>
+			<td class="red">No input length limit. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_V0JDVEhqVHA3SGM" target="_blank">video</a>)</td>
+			<td class="red">No input length limit. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_THRucVliQkdSRzQ" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Amount input filtering</th>
+			<td class="green">Only allows numbers and a single period logically. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_OWZ1d1F3c1A1VW8" target="_blank">video</a>)</td>
+			<td class="red">Filters out letters, but allows +, -, multiple periods in a row. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_WkZ4d0gwcWN1dUk" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Amount input length limit</th>
+			<td class="red">Does not allow the maximum length sendable in ZEC (i.e. 20999999.99999999). (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_eENteldBUS1LWXM" target="_blank">video</a>)</td>
+			<td class="dark-red">Does not allow the maximum length sendable in ZEC (i.e. 20999999.99999999), has a bug that resets the input field when you enter in a too-small number (i.e. .00000). (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_c3dleVJkQjFwNHc" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Send to syntactically correct but invalid address</th>
+			<td class="green">Tells user that it is an invalid Zcash address and instructs to double check the address. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_ak5zZlotRU9RS00" target="_blank">video</a>)</td>
+			<td class="red">Silently fails, no notification or UI feedback. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_eENfNUlsM1o0bWM" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Send to syntactically invalid address</th>
+			<td class="green">Tells user that it is an invalid Zcash address and instructs to double check the address. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_bWQ0cEJDX3Y4X1E" target="_blank">video</a>)</td>
+			<td class="red">Silently fails, no notification or UI feedback. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_TFJJM1p6MnJ6dHM" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Sending payments offline</th>
+			<td class="green">Notifies the user that it cannot send payments offline. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_Z3ctR0dVaDB3ak0" target="_blank">video</a>)</td>
+			<td class="dark-red">Silently fails, no notification or UI feedback. Attempt silently disappears on next start. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_TDV5aktkNktlOTg" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Sending too little (less than the fee or balance)</th>
+			<td class="green">Notifies the user that the amount is too little. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_N0FhZ050bzJFaXM" target="_blank">video</a>)</td>
+			<td class="dark-red">Looks like it’s able to send, with a confirmation dialogue and everything, but it actually never goes through. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_cXBYOEdmNkZ4Zm8" target="_blank">video</a>)</td>
+		</tr>
+		<tr>
+			<th scope="row">Sending too much (more than the balance)</th>
+			<td class="green">Notifies the user that the amount is too much. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_bVFuM0EtT3h4TTA" target="_blank">video</a>)</td>
+			<td class="red">Silently fails, no notification or UI feedback. (<a href="https://drive.google.com/open?id=0B36YkvDtVNK_YlhuZlRHQVhReE0" target="_blank">video</a>)</td>
+		</tr>
+	</tbody></table>
+
+<div class="subtitle">
+	<a class="subtitle-link" href="#recommendations"><i class="fa fa-link" aria-hidden="true"></i></a>
+	<div class="subtitle-text">
+		<h2 id="recommendations">Recommendations</h2>
+	</div>
+</div>
+<ol>
+	<li>
+		<p>For all crypto wallets: think about not just what the user should input or do, but all possible inputs and interactions a user can do. And if any of those are invalid, prevent users from making mistakes by filtering inputs and disabling interactions.</p>
+	</li>
+	<li>
+		<p>For Jaxx: users are bound to make some mistakes, so help them through it. Alert users when a transaction failed to go through, and tell them what happened (the request was canceled, we will retry sending the transaction), and give them instructions on how to fix their issue if applicable (re-check your internet connection, check the address, etc).</p>
+	</li>
+	<li>
+		<p>For Cryptonator: a long and task-heavy setup process will turn away most of the users before they start using your application. Get users to the wallet first, then guide then through the security steps and verify their accounts later. A good policy is to ask them to verify their device right away, ask them to verify an account hour to a day after they create their crypto wallet, and to ask if they want to enable additional security features (PINS, key backup, etc) after a set amount of use.</p>
+	</li>
+</ol>
+<p>We contacted both companies, and they have been receptive to the feedback. We look forward to making these, and other crypto wallets better in the future with further evaluation and testing.</p>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+	
+</article><!-- #post-## -->
+			</main><!-- #main -->
+		</div> <!-- end .container -->
+		
+
+<footer class="entry-footer" id="footer-links" >
+  <div class="container">
+    <div class="h5">Additional Information</div>
+    <div class="row">
+      <div class="col-10  col-sm-5 col-xl-4">
+        <p><strong>UX Research Reference</strong><br />
+<a href="../cryptocurrency-ux-challenges.html">Cryptocurrency UX Challenges</a><br />
+<a href="../ux-case-study-jaxx-cryptonator.html">A usability evaluation of the Jaxx and Cryptonator cryptocurrency wallets</a><br />
+<a href="https://docs.google.com/presentation/d/103iFzueCjW0T5bOvVi36EtgrHUU-f1BSvF6fL561HOo/embed?start=true&amp;loop=false&amp;delayms=3000#slide=id.g23274209fc_3_23" target="_blank">What it's like to buy something with ZEC for the first time</a></p>      </div>
+              <div class="col-sm-1">
+        </div>
+        <div class="col-10 col-sm-5 col-xl-4">
+          <p><strong>Related Blog posts</strong><br />
+<a href="../../blog/ux-research.html">A Preliminary UX Survey of the Zcash Ecosystem</a></p>        </div>
+          </div>
+  </div>
+</footer>
+
+
+		
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Zcash Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Electric Coin Company</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3922"><a href="../../blog/index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/zcashco" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/zcashco"><img class="alignnone size-medium wp-image-3444" src="../../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../../privacy-policy.html">Privacy Policy</a>  |  <a href="../../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 ELECTRIC COIN COMPANY</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/technology/ux-case-study-jaxx-cryptonator/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:16:59 GMT -->
+</html>
