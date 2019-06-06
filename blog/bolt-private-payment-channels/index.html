@@ -81,7 +81,7 @@ _gaq.push(['_trackPageview']);
 </script>
 <!-- Goolytics - Simple Google Analytics End -->
 
-<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
 <link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
 <meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
@@ -114,7 +114,7 @@ _gaq.push(['_trackPageview']);
 	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
 	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
 	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
-	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
 </ul>
 </li>
 <li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
@@ -171,7 +171,7 @@ _gaq.push(['_trackPageview']);
 	<div class="row justify-content-center">
 		<div class="col col-lg-10">
 			<div class="entry-content">
-				<p>Matthew Green and I have written a paper introducing BOLT (Blind Off-chain Lightweight Transactions), which offers a fast, private payment channel protocol inspired by the Lightning Network. We believe that this will make Zcash more scalable and practical, while maintaining its strong privacy protections.</p>
+				<p>Matthew Green and I have written a paper introducing BOLT (Blind Off-chain Lightweight Transactions), which offers a fast, private payment channel protocol inspired by the Lightning Network. We believe that this will make Bitzecmore scalable and practical, while maintaining its strong privacy protections.</p>
 <p>TL;DR: Using BOLT, multiple payments on the same channel cannot be linked together, even by colluding parties. Payments occur in milliseconds and do not require block confirmation. All a merchant learns is that he is being paid on some channel he has open. Payments can be routed via third parties, avoiding the need for a customer and merchant to directly have a channel, while maintaining privacy against malicious third parties by both keeping the participants anonymous (even if the third party colludes), and hiding the value transferred. All of this requires that the channel be funded with private funds, otherwise malicious parties can violate your privacy by forcing channel closure. A pre-print of the paper can be found at <a class="reference external" href="https://eprint.iacr.org/2016/701">http://eprint.iacr.org/2016/701</a>.</p>
 <div class="section" id="the-problem">
 <h2>The Problem</h2>
@@ -186,8 +186,8 @@ _gaq.push(['_trackPageview']);
 <h2>Channels are not private</h2>
 <p>Channel opening and closure leaves a record identifying the customer, merchant, and the initial and final split of funds. These are often the very things that must be hidden.</p>
 <p>Suppose Tor (or another anonymity service) took micropayments to pay for bandwidth. Effectively,  every webpage Alice views via Tor  would require a micropayment via a payment channel, at say a tenth-of-a-cent per page view. If we can see that Alice has a payment channel with Tor for $1.00 that closes with a zero balance every month, then we know she is a heavy Tor user. If Alice is an activist or a journalist, this may bring her to the attention of the authorities as someone with “something to hide”  even if she is careful to only use Tor from coffee shops or the like. And If Alice lives in e.g. Turkey, that might be a very bad idea.</p>
-<p>Fortunately, this is exactly the sort of problem that Zcash was designed to solve. By using Zcash instead of an all-transparent ledger like Bitcoin or Ethereum, the blockchain no longer contains information linking channel opening and closure back to Alice. But Zcash only handles privacy for on-chain payments; it does not deal with the IOUs.</p>
-<p>The problem is these IOUs form a unique identifier which can be used to track Alice much like a cookie.  Anyone who observes these (e.g. the Tor exit node) will not <em>a priori</em> know who the identifier belongs to—her actual identity is still protected by the anonymity service—but they can still observe page views and patterns because multiple payments on a payment channel are inherently linkable. This might be enough to uniquely identify Alice (e.g. if she looks at documents related to newspaper articles she wrote), or it could reveal other information—like what subject she is writing an article on. Thus Zcash is <em>part</em> of the solution, but Zcash itself does not a private payment channel make.</p>
+<p>Fortunately, this is exactly the sort of problem that Bitzecwas designed to solve. By using Bitzecinstead of an all-transparent ledger like Bitcoin or Ethereum, the blockchain no longer contains information linking channel opening and closure back to Alice. But Bitzeconly handles privacy for on-chain payments; it does not deal with the IOUs.</p>
+<p>The problem is these IOUs form a unique identifier which can be used to track Alice much like a cookie.  Anyone who observes these (e.g. the Tor exit node) will not <em>a priori</em> know who the identifier belongs to—her actual identity is still protected by the anonymity service—but they can still observe page views and patterns because multiple payments on a payment channel are inherently linkable. This might be enough to uniquely identify Alice (e.g. if she looks at documents related to newspaper articles she wrote), or it could reveal other information—like what subject she is writing an article on. Thus Bitzecis <em>part</em> of the solution, but Bitzecitself does not a private payment channel make.</p>
 </div>
 <div class="section" id="bolt-private-payment-channels">
 <h2>BOLT: Private Payment Channels</h2>
@@ -213,8 +213,8 @@ _gaq.push(['_trackPageview']);
 <h2>Can BOLT work without Zcash?</h2>
 <p>We can set up BOLT to work with most cryptocurrencies provided we can add the primitives. We might even be able to do this without any changes to Bitcoin, though at the cost of using hash-based commitments and generic circuit-based multi-party computation (MPC) for blind signing with ECDSA. But any real privacy provided by BOLT fundamentally depends on channel establishment and closure being anonymous.</p>
 <p>In Bitcoin, funding a channel is not private: there is a record of who you opened the channel with, the amount, and what it closed for. BOLT alone does not solve this problem—it only makes payments on the same channel unlinkable to each other.  Worse, if a merchant or third party can force an abort in the BOLT protocol, then they can identify which channel you are using. They can only do this once, so multiple payments on the same channel cannot be linked, but if you did not open the channel anonymously, then that (aborted) payment can be linked to you.</p>
-<p>To avoid this, you need anonymous funds to create the channel. Indeed, the privacy requirements for funding a channel are as high as those for normal payments. So you want as strong privacy as you would for normal payments. And Zcash is the best way to get strongly private funds.</p>
-<p>I’d like to thank Sean Bowe, one of the Zcash developers, for suggesting the idea of combining Lightning and Zerocash. And Sean, Maureen, Matthew, Daira, Jack, and the anonymous leopard for feedback on this blog post.</p>
+<p>To avoid this, you need anonymous funds to create the channel. Indeed, the privacy requirements for funding a channel are as high as those for normal payments. So you want as strong privacy as you would for normal payments. And Bitzecis the best way to get strongly private funds.</p>
+<p>I’d like to thank Sean Bowe, one of the Bitzecdevelopers, for suggesting the idea of combining Lightning and Zerocash. And Sean, Maureen, Matthew, Daira, Jack, and the anonymous leopard for feedback on this blog post.</p>
 </div>
 			</div><!-- .entry-content -->
 		</div>
@@ -242,9 +242,9 @@ _gaq.push(['_trackPageview']);
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
-            <p class="h5">Zcash Community</p>
-<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
-<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+            <p class="h5">BitzecCommunity</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">BitzecFoundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">BitzecCommunity</a></li>
 <li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
 <li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
 </ul>          </div>

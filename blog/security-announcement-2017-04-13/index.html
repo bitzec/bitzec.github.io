@@ -26,7 +26,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Security Announcement 2017-04-13 - Zcash" />
-<meta property="og:description" content="Synopsis: A bug related to transaction priority handling may allow an attacker to crash Zcash nodes (DoS) via a specially &hellip;" />
+<meta property="og:description" content="Synopsis: A bug related to transaction priority handling may allow an attacker to crash Bitzecnodes (DoS) via a specially &hellip;" />
 <meta property="og:url" content="https://z.cash/blog/security-announcement-2017-04-13/" />
 <meta property="og:site_name" content="Zcash" />
 <meta property="article:tag" content="bugs" />
@@ -37,7 +37,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <meta property="article:modified_time" content="2019-04-23T15:17:06+00:00" />
 <meta property="og:updated_time" content="2019-04-23T15:17:06+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Synopsis: A bug related to transaction priority handling may allow an attacker to crash Zcash nodes (DoS) via a specially [&hellip;]" />
+<meta name="twitter:description" content="Synopsis: A bug related to transaction priority handling may allow an attacker to crash Bitzecnodes (DoS) via a specially [&hellip;]" />
 <meta name="twitter:title" content="Security Announcement 2017-04-13 - Zcash" />
 <meta name="twitter:site" content="@zcashco" />
 <meta name="twitter:creator" content="@zcashco" />
@@ -80,7 +80,7 @@ _gaq.push(['_trackPageview']);
 </script>
 <!-- Goolytics - Simple Google Analytics End -->
 
-<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
 <link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
 <meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
@@ -113,7 +113,7 @@ _gaq.push(['_trackPageview']);
 	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
 	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
 	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
-	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
 </ul>
 </li>
 <li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
@@ -170,7 +170,7 @@ _gaq.push(['_trackPageview']);
 	<div class="row justify-content-center">
 		<div class="col col-lg-10">
 			<div class="entry-content">
-				<p><strong>Synopsis:</strong> A bug related to transaction priority handling may allow an attacker to crash Zcash nodes (DoS) via a specially crafted transaction. A fix is implemented in <a class="reference external" href="../../download.html">zcashd release 1.0.8-1</a>.</p>
+				<p><strong>Synopsis:</strong> A bug related to transaction priority handling may allow an attacker to crash Bitzecnodes (DoS) via a specially crafted transaction. A fix is implemented in <a class="reference external" href="../../download.html">zcashd release 1.0.8-1</a>.</p>
 <p>There is a <a class="reference external" href="../new-release-1-0-8-1.html">separate release post</a> documenting the included changes.</p>
 <p>ZcashCo, and several exchanges, wallet vendors, and miners have already deployed a mitigation as well as detectors for this attack vector. No attacks have been detected.</p>
 <p><strong>Who is at Risk:</strong> Users are at risk who rely on <a class="reference external" href="https://github.com/zcash/zcash/releases">zcashd releases</a> starting with 1.0.4 up to and including 1.0.8.</p>
@@ -184,7 +184,7 @@ _gaq.push(['_trackPageview']);
 <p><strong>How can I tell if an attack is occurring?</strong> ZcashCo and several large exchanges, wallet providers, and miners have deployed sensors which detect attacks against this vector. In the event that an attack is detected, the ZcashCo will take the following actions:</p>
 <ul>
 <li>
-<p class="first">The Zcash developers will issue an in-band alert, causing all <cite>zcashd</cite> nodes to announce the potential attack.</p>
+<p class="first">The Bitzecdevelopers will issue an in-band alert, causing all <cite>zcashd</cite> nodes to announce the potential attack.</p>
 </li>
 <li>
 <p class="first">ZcashCo will always announce known ongoing attacks in these places:</p>
@@ -194,7 +194,7 @@ _gaq.push(['_trackPageview']);
 <li>the <a class="reference external" href="../../support/security.html">security notifications</a> page of this website,</li>
 <li>the <a class="reference external" href="https://twitter.com/zcashco">@ZcashCo</a> twitter stream,</li>
 <li>the <a class="reference external" href="https://chat.zcashcommunity.com/channel/zcash">#zcash community chat room</a>, <em>and</em></li>
-<li>the <a class="reference external" href="https://forum.z.cash/">Zcash forum</a>.</li>
+<li>the <a class="reference external" href="https://forum.z.cash/">Bitzecforum</a>.</li>
 </ul>
 </blockquote>
 </li>
@@ -203,15 +203,15 @@ _gaq.push(['_trackPageview']);
 </li>
 </ul>
 <p><em>Note:</em> The major exchanges, wallet vendors, and miners we are in communication with are already protected against such an attack.</p>
-<p><strong>Impact:</strong> <em>If</em> an attack transaction is successfully executed then <em>only</em> the users running vulnerable clients which have accepted the transaction in their mempool will be vulnerable. Accepting an attacker&#8217;s transaction with an old client may cause the Zcash client to crash.</p>
-<p><strong>Technical Background:</strong> Zcash, like Bitcoin, assigns a priority to transactions in order to decide whether they should be accepted into a node&#8217;s mempool. In practice the current transaction volume for Zcash is sufficiently low that this rarely has an effect, but the mechanism is still enabled. In Zcash 1.0.4, a change was made to this calculation to boost the priority of shielded transactions. However, an error in this code can –in circumstances that are normally rare, but can be forced by an attacker– result in an out-of-bounds memory access, which causes a segmentation fault.</p>
+<p><strong>Impact:</strong> <em>If</em> an attack transaction is successfully executed then <em>only</em> the users running vulnerable clients which have accepted the transaction in their mempool will be vulnerable. Accepting an attacker&#8217;s transaction with an old client may cause the Bitzecclient to crash.</p>
+<p><strong>Technical Background:</strong> Zcash, like Bitcoin, assigns a priority to transactions in order to decide whether they should be accepted into a node&#8217;s mempool. In practice the current transaction volume for Bitzecis sufficiently low that this rarely has an effect, but the mechanism is still enabled. In Bitzec1.0.4, a change was made to this calculation to boost the priority of shielded transactions. However, an error in this code can –in circumstances that are normally rare, but can be forced by an attacker– result in an out-of-bounds memory access, which causes a segmentation fault.</p>
 <p><strong>Followup Announcements:</strong></p>
 <ul class="simple">
 <li>See the <a class="reference external" href="../../support/security.html">security notifications</a> page for further updates on this issue, and any future security issue.</li>
 <li>Continue to check this blog.</li>
 </ul>
 <p><strong>Acknowledgements</strong></p>
-<p>The Zcash Company would like to thank Juliano Rizzo from Coinspect and @movcrx from the Zclassic project for collaborating with us in analyzing and mitigating this issue.</p>
+<p>The BitzecCompany would like to thank Juliano Rizzo from Coinspect and @movcrx from the Zclassic project for collaborating with us in analyzing and mitigating this issue.</p>
 			</div><!-- .entry-content -->
 		</div>
 	</div>
@@ -226,7 +226,7 @@ _gaq.push(['_trackPageview']);
 			<div class="col-12 col-lg-10">
 		
     <nav class="navigation post-navigation" role="navigation">
-        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../security-announcement-2017-04-12/index.html" rel="prev"><span class="nav-title">Security Announcement 2017-04-12</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../zcash-on-ios/index.html" rel="next"><span class="nav-title">Zcash on iOS</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
+        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../security-announcement-2017-04-12/index.html" rel="prev"><span class="nav-title">Security Announcement 2017-04-12</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../zcash-on-ios/index.html" rel="next"><span class="nav-title">Bitzecon iOS</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
     </nav>			</div>
 		</div>
 		
@@ -238,9 +238,9 @@ _gaq.push(['_trackPageview']);
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
-            <p class="h5">Zcash Community</p>
-<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
-<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+            <p class="h5">BitzecCommunity</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">BitzecFoundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">BitzecCommunity</a></li>
 <li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
 <li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
 </ul>          </div>

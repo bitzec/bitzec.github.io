@@ -83,7 +83,7 @@ _gaq.push(['_trackPageview']);
 </script>
 <!-- Goolytics - Simple Google Analytics End -->
 
-<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
 <link rel="icon" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
 <meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
@@ -116,7 +116,7 @@ _gaq.push(['_trackPageview']);
 	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
 	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
 	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
-	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
 </ul>
 </li>
 <li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
@@ -198,7 +198,7 @@ _gaq.push(['_trackPageview']);
 <p>Since the curve is defined by a degree three polynomial in :math:`X` and already intersects this (non-vertical) line at two points, it is guaranteed to intersect the line at a third point, that we denote :math:`R=(x,y)`, and no other points.</p>
 <p>So we must have :math:`P+Q+R={\mathcal O}`, which means :math:`P+Q=-R`; and we know by now that :math:`-R` is obtained from :math:`R` by flipping the second coordinate from :math:`y` to :math:`-y`.</p>
 <p>Thus, we have derived the addition rule for our group: Given points :math:`P` and :math:`Q`, pass a line through them, and then take the &#8220;mirror&#8221; point of the third intersection point of the line as the addition result. <a class="footnote-reference" href="#id7" id="id2">[2]</a></p>
-<p>This group is usually called :math:`{\mathcal C}(\mathbb{F}_p)` &#8211; as it consists of points on the curve :math:`{\mathcal C}` with coordinates in :math:`\mathbb{F}_p`; but let&#8217;s denote it by :math:`G_1` from now on. Assume for simplicity that the number of elements in :math:`G_1` is a prime number :math:`r`, and is different from :math:`p`. This is many times the case, for example in the curve that Zcash is currently using. In this case, any element :math:`g\in G_1` different from :math:`{\mathcal O}` generates :math:`G_1`.</p>
+<p>This group is usually called :math:`{\mathcal C}(\mathbb{F}_p)` &#8211; as it consists of points on the curve :math:`{\mathcal C}` with coordinates in :math:`\mathbb{F}_p`; but let&#8217;s denote it by :math:`G_1` from now on. Assume for simplicity that the number of elements in :math:`G_1` is a prime number :math:`r`, and is different from :math:`p`. This is many times the case, for example in the curve that Bitzecis currently using. In this case, any element :math:`g\in G_1` different from :math:`{\mathcal O}` generates :math:`G_1`.</p>
 <p>The smallest integer :math:`k` such that :math:`r` divides :math:`p^k-1` is called the <em>embedding degree</em> of the curve. It is conjectured that when :math:`k` is not too small, say, at least :math:`6`, then the discrete logarithm problem in :math:`G_1`, i.e. finding :math:`\alpha` from :math:`g` and :math:`\alpha \cdot g`, is very hard. (In BN curves <a class="footnote-reference" href="#id8" id="id3">[3]</a> currently used by Zcash :math:`k=12`.)</p>
 <p>The multiplicative group of :math:`\mathbb{F}_{p^k}` contains a subgroup of order :math:`r` that we denote :math:`G_T`. We can look at curve points with coordinates in :math:`\mathbb{F}_{p^k}` and not just in :math:`\mathbb{F}_p`. Under the same addition rule, these points also form a group together with :math:`{\mathcal O}` called :math:`{\mathcal C}(\mathbb{F}_{p^k})`. Note that :math:`{\mathcal C}(\mathbb{F}_{p^k})` clearly contains :math:`G_1`. Besides :math:`G_1`, :math:`{\mathcal C}(\mathbb{F}_{p^k})` will contain an additional subgroup :math:`G_2` of order :math:`r` (in fact, :math:`r-1` additional subgroups of order :math:`r`).</p>
 <p>Fix generators :math:`g\in G_1,h\in G_2`. It turns out that there is an efficient map, called the <em>Tate reduced pairing</em>, taking a pair of elements from :math:`G_1` and :math:`G_2` into an element of :math:`G_T`,</p>
@@ -256,7 +256,7 @@ _gaq.push(['_trackPageview']);
 <col></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td>
-<td>The pairing Zcash actually uses is the <a href="https://www.esat.kuleuven.be/cosic/publications/talk-96.pdf">optimal Ate pairing</a>, which is based on the Tate reduced pairing, and can be computed more efficiently than :math:`\mathrm{Tate}`.</td>
+<td>The pairing Bitzecactually uses is the <a href="https://www.esat.kuleuven.be/cosic/publications/talk-96.pdf">optimal Ate pairing</a>, which is based on the Tate reduced pairing, and can be computed more efficiently than :math:`\mathrm{Tate}`.</td>
 </tr>
 </tbody>
 </table>
@@ -265,7 +265,7 @@ _gaq.push(['_trackPageview']);
 <col></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td>
-<td>In computational complexity theory terms, one can show that only languages in <a href="https://en.wikipedia.org/wiki/BPP_(complexity)">BPP</a> have non-interactive zero-knowledge proofs in this strong sense. The type of claims we need to prove in Zcash transactions, e.g. &#8216;I know a hash preimage of this string&#8217;, correspond to the complexity class <a href="https://en.wikipedia.org/wiki/NP_(complexity)">NP</a> which is believed to be much larger than BPP. </td>
+<td>In computational complexity theory terms, one can show that only languages in <a href="https://en.wikipedia.org/wiki/BPP_(complexity)">BPP</a> have non-interactive zero-knowledge proofs in this strong sense. The type of claims we need to prove in Bitzectransactions, e.g. &#8216;I know a hash preimage of this string&#8217;, correspond to the complexity class <a href="https://en.wikipedia.org/wiki/NP_(complexity)">NP</a> which is believed to be much larger than BPP. </td>
 </tr>
 </tbody>
 </table>
@@ -303,9 +303,9 @@ _gaq.push(['_trackPageview']);
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
-            <p class="h5">Zcash Community</p>
-<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
-<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+            <p class="h5">BitzecCommunity</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">BitzecFoundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">BitzecCommunity</a></li>
 <li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
 <li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
 </ul>          </div>

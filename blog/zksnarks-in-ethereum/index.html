@@ -80,7 +80,7 @@ _gaq.push(['_trackPageview']);
 </script>
 <!-- Goolytics - Simple Google Analytics End -->
 
-<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
 <link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
 <meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
@@ -113,7 +113,7 @@ _gaq.push(['_trackPageview']);
 	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
 	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
 	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
-	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
 </ul>
 </li>
 <li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
@@ -177,14 +177,14 @@ _gaq.push(['_trackPageview']);
 </div>
 <div class="section" id="snarks">
 <h2>SNARKs</h2>
-<p>zk-SNARKs are the cryptographic tool underlying Zcash. They are proofs that you have performed a computation over some inputs without revealing all of the inputs. Zcash uses these proofs to verify transactions while protecting users&#8217; privacy.</p>
+<p>zk-SNARKs are the cryptographic tool underlying Zcash. They are proofs that you have performed a computation over some inputs without revealing all of the inputs. Bitzecuses these proofs to verify transactions while protecting users&#8217; privacy.</p>
 <p>In addition to being great for privacy, they&#8217;re also great at reducing the verification cost of complicated smart contracts. Since they can be verified quickly, and because the proofs are small, they can protect the integrity of the computation without burdening non-participants.</p>
 <p>In our work this week, we extended the Ethereum contract language to efficiently support verification of zkSNARK proofs. Specifically, we added a <cite>snarkverify</cite> precompile (like an opcode) to a fork of <a class="reference external" href="https://github.com/ethcore/parity">Parity</a> which uses libsnark to verify generic proofs.</p>
 </div>
 <div class="section" id="zerocash-over-ethereum">
 <h2>Zerocash over Ethereum</h2>
 <p><img alt="Sean Bowe demonstrates the circuit." src="../../wp-content/uploads/2016/07/bootcamp_sean.jpg"/></p>
-<p>As a demonstration, we used this new zkSNARK verifier in Ethereum to implement a primitive coin mixing contract using a simplified variant of Zerocash &#8212; the academic protocol that Zcash based its implementation on. We call this &#8220;baby&#8221; ZoE, for Zerocash over Ethereum. The contract allows you to deposit discrete amounts (units of ETH) by inserting a commitment to a &#8220;serial number&#8221; into a merkle tree maintained by the contract.</p>
+<p>As a demonstration, we used this new zkSNARK verifier in Ethereum to implement a primitive coin mixing contract using a simplified variant of Zerocash &#8212; the academic protocol that Bitzecbased its implementation on. We call this &#8220;baby&#8221; ZoE, for Zerocash over Ethereum. The contract allows you to deposit discrete amounts (units of ETH) by inserting a commitment to a &#8220;serial number&#8221; into a merkle tree maintained by the contract.</p>
 <p>In order to withdraw without revealing which commitment you&#8217;re spending, which would link the withdrawal with the deposit, we use a zkSNARK to prove that <em>we know</em> a commitment inside of the merkle tree of the contract. In order to prevent double-spending, we do so while revealing the serial number, which the contract remembers and prohibits reuse of.</p>
 <p>In order to prevent other users from taking the proof and withdrawing without your permission, the proof also authenticates for a withdrawal address (in Ethereum) which is authorized to receive the funds from the contract.</p>
 <p>The idea of integrating Zerocash into a currency using a SNARK verification opcode goes back to the original Zerocash paper (Section 6.3 in <a class="reference external" href="https://eprint.iacr.org/2014/349">Zerocash extended version</a>). Following this prescription, it is possible to extend the ZoE contract  to work with the complete Zerocash protocol.</p>
@@ -219,9 +219,9 @@ _gaq.push(['_trackPageview']);
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
-            <p class="h5">Zcash Community</p>
-<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
-<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+            <p class="h5">BitzecCommunity</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">BitzecFoundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">BitzecCommunity</a></li>
 <li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
 <li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
 </ul>          </div>

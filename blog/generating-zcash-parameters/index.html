@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Zcash Parameters And How They Will Be Generated - Zcash</title>
+        <title>BitzecParameters And How They Will Be Generated - Zcash</title>
 
 <script type='text/x-mathjax-config'>
 MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
@@ -25,7 +25,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <link rel="canonical" href="index.html" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Zcash Parameters And How They Will Be Generated - Zcash" />
+<meta property="og:title" content="BitzecParameters And How They Will Be Generated - Zcash" />
 <meta property="og:description" content="At its core, Zcash&#8217;s privacy technology relies on a novel cryptographic tool called a zkSNARK &#8211; a small zero-knowledge proof &hellip;" />
 <meta property="og:url" content="https://z.cash/blog/generating-zcash-parameters/" />
 <meta property="og:site_name" content="Zcash" />
@@ -38,10 +38,10 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <meta property="og:updated_time" content="2018-10-01T07:41:14+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:description" content="At its core, Zcash&#8217;s privacy technology relies on a novel cryptographic tool called a zkSNARK &#8211; a small zero-knowledge proof [&hellip;]" />
-<meta name="twitter:title" content="Zcash Parameters And How They Will Be Generated - Zcash" />
+<meta name="twitter:title" content="BitzecParameters And How They Will Be Generated - Zcash" />
 <meta name="twitter:site" content="@zcashco" />
 <meta name="twitter:creator" content="@zcashco" />
-<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/zcashco"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/blog/generating-zcash-parameters/#webpage","url":"https://z.cash/blog/generating-zcash-parameters/","inLanguage":"en-US","name":"Zcash Parameters And How They Will Be Generated - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2016-09-25T00:00:00+00:00","dateModified":"2018-10-01T07:41:14+00:00"},{"@type":"Article","@id":"https://z.cash/blog/generating-zcash-parameters/#article","isPartOf":{"@id":"https://z.cash/blog/generating-zcash-parameters/#webpage"},"author":{"@id":"https://z.cash/blog/author/ariel-gabizon/#author","name":"Ariel Gabizon"},"publisher":{"@id":"https://z.cash/#organization"},"headline":"Zcash Parameters And How They Will Be Generated","datePublished":"2016-09-25T00:00:00+00:00","dateModified":"2018-10-01T07:41:14+00:00","commentCount":0,"mainEntityOfPage":"https://z.cash/blog/generating-zcash-parameters/#webpage","keywords":"cryptography,Parameter Generation,zkSNARKs","articleSection":"Technical"},{"@type":"Person","@id":"https://z.cash/blog/author/ariel-gabizon/#author","name":"Ariel Gabizon","image":{"@type":"ImageObject","@id":"https://z.cash/#personlogo","url":"https://secure.gravatar.com/avatar/7d15dda151e55a3edc32294f9fc871a7?s=96&d=mm&r=g","caption":"Ariel Gabizon"},"sameAs":[]}]}</script>
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/zcashco"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/blog/generating-zcash-parameters/#webpage","url":"https://z.cash/blog/generating-zcash-parameters/","inLanguage":"en-US","name":"BitzecParameters And How They Will Be Generated - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2016-09-25T00:00:00+00:00","dateModified":"2018-10-01T07:41:14+00:00"},{"@type":"Article","@id":"https://z.cash/blog/generating-zcash-parameters/#article","isPartOf":{"@id":"https://z.cash/blog/generating-zcash-parameters/#webpage"},"author":{"@id":"https://z.cash/blog/author/ariel-gabizon/#author","name":"Ariel Gabizon"},"publisher":{"@id":"https://z.cash/#organization"},"headline":"BitzecParameters And How They Will Be Generated","datePublished":"2016-09-25T00:00:00+00:00","dateModified":"2018-10-01T07:41:14+00:00","commentCount":0,"mainEntityOfPage":"https://z.cash/blog/generating-zcash-parameters/#webpage","keywords":"cryptography,Parameter Generation,zkSNARKs","articleSection":"Technical"},{"@type":"Person","@id":"https://z.cash/blog/author/ariel-gabizon/#author","name":"Ariel Gabizon","image":{"@type":"ImageObject","@id":"https://z.cash/#personlogo","url":"https://secure.gravatar.com/avatar/7d15dda151e55a3edc32294f9fc871a7?s=96&d=mm&r=g","caption":"Ariel Gabizon"},"sameAs":[]}]}</script>
 <!-- / Yoast SEO plugin. -->
 
 <link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
@@ -80,7 +80,7 @@ _gaq.push(['_trackPageview']);
 </script>
 <!-- Goolytics - Simple Google Analytics End -->
 
-<link rel="alternate" type="application/rss+xml" title="Zcash RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
 <link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
 <meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
@@ -113,7 +113,7 @@ _gaq.push(['_trackPageview']);
 	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
 	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
 	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
-	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Zcash for Investors</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
 </ul>
 </li>
 <li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
@@ -159,10 +159,10 @@ _gaq.push(['_trackPageview']);
 	<header class="entry-header">
 		<div class="row justify-content-center">
 			<div class="col col-lg-10">
-									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="../index.html"><span class="notranslate">Electric Coin Company </span>Posts</a></div> / <div class="d-inline">Zcash Parameters And How They Will Be Generated</div></div>
+									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="../index.html"><span class="notranslate">Electric Coin Company </span>Posts</a></div> / <div class="d-inline">BitzecParameters And How They Will Be Generated</div></div>
 				
 				
-				<h1 class="entry-title">Zcash Parameters And How They Will Be Generated</h1><div class="entry-meta"><span class="notranslate"><a href="../author/ariel-gabizon/index.html" title="Posts by Ariel Gabizon" class="author url fn" rel="author">Ariel Gabizon</a></span> <span class="meta-sep">|</span> <div class="d-inline">September <span class="notranslate">25, 2016</span></div></div><!-- .entry-meta -->			</div>
+				<h1 class="entry-title">BitzecParameters And How They Will Be Generated</h1><div class="entry-meta"><span class="notranslate"><a href="../author/ariel-gabizon/index.html" title="Posts by Ariel Gabizon" class="author url fn" rel="author">Ariel Gabizon</a></span> <span class="meta-sep">|</span> <div class="d-inline">September <span class="notranslate">25, 2016</span></div></div><!-- .entry-meta -->			</div>
 		</div>
 	</header><!-- .entry-header -->
 
@@ -170,9 +170,9 @@ _gaq.push(['_trackPageview']);
 	<div class="row justify-content-center">
 		<div class="col col-lg-10">
 			<div class="entry-content">
-				<p>At its core, Zcash&#8217;s privacy technology relies on a novel cryptographic tool called a zkSNARK &#8211; a small <a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">zero-knowledge proof</a> that is cheap to verify. Zcash will be the first to employ this powerful tool on a large scale. For these zkSNARKs to work, a setup phase is required where the &#8220;system parameters&#8221; are generated. This setup phase is similar to the setup phase of a public-key cryptosystem, but with a catch: As in the public-key cryptosystem, a pair (:math:`\mathsf{privkey},` :math:`\mathsf{pubkey)}` is generated, but then :math:`\mathsf{privkey}` is <em>destroyed</em>. Indeed, it will be essential for the integrity of the system that after the setup phase <em>nobody</em> possesses :math:`\mathsf{privkey}.`</p>
+				<p>At its core, Zcash&#8217;s privacy technology relies on a novel cryptographic tool called a zkSNARK &#8211; a small <a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">zero-knowledge proof</a> that is cheap to verify. Bitzecwill be the first to employ this powerful tool on a large scale. For these zkSNARKs to work, a setup phase is required where the &#8220;system parameters&#8221; are generated. This setup phase is similar to the setup phase of a public-key cryptosystem, but with a catch: As in the public-key cryptosystem, a pair (:math:`\mathsf{privkey},` :math:`\mathsf{pubkey)}` is generated, but then :math:`\mathsf{privkey}` is <em>destroyed</em>. Indeed, it will be essential for the integrity of the system that after the setup phase <em>nobody</em> possesses :math:`\mathsf{privkey}.`</p>
 <p>:math:`\mathsf{pubkey}` corresponds to the required system parameters. :math:`\mathsf{privkey}` corresponds to what has been called the &#8220;toxic waste&#8221; <a href="../snark-parameters/index.html">here</a>, and possessing it enables counterfeiting new coins (but does not enable violating the privacy of other users&#8217; transactions).</p>
-<p>To reduce risk, Zcash has designed a multi-player protocol where :math:`\mathsf{pubkey}` will be generated. The protocol has the property that :math:`\mathsf{privkey}` now corresponds to the concatenation of all participants&#8217; secret randomness. Thus, :math:`\mathsf{privkey}` will be destroyed unless <em>all</em> of the participants are dishonest or compromised.</p>
+<p>To reduce risk, Bitzechas designed a multi-player protocol where :math:`\mathsf{pubkey}` will be generated. The protocol has the property that :math:`\mathsf{privkey}` now corresponds to the concatenation of all participants&#8217; secret randomness. Thus, :math:`\mathsf{privkey}` will be destroyed unless <em>all</em> of the participants are dishonest or compromised.</p>
 <p>The purpose of this post is to give a simplified explanation of what :math:`\mathsf{pubkey}` looks like, and how the protocol for generating it works.</p>
 <h2>What :math:`\mathsf{pubkey}` looks like</h2>
 <p>Suppose :math:`g` is a generator of a group :math:`G` where the discrete log is hard. We assume :math:`G` has order :math:`r` for some prime :math:`r,` and we write group operations additively. So for :math:`s\in \mathbb{F}`, where :math:`\mathbb{F}` is the field of size :math:`r`, we can write :math:`s\cdot g` to denote scalar multiplication of :math:`g` by :math:`s`; i.e. :math:`s\cdot g` is obtained by adding :math:`s` copies of :math:`g`. A simplified version of (:math:`\mathsf{privkey},` :math:`\mathsf{pubkey)}` is that :math:`\mathsf{privkey}` is simply a uniformly random element :math:`s\in \mathbb{F}^*` and :math:`\mathsf{pubkey}` is the sequence of group elements</p>
@@ -210,7 +210,7 @@ _gaq.push(['_trackPageview']);
 <h2>How :math:`\mathsf{pubkey}` is used</h2>
 <p>Recall that a <em>polynomial</em> :math:`P` of degree :math:`d` over :math:`\mathbb{F}` is an expression of the form</p>
 <p>:math:`P(X) = a_0 + a_1\cdot X + a_2\cdot X^2 + \ldots + a_d\cdot X^d`</p>
-<p>We can <em>evaluate</em> a polynomial at a point :math:`s\in \mathbb{F}` by substituting :math:`s` for :math:`X,` and computing the resultant sum. A useful fact is that if :math:`P` and :math:`Q` are different polynomials of degree at most :math:`d,` they can agree on at most :math:`d` points. In Zcash the sender needs to construct two degree :math:`d` polynomials :math:`P` and :math:`Q` in a certain way, and a lot of mathematical magic ensures that they can make them the same polynomial, i.e., get :math:`P=Q,` only if the transaction is valid.</p>
+<p>We can <em>evaluate</em> a polynomial at a point :math:`s\in \mathbb{F}` by substituting :math:`s` for :math:`X,` and computing the resultant sum. A useful fact is that if :math:`P` and :math:`Q` are different polynomials of degree at most :math:`d,` they can agree on at most :math:`d` points. In Bitzecthe sender needs to construct two degree :math:`d` polynomials :math:`P` and :math:`Q` in a certain way, and a lot of mathematical magic ensures that they can make them the same polynomial, i.e., get :math:`P=Q,` only if the transaction is valid.</p>
 <p>:math:`\mathsf{pubkey}` can now be used to test if :math:`P` and :math:`Q` are equal at a point :math:`s` <em>not known by the sender</em>. Say</p>
 <p>:math:`P(X) = a_0 + a_1\cdot X + a_2\cdot X^2 + \ldots + a_d\cdot X^d`</p>
 <p>and</p>
@@ -237,7 +237,7 @@ _gaq.push(['_trackPageview']);
 			<div class="col-12 col-lg-10">
 		
     <nav class="navigation post-navigation" role="navigation">
-        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../continued-funding-and-transparency/index.html" rel="prev"><span class="nav-title">Continued Funding and Transparency</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../open-source-miner-challenge/index.html" rel="next"><span class="nav-title">Accepting Submissions: Zcash Open Source Miner Challenge</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
+        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../continued-funding-and-transparency/index.html" rel="prev"><span class="nav-title">Continued Funding and Transparency</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../open-source-miner-challenge/index.html" rel="next"><span class="nav-title">Accepting Submissions: BitzecOpen Source Miner Challenge</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
     </nav>			</div>
 		</div>
 		
@@ -249,9 +249,9 @@ _gaq.push(['_trackPageview']);
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
-            <p class="h5">Zcash Community</p>
-<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Zcash Foundation</a></li>
-<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Zcash Community</a></li>
+            <p class="h5">BitzecCommunity</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">BitzecFoundation</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">BitzecCommunity</a></li>
 <li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
 <li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
 </ul>          </div>
