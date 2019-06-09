@@ -28,17 +28,17 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <meta property="og:type" content="article" />
 <meta property="og:title" content="What are zk-SNARKs? | Bitzec" />
 <meta property="og:description" content="zk-SNARKs are a novel form of zero-knowledge cryptography which allow for private Bitzec transactions. These transactions can be fully encrypted on the blockchain, yet still be verified by zK-SNARKs as valid under the network’s consensus rules." />
-<meta property="og:url" content="https://z.cash/technology/zksnarks/" />
+<meta property="og:url" content="https://bitzec.github.io/technology/zksnarks/" />
 <meta property="og:site_name" content="Bitzec" />
-<meta property="og:image" content="https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
-<meta property="og:image:secure_url" content="https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
+<meta property="og:image" content="https://bitzec.github.io/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
+<meta property="og:image:secure_url" content="https://bitzec.github.io/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:description" content="zk-SNARKs are a novel form of zero-knowledge cryptography which allow for private Bitzec transactions. These transactions can be fully encrypted on the blockchain, yet still be verified by zK-SNARKs as valid under the network’s consensus rules." />
 <meta name="twitter:title" content="What are zk-SNARKs? | Bitzec" />
 <meta name="twitter:site" content="@zcashco" />
-<meta name="twitter:image" content="https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
+<meta name="twitter:image" content="hi/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" />
 <meta name="twitter:creator" content="@zcashco" />
-<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Bitzec","url":"https://z.cash/","sameAs":["https://twitter.com/bitzecorg"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Bitzec"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Bitzec","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/technology/zksnarks/#webpage","url":"https://z.cash/technology/zksnarks/","inLanguage":"en-US","name":"What are zk-SNARKs? | Bitzec","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2018-09-21T17:15:17+00:00","dateModified":"2018-12-14T16:29:25+00:00","description":"zk-SNARKs are a novel form of zero-knowledge cryptography which allow for private Bitzec transactions. These transactions can be fully encrypted on the blockchain, yet still be verified by zK-SNARKs as valid under the network\u2019s consensus rules."}]}</script>
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://bitzec.github.io/#organization","name":"Bitzec","url":"https://bitzec.github.io/","sameAs":["https://twitter.com/bitzecorg"],"logo":{"@type":"ImageObject","@id":"https://bitzec.github.io/#logo","url":"https://bitzec.github.io/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Bitzec"},"image":{"@id":"https://bitzec.github.io/#logo"}},{"@type":"WebSite","@id":"https://bitzec.github.io/#website","url":"https://bitzec.github.io/","name":"Bitzec","publisher":{"@id":"https://bitzec.github.io/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://bitzec.github.io/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://bitzec.github.io/technology/zksnarks/#webpage","url":"https://bitzec.github.io/technology/zksnarks/","inLanguage":"en-US","name":"What are zk-SNARKs? | Bitzec","isPartOf":{"@id":"https://bitzec.github.io/#website"},"datePublished":"2018-09-21T17:15:17+00:00","dateModified":"2018-12-14T16:29:25+00:00","description":"zk-SNARKs are a novel form of zero-knowledge cryptography which allow for private Bitzec transactions. These transactions can be fully encrypted on the blockchain, yet still be verified by zK-SNARKs as valid under the network\u2019s consensus rules."}]}</script>
 <!-- / Yoast SEO plugin. -->
 
 <link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
@@ -80,7 +80,7 @@ _gaq.push(['_trackPageview']);
 <link rel="alternate" type="application/rss+xml" title="Bitzec RSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
 <link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
-<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+<meta name="msapplication-TileImage" content="https://bitzec.github.io/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
   </head>
 
     <body class="page-template page-template-page-templates page-template-page-like-post page-template-page-templatespage-like-post-php page page-id-4108 page-child parent-pageid-3459">
@@ -181,7 +181,7 @@ _gaq.push(['_trackPageview']);
 
 
 
-<figure class="wp-block-image is-resized post-thumbnail"><img src="../../wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" alt="" class="wp-image-4653" width="527" height="228" srcset="https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png 1054w, https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-300x130.png 300w, https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-768x332.png 768w, https://z.cash/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-1024x443.png 1024w" sizes="(max-width: 527px) 100vw, 527px" /></figure>
+<figure class="wp-block-image is-resized post-thumbnail"><img src="../../wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png" alt="" class="wp-image-4653" width="527" height="228" srcset="https://bitzec.github.io/wp-content/uploads/2018/09/arithmetic-circuit_720_2x.png 1054w, https://bitzec.github.io/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-300x130.png 300w, https://bitzec.github.io/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-768x332.png 768w, https://bitzec.github.io/wp-content/uploads/2018/09/arithmetic-circuit_720_2x-1024x443.png 1024w" sizes="(max-width: 527px) 100vw, 527px" /></figure>
 
 
 
@@ -277,7 +277,7 @@ _gaq.push(['_trackPageview']);
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
             <p class="h5">Bitzec Community</p>
-<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://z.cash.foundation/" class="nav-link align-self-center">Bitzec Foundation</a></li>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://bitzec.github.io.foundation/" class="nav-link align-self-center">Bitzec Foundation</a></li>
 <li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Bitzec Community</a></li>
 <li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
 <li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
