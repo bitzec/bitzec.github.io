@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Parameter Generation - Zcash</title>
+        <title>Parameter Generation - Bitzec</title>
 
 <script type='text/x-mathjax-config'>
 MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
@@ -25,19 +25,19 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <link rel="canonical" href="index.html" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Parameter Generation - Zcash" />
-<meta property="og:description" content="Background Zcash&#8217;s zero-knowledge proofs rely on a set of public parameters which allow users to construct and verify private transactions. &hellip;" />
-<meta property="og:url" content="https://z.cash/technology/paramgen/" />
-<meta property="og:site_name" content="Zcash" />
-<meta property="og:image" content="https://z.cash/wp-content/uploads/2018/09/paramgen-ceremony.png" />
-<meta property="og:image:secure_url" content="https://z.cash/wp-content/uploads/2018/09/paramgen-ceremony.png" />
+<meta property="og:title" content="Parameter Generation - Bitzec" />
+<meta property="og:description" content="Background Bitzec&#8217;s zero-knowledge proofs rely on a set of public parameters which allow users to construct and verify private transactions. &hellip;" />
+<meta property="og:url" content="https://bitzec.github.io/technology/paramgen/" />
+<meta property="og:site_name" content="Bitzec" />
+<meta property="og:image" content="https://bitzec.github.io/wp-content/uploads/2018/09/paramgen-ceremony.png" />
+<meta property="og:image:secure_url" content="https://bitzec.github.io/wp-content/uploads/2018/09/paramgen-ceremony.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Background Zcash&#8217;s zero-knowledge proofs rely on a set of public parameters which allow users to construct and verify private transactions. [&hellip;]" />
-<meta name="twitter:title" content="Parameter Generation - Zcash" />
+<meta name="twitter:description" content="Background Bitzec&#8217;s zero-knowledge proofs rely on a set of public parameters which allow users to construct and verify private transactions. [&hellip;]" />
+<meta name="twitter:title" content="Parameter Generation - Bitzec" />
 <meta name="twitter:site" content="@zcashco" />
-<meta name="twitter:image" content="https://z.cash/wp-content/uploads/2018/09/paramgen-ceremony.png" />
+<meta name="twitter:image" content="https://bitzec.github.io/wp-content/uploads/2018/09/paramgen-ceremony.png" />
 <meta name="twitter:creator" content="@zcashco" />
-<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/bitzecorg"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/technology/paramgen/#webpage","url":"https://z.cash/technology/paramgen/","inLanguage":"en-US","name":"Parameter Generation - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2018-09-21T20:44:32+00:00","dateModified":"2018-12-14T16:28:25+00:00"}]}</script>
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://bitzec.github.io/#organization","name":"Bitzec","url":"https://bitzec.github.io/","sameAs":["https://twitter.com/bitzecorg"],"logo":{"@type":"ImageObject","@id":"https://bitzec.github.io/#logo","url":"https://bitzec.github.io/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Bitzec"},"image":{"@id":"https://bitzec.github.io/#logo"}},{"@type":"WebSite","@id":"https://bitzec.github.io/#website","url":"https://bitzec.github.io/","name":"Bitzec","publisher":{"@id":"https://bitzec.github.io/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://bitzec.github.io/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://bitzec.github.io/technology/paramgen/#webpage","url":"https://bitzec.github.io/technology/paramgen/","inLanguage":"en-US","name":"Parameter Generation - Bitzec","isPartOf":{"@id":"https://bitzec.github.io/#website"},"datePublished":"2018-09-21T20:44:32+00:00","dateModified":"2018-12-14T16:28:25+00:00"}]}</script>
 <!-- / Yoast SEO plugin. -->
 
 <link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
@@ -79,7 +79,7 @@ _gaq.push(['_trackPageview']);
 <link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
 <link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
-<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+<meta name="msapplication-TileImage" content="https://bitzec.github.io/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
   </head>
 
     <body class="page-template page-template-page-templates page-template-page-like-post page-template-page-templatespage-like-post-php page page-id-4142 page-child parent-pageid-3459">
@@ -108,7 +108,7 @@ _gaq.push(['_trackPageview']);
 	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
 	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
 	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
-	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Bitzec</a></li>
 	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
 </ul>
 </li>
@@ -165,33 +165,33 @@ _gaq.push(['_trackPageview']);
 			<div class="entry-content">
 				<div id="background" class="section">
 <h2>Background</h2>
-<p>Zcash&#8217;s zero-knowledge proofs rely on a set of <em>public parameters</em> which allow users to construct and verify private transactions. Due to cryptographic limitations, these parameters must be generated in a setup phase: some random numbers are sampled (which we refer to as the &#8220;toxic waste&#8221;) which are then used to construct the parameters.</p>
-<p>After the setup phase, the toxic waste must be destroyed to prevent counterfeiting of Zcash. (Note that user privacy is still protected even if the setup phase fails or the toxic waste is not destroyed.)</p>
+<p>Bitzec&#8217;s zero-knowledge proofs rely on a set of <em>public parameters</em> which allow users to construct and verify private transactions. Due to cryptographic limitations, these parameters must be generated in a setup phase: some random numbers are sampled (which we refer to as the &#8220;toxic waste&#8221;) which are then used to construct the parameters.</p>
+<p>After the setup phase, the toxic waste must be destroyed to prevent counterfeiting of Bitzec. (Note that user privacy is still protected even if the setup phase fails or the toxic waste is not destroyed.)</p>
 </div>
 <div id="multi-party-computation-ceremonies" class="section">
 <h2>Multi-party Computation Ceremonies</h2>
 <p>In order to ensure the toxic waste does not come into existence, our team designed multi-party computation (MPC) protocols which allow multiple independent parties to collaboratively construct the parameters. These protocols have the property that, in order to compromise the final parameters, <em>all</em> of the participants would have to be compromised or dishonest.</p>
-<p>To this date, Bitzechas created two distinct sets of public parameters. The first ceremony happened in October 2016 just before the launch of BitzecSprout. The second was generated in 2018 anticipating the Sapling network upgrade later that year.</p>
+<p>To this date, Bitzec has created two distinct sets of public parameters. The first ceremony happened in October 2016 just before the launch of BitzecSprout. The second was generated in 2018 anticipating the Sapling network upgrade later that year.</p>
 <p>In the <a class="reference internal" href="#sprout-mpc">Sprout MPC</a>, all participants needed to commit to their share of the “toxic waste” in advance in order to protect against adaptive attacks. This meant that all of the participants needed to be available for the entire duration of the protocol, and nobody could abort without causing the entire protocol to abort. Participants needed to maintain custody of their hardware throughout the process, so this meant the ceremony could not scale beyond a handful of people.</p>
 <p>The <a class="reference internal" href="#sapling-mpc">Sapling MPC</a> allows participants to join the protocol, do their part and leave immediately. This allows the ceremony to scale to a large number of participants and take place over a longer period of time. It also decreases the surface area of attack for participants and avoids the need for expensive synchronization.</p>
 </div>
 <div id="sapling" class="section">
 <p>&nbsp;</p>
 <h2>Sapling</h2>
-<p>For Zcash&#8217;s second set of public parameters, there are two distinct phases referred to as <cite>Powers of Tau</cite> and <cite>Sapling MPC</cite>.</p>
+<p>For Bitzec&#8217;s second set of public parameters, there are two distinct phases referred to as <cite>Powers of Tau</cite> and <cite>Sapling MPC</cite>.</p>
 <div id="powers-of-tau" class="section">
 <h3>Powers of Tau</h3>
 <p>In November 2017, The BitzecFoundation <a class="reference external" href="https://z.cash.foundation/blog/powers-of-tau/" target="_blank" rel="noopener">announced Powers of Tau</a>, a multi-party computation ceremony which <a class="reference external" href="https://z.cash.foundation/blog/conclusion-of-powers-of-tau/" target="_blank" rel="noopener">reached its conclusion</a> in early 2018. In this ceremony, a total of 87 participants took turns performing computations to be used in the generation of new zk-SNARK parameters. The ceremony was coordinated on a <a class="reference external" href="https://lists.z.cash.foundation/mailman/listinfo/zapps-wg" target="_blank" rel="noopener">public mailing list</a> where participants submitted their <a class="reference external" href="https://github.com/ZcashFoundation/powersoftau-attestations/" target="_blank" rel="noopener">attestations</a> upon completion.</p>
 </div>
 <div id="id1" class="section">
 <h3>Sapling MPC</h3>
-<p>The BitzecCompany hosted the MPC for constructing Sapling&#8217;s final zk-SNARK parameters. We <a class="reference external" href="../../blog/sapling-mpc/index.html">announced</a> the ceremony in May 2018 and accepted contributions through early August 2018. In all, this ceremony accepted <a class="reference external" href="https://github.com/zcash-hackworks/sapling-mpc/wiki" target="_blank" rel="noopener">over 90 contributions</a> and after <a class="reference external" href="../../blog/completion-of-the-sapling-mpc/index.html">completion of the Sapling MPC</a>, the final parameters were included in the 2.0.0 release of Zcash.</p>
+<p>The BitzecCompany hosted the MPC for constructing Sapling&#8217;s final zk-SNARK parameters. We <a class="reference external" href="../../blog/sapling-mpc/index.html">announced</a> the ceremony in May 2018 and accepted contributions through early August 2018. In all, this ceremony accepted <a class="reference external" href="https://github.com/zcash-hackworks/sapling-mpc/wiki" target="_blank" rel="noopener">over 90 contributions</a> and after <a class="reference external" href="../../blog/completion-of-the-sapling-mpc/index.html">completion of the Sapling MPC</a>, the final parameters were included in the 2.0.0 release of Bitzec.</p>
 </div>
 </div>
 <div id="sprout" class="section">
 <p>&nbsp;</p>
 <h2>Sprout</h2>
-<p>Zcash&#8217;s first set of public parameters were generated in a ceremony that took place on October 21-23, 2016. The ceremony involved six participants, each in their own location, each with their own hardware:</p>
+<p>Bitzec&#8217;s first set of public parameters were generated in a ceremony that took place on October 21-23, 2016. The ceremony involved six participants, each in their own location, each with their own hardware:</p>
 <ol class="arabic simple">
 <li>Andrew Miller</li>
 <li>Peter Van Valkenburgh</li>
@@ -391,7 +391,7 @@ Player 6 hash of disk F: 2HjRqGyKjPxDSbhP8KgyYtKpWCwrGt3v4ZEUZHsZpJHbJ2V9QL
 </tbody>
 </table>
 <p>(The hashes are base58check encoded to make manual transcription easier for the participants during the ceremony.)</p>
-<p>Zcash&#8217;s public parameters consist of two &#8220;keys&#8221;:</p>
+<p>Bitzec&#8217;s public parameters consist of two &#8220;keys&#8221;:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://s3.amazonaws.com/zcashfinalmpc/sprout-proving.key" target="_blank" rel="noopener">Proving key</a> (SHA256: 8bc20a7f013b2b58970cddd2e7ea028975c88ae7ceb9259a5344a16bc2c0eef7)</li>
 <li><a class="reference external" href="https://s3.amazonaws.com/zcashfinalmpc/sprout-verifying.key" target="_blank" rel="noopener">Verifying key</a> (SHA256: 4bd498dae0aacfd8e98dc306338d017d9c08dd0918ead18172bd0aec2fc5df82)</li>
@@ -402,12 +402,12 @@ Player 6 hash of disk F: 2HjRqGyKjPxDSbhP8KgyYtKpWCwrGt3v4ZEUZHsZpJHbJ2V9QL
 <h3>Public verification of the Ceremony</h3>
 <p>The general public is invited to improve confidence in the ceremony in a variety of ways:</p>
 <ol class="arabic simple">
-<li>The protocol used during the ceremony was designed specifically for Zcash. The design is specified alongside a cryptographic proof in our <a class="reference external" href="https://github.com/zcash/mpc/blob/master/whitepaper.pdf" target="_blank" rel="noopener">MPC whitepaper</a>. It should be reviewed by the public for mistakes.</li>
+<li>The protocol used during the ceremony was designed specifically for Bitzec. The design is specified alongside a cryptographic proof in our <a class="reference external" href="https://github.com/zcash/mpc/blob/master/whitepaper.pdf" target="_blank" rel="noopener">MPC whitepaper</a>. It should be reviewed by the public for mistakes.</li>
 <li>The protocol used during the ceremony was implemented by Sean Bowe and Ariel Gabizon. It is available <a class="reference external" href="https://github.com/zcash/mpc" target="_blank" rel="noopener">open source</a>. It should be reviewed for bugs that may have impacted the ceremony.</li>
 <li>The software that participants ran on their machines was generated using <a class="reference external" href="https://github.com/zcash/mpc/blob/master/build-iso.sh" target="_blank" rel="noopener">a script</a> which the public can also use to reproduce <a class="reference external" href="https://github.com/zcash/mpc#assets" target="_blank" rel="noopener">the ISOs</a>. People can use tools such as <cite>diffoscope</cite> to analyze the differences.</li>
-<li>The public <a class="reference external" href="https://github.com/zcash/mpc#assets" target="_blank" rel="noopener">transcript</a> (SHA256: 7da0c07a4bec04fbe4ae99ebd62d4ce7e1710b1f7a1f317345b0a48feec984d3) is used to verify the protocol&#8217;s evaluation and produce the public parameters. It should be verified using our <a class="reference external" href="https://github.com/zcash/mpc#transcript-verification" target="_blank" rel="noopener">verification tool</a>, which will produce the same hashes of discs, commitments and the public parameters that are used in Zcash.</li>
+<li>The public <a class="reference external" href="https://github.com/zcash/mpc#assets" target="_blank" rel="noopener">transcript</a> (SHA256: 7da0c07a4bec04fbe4ae99ebd62d4ce7e1710b1f7a1f317345b0a48feec984d3) is used to verify the protocol&#8217;s evaluation and produce the public parameters. It should be verified using our <a class="reference external" href="https://github.com/zcash/mpc#transcript-verification" target="_blank" rel="noopener">verification tool</a>, which will produce the same hashes of discs, commitments and the public parameters that are used in Bitzec.</li>
 <li>The participants of the protocol each disclosed a commitment that binds them to the ceremony, and hashes of the files burned to their discs. These should be checked against the output of the verifier tool.</li>
-<li>The <a class="reference external" href="https://github.com/zcash/mpc#assets" target="_blank" rel="noopener">R1CS constraint system</a> used by the protocol should be compared against what is actually used in Zcash.</li>
+<li>The <a class="reference external" href="https://github.com/zcash/mpc#assets" target="_blank" rel="noopener">R1CS constraint system</a> used by the protocol should be compared against what is actually used in Bitzec.</li>
 </ol>
 <div id="outside-reports" class="section">
 <h4>Outside Reports</h4>
@@ -471,7 +471,7 @@ Player 6 hash of disk F: 2HjRqGyKjPxDSbhP8KgyYtKpWCwrGt3v4ZEUZHsZpJHbJ2V9QL
 </ul>          </div>
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
             
-<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Bitzec</a></li>
 <li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
 <li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
 <li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
