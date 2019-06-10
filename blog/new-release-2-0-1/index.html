@@ -183,7 +183,7 @@ _gaq.push(['_trackPageview']);
 
 
 
-<p>This release is consensus-compatible with the Sapling network upgrade and adds significant support in the zcashd wallet RPC. We’re encouraging all users and miners to upgrade as soon as possible. The first block of Sapling will be block 419200, which is expected to be mined on the 28th of October 2018, the second anniversary of Zcash’s official launch. More information on the upcoming Sapling network upgrade can be found below:</p>
+<p>This release is consensus-compatible with the Sapling network upgrade and adds significant support in the bitzecd wallet RPC. We’re encouraging all users and miners to upgrade as soon as possible. The first block of Sapling will be block 419200, which is expected to be mined on the 28th of October 2018, the second anniversary of Zcash’s official launch. More information on the upcoming Sapling network upgrade can be found below:</p>
 
 
 
@@ -231,7 +231,7 @@ _gaq.push(['_trackPageview']);
 
 
 
-<p>In&nbsp;<code>signrawtransaction</code>&nbsp;we determine the consensus branch ID (which we then later use to construct the transaction) using the chain height. We now also consider the&nbsp;<code>APPROX_RELEASE_HEIGHT</code>&nbsp;, as this is a better estimation than 0 for the height of the chain if we are unsynced. We have also added an additional parameter to&nbsp;<code>signrawtransaction</code>&nbsp;to allow manually overriding the consensus branch ID that zcashd determines we are on.</p>
+<p>In&nbsp;<code>signrawtransaction</code>&nbsp;we determine the consensus branch ID (which we then later use to construct the transaction) using the chain height. We now also consider the&nbsp;<code>APPROX_RELEASE_HEIGHT</code>&nbsp;, as this is a better estimation than 0 for the height of the chain if we are unsynced. We have also added an additional parameter to&nbsp;<code>signrawtransaction</code>&nbsp;to allow manually overriding the consensus branch ID that bitzecd determines we are on.</p>
 
 
 
@@ -247,7 +247,7 @@ _gaq.push(['_trackPageview']);
 
 
 
-<p>For information on specific Sapling RPC parameter changes, please see the Network Upgrade Developer guide on&nbsp;<a href="https://zcash.readthedocs.io/en/latest/rtd_pages/nu_dev_guide.html#using-zcashd-unmodified">using zcashd unmodified.</a></p>
+<p>For information on specific Sapling RPC parameter changes, please see the Network Upgrade Developer guide on&nbsp;<a href="https://zcash.readthedocs.io/en/latest/rtd_pages/nu_dev_guide.html#using-bitzecd-unmodified">using bitzecd unmodified.</a></p>
 
 
 

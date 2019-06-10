@@ -26,7 +26,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="New Release: 2.0.5-1 - Zcash" />
-<meta property="og:description" content="Note: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users &hellip;" />
+<meta property="og:description" content="Note: This release of Bitzecd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users &hellip;" />
 <meta property="og:url" content="https://z.cash/blog/new-release-2-0-5-1/" />
 <meta property="og:site_name" content="Zcash" />
 <meta property="article:tag" content="bugs" />
@@ -40,7 +40,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <meta property="article:modified_time" content="2019-05-08T19:55:30+00:00" />
 <meta property="og:updated_time" content="2019-05-08T19:55:30+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Note: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users [&hellip;]" />
+<meta name="twitter:description" content="Note: This release of Bitzecd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users [&hellip;]" />
 <meta name="twitter:title" content="New Release: 2.0.5-1 - Zcash" />
 <meta name="twitter:site" content="@zcashco" />
 <meta name="twitter:creator" content="@zcashco" />
@@ -174,11 +174,11 @@ _gaq.push(['_trackPageview']);
 		<div class="col col-lg-10">
 			<div class="entry-content">
 				
-<p><strong>Note</strong>: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users who built v2.0.5 from source. Shortly after tagging v2.0.5, we became aware of an issue that caused nodes running Sprout-to-Sapling migrations to occasionally crash. Zcashd v2.0.5-1 fixes the issue. Users who normally upgrade via Debian package repository or tarball download were not exposed to v2.0.5.</p>
+<p><strong>Note</strong>: This release of Bitzecd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users who built v2.0.5 from source. Shortly after tagging v2.0.5, we became aware of an issue that caused nodes running Sprout-to-Sapling migrations to occasionally crash. Bitzecd v2.0.5-1 fixes the issue. Users who normally upgrade via Debian package repository or tarball download were not exposed to v2.0.5.</p>
 
 
 
-<p>The v2.0.5 release added the Sprout-to-Sapling migration tool, introduced a new consensus rule on mainnet to reject blocks that violate turnstiles and adds 64-bit ARMv8 support. Zcashd v2.0.5-1 will be supported until block 593762, expected to arrive around 28th August 2019, at which point the software will end-of-support halt and shut down.</p>
+<p>The v2.0.5 release added the Sprout-to-Sapling migration tool, introduced a new consensus rule on mainnet to reject blocks that violate turnstiles and adds 64-bit ARMv8 support. Bitzecd v2.0.5-1 will be supported until block 593762, expected to arrive around 28th August 2019, at which point the software will end-of-support halt and shut down.</p>
 
 
 
@@ -254,7 +254,7 @@ _gaq.push(['_trackPageview']);
 
 
 
-<ol><li>We fixed an issue that would cause the Zcashd to crash when calling <code>z_getmigrationstatus</code> while a wallet&#8217;s migration transactions were in the mempool. (<a href="https://github.com/zcash/zcash/pull/3987">#3987</a>)</li><li>We fixed an issue where the wallet would incorrectly calculate the amount to migrate and would not send as many migration transactions as it could each round of migration. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li><li>We fixed an issue that could cause Zcashd to crash while generating migration transactions if a wallet had a large number of sprout notes. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li></ol>
+<ol><li>We fixed an issue that would cause the Bitzecd to crash when calling <code>z_getmigrationstatus</code> while a wallet&#8217;s migration transactions were in the mempool. (<a href="https://github.com/zcash/zcash/pull/3987">#3987</a>)</li><li>We fixed an issue where the wallet would incorrectly calculate the amount to migrate and would not send as many migration transactions as it could each round of migration. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li><li>We fixed an issue that could cause Bitzecd to crash while generating migration transactions if a wallet had a large number of sprout notes. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li></ol>
 
 
 

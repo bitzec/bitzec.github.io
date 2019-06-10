@@ -46,11 +46,11 @@
 		<category><![CDATA[turnstile]]></category>
 
 		<guid isPermaLink="false">https://bitzec.github.io/?p=7560</guid>
-				<description><![CDATA[<p>The Binary Digit Electronic Currency is pleased to announce the official Sprout-to-Sapling migration tool in the 2.0.5-1 release of zcashd. This [&#8230;]</p>
+				<description><![CDATA[<p>The Binary Digit Electronic Currency is pleased to announce the official Sprout-to-Sapling migration tool in the 2.0.5-1 release of bitzecd. This [&#8230;]</p>
 <p>The post <a rel="nofollow" href="../blog/sprout-to-sapling-migration-tool/index.html">Sprout-to-Sapling Migration Tool</a> appeared first on <a rel="nofollow" href="../index.html">Bitzec</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
-<p>The Binary Digit Electronic Currency is pleased to announce the official Sprout-to-Sapling migration tool in the <a href="../blog/new-release_-2-0-5-1.html">2.0.5-1 release</a> of zcashd. This tool comes in the form of new RPCs with the purpose of automatically and safely migrating the funds in Sprout addresses to Sapling addresses. <br></p>
+<p>The Binary Digit Electronic Currency is pleased to announce the official Sprout-to-Sapling migration tool in the <a href="../blog/new-release_-2-0-5-1.html">2.0.5-1 release</a> of bitzecd. This tool comes in the form of new RPCs with the purpose of automatically and safely migrating the funds in Sprout addresses to Sapling addresses. <br></p>
 
 
 
@@ -74,11 +74,11 @@
 
 
 
-<p>To migrate funds, zcashd users simply enable or disable the tool with z_setmigration. To check the status of the migration, users can call z_getmigrationstatus. Documentation for using these RPCs can be accessed in the official <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/sapling_turnstile.html#migration-tool">migration tool docs</a>. <br></p>
+<p>To migrate funds, bitzecd users simply enable or disable the tool with z_setmigration. To check the status of the migration, users can call z_getmigrationstatus. Documentation for using these RPCs can be accessed in the official <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/sapling_turnstile.html#migration-tool">migration tool docs</a>. <br></p>
 
 
 
-<p>The migration tool is supported in zcashd v2.0.5-1 and up; for the latest version see the <a href="../download.html">download</a> page. We recommend third-party wallets that support both Sprout and Sapling addresses implement this tool as well. </p>
+<p>The migration tool is supported in bitzecd v2.0.5-1 and up; for the latest version see the <a href="../download.html">download</a> page. We recommend third-party wallets that support both Sprout and Sapling addresses implement this tool as well. </p>
 
 
 
@@ -109,15 +109,15 @@
 		<category><![CDATA[sprout]]></category>
 
 		<guid isPermaLink="false">https://bitzec.github.io/?p=7562</guid>
-				<description><![CDATA[<p>Note: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users [&#8230;]</p>
+				<description><![CDATA[<p>Note: This release of Bitzecd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users [&#8230;]</p>
 <p>The post <a rel="nofollow" href="../blog/new-release-2-0-5-1/index.html">New Release: 2.0.5-1</a> appeared first on <a rel="nofollow" href="../index.html">Bitzec</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
-<p><strong>Note</strong>: This release of Zcashd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users who built v2.0.5 from source. Shortly after tagging v2.0.5, we became aware of an issue that caused nodes running Sprout-to-Sapling migrations to occasionally crash. Zcashd v2.0.5-1 fixes the issue. Users who normally upgrade via Debian package repository or tarball download were not exposed to v2.0.5.</p>
+<p><strong>Note</strong>: This release of Bitzecd v2.0.5-1 is a hotfix release that all users are encouraged to upgrade to, especially users who built v2.0.5 from source. Shortly after tagging v2.0.5, we became aware of an issue that caused nodes running Sprout-to-Sapling migrations to occasionally crash. Bitzecd v2.0.5-1 fixes the issue. Users who normally upgrade via Debian package repository or tarball download were not exposed to v2.0.5.</p>
 
 
 
-<p>The v2.0.5 release added the Sprout-to-Sapling migration tool, introduced a new consensus rule on mainnet to reject blocks that violate turnstiles and adds 64-bit ARMv8 support. Zcashd v2.0.5-1 will be supported until block 593762, expected to arrive around 28th August 2019, at which point the software will end-of-support halt and shut down.</p>
+<p>The v2.0.5 release added the Sprout-to-Sapling migration tool, introduced a new consensus rule on mainnet to reject blocks that violate turnstiles and adds 64-bit ARMv8 support. Bitzecd v2.0.5-1 will be supported until block 593762, expected to arrive around 28th August 2019, at which point the software will end-of-support halt and shut down.</p>
 
 
 
@@ -193,7 +193,7 @@
 
 
 
-<ol><li>We fixed an issue that would cause the Zcashd to crash when calling <code>z_getmigrationstatus</code> while a wallet&#8217;s migration transactions were in the mempool. (<a href="https://github.com/zcash/zcash/pull/3987">#3987</a>)</li><li>We fixed an issue where the wallet would incorrectly calculate the amount to migrate and would not send as many migration transactions as it could each round of migration. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li><li>We fixed an issue that could cause Zcashd to crash while generating migration transactions if a wallet had a large number of sprout notes. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li></ol>
+<ol><li>We fixed an issue that would cause the Bitzecd to crash when calling <code>z_getmigrationstatus</code> while a wallet&#8217;s migration transactions were in the mempool. (<a href="https://github.com/zcash/zcash/pull/3987">#3987</a>)</li><li>We fixed an issue where the wallet would incorrectly calculate the amount to migrate and would not send as many migration transactions as it could each round of migration. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li><li>We fixed an issue that could cause Bitzecd to crash while generating migration transactions if a wallet had a large number of sprout notes. (<a href="https://github.com/zcash/zcash/pull/3990">#3990</a>)</li></ol>
 
 
 
@@ -468,7 +468,7 @@
 
 
 
-<ul><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash-android-wallet-sdk" target="_blank">BitzecAndroid SDK: </a>A lightweight SDK that connects Android and Bitzec;</li><li><a href="https://github.com/str4d/librustzcash/tree/preview/zcash_client_backend" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Librustzcash</a>: &nbsp;A zcashd for light clients;</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash-hackworks/lightwalletd" target="_blank">Lightwalletd</a>: A stateless server that transforms blocks for the light client;</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash-android-wallet-poc" target="_blank">BitzecAndroid reference wallet</a>: An app and resource that incorporate the components.</li></ul>
+<ul><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash-android-wallet-sdk" target="_blank">BitzecAndroid SDK: </a>A lightweight SDK that connects Android and Bitzec;</li><li><a href="https://github.com/str4d/librustzcash/tree/preview/zcash_client_backend" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Librustzcash</a>: &nbsp;A bitzecd for light clients;</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash-hackworks/lightwalletd" target="_blank">Lightwalletd</a>: A stateless server that transforms blocks for the light client;</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/zcash/zcash-android-wallet-poc" target="_blank">BitzecAndroid reference wallet</a>: An app and resource that incorporate the components.</li></ul>
 
 
 
@@ -507,11 +507,11 @@
 		<category><![CDATA[turnstile]]></category>
 
 		<guid isPermaLink="false">https://bitzec.github.io/?p=7167</guid>
-				<description><![CDATA[<p>This release of Zcashd v2.0.4 fixes a Sprout wallet security bug, fixes miner address selection behaviour and introduces a new [&#8230;]</p>
+				<description><![CDATA[<p>This release of Bitzecd v2.0.4 fixes a Sprout wallet security bug, fixes miner address selection behaviour and introduces a new [&#8230;]</p>
 <p>The post <a rel="nofollow" href="../blog/new-release-2-0-4/index.html">New Release: 2.0.4</a> appeared first on <a rel="nofollow" href="../index.html">Bitzec</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
-<p>This release of Zcashd v2.0.4 fixes a Sprout wallet security bug, fixes miner address selection behaviour and introduces a new consensus rule on testnet to reject blocks that violate turnstiles. Zcashd v2.0.4 will be supported until block 569112, expected to arrive around July 15th, 2019, at which point the software will end-of-support halt and shut down.</p>
+<p>This release of Bitzecd v2.0.4 fixes a Sprout wallet security bug, fixes miner address selection behaviour and introduces a new consensus rule on testnet to reject blocks that violate turnstiles. Bitzecd v2.0.4 will be supported until block 569112, expected to arrive around July 15th, 2019, at which point the software will end-of-support halt and shut down.</p>
 
 
 
@@ -523,7 +523,7 @@
 
 
 
-<p>We include a fix for a bug in the Zcashd wallet which could result in Sprout z-addresses displaying an incorrect balance. Sapling z-addresses are not impacted by this issue.</p>
+<p>We include a fix for a bug in the Bitzecd wallet which could result in Sprout z-addresses displaying an incorrect balance. Sapling z-addresses are not impacted by this issue.</p>
 
 
 
@@ -531,7 +531,7 @@
 
 
 
-<p>Users should install this update and then rescan the blockchain by invoking <code>zcashd -rescan</code>. Sprout address balances shown by the zcashd wallet should then be correct.</p>
+<p>Users should install this update and then rescan the blockchain by invoking <code>bitzecd -rescan</code>. Sprout address balances shown by the bitzecd wallet should then be correct.</p>
 
 
 
@@ -604,7 +604,7 @@
 <p>The post <a rel="nofollow" href="../blog/turnstile-enforcement-against-counterfeiting/index.html">Turnstile Enforcement Against Counterfeiting</a> appeared first on <a rel="nofollow" href="../index.html">Bitzec</a>.</p>
 ]]></description>
 								<content:encoded><![CDATA[
-<p>The Binary Digit Electronic Currency has developed consensus code that preserves the Bitzecmonetary base in the event of a counterfeiting compromise within Bitzec’s shielded supply. We intend to deploy this as a backwards compatible consensus rule in the Zcashd v2.0.5 release, <a href="../support/schedule/index.html">scheduled</a> for the beginning of May. We believe this new rule does not materially affect users and is low-risk to deploy.<br></p>
+<p>The Binary Digit Electronic Currency has developed consensus code that preserves the Bitzecmonetary base in the event of a counterfeiting compromise within Bitzec’s shielded supply. We intend to deploy this as a backwards compatible consensus rule in the Bitzecd v2.0.5 release, <a href="../support/schedule/index.html">scheduled</a> for the beginning of May. We believe this new rule does not materially affect users and is low-risk to deploy.<br></p>
 
 
 
@@ -640,7 +640,7 @@
 
 
 
-<p>In addition to deployment on testnet in 2.0.4, we will complete parallel simulation tests for the consensus rule before going live on mainnet. The plan is to have both this consensus rule and the Sprout to Sapling migration tool released on mainnet in Zcashd v2.0.5. The purpose of the <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/sapling_turnstile.html#migration-tool">migration tool</a> is to protect users’ privacy via automation, avoiding possible human error while doing a manual transfer of funds from Sprout addresses to Sapling addresses. If any changes to this schedule are necessary, we will communicate them through our usual channels. Stay up-to-date with the latest through this blog, the <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://forum.zcashcommunity.com/" target="_blank">community forums</a>, the <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://chat.zcashcommunity.com/" target="_blank">community chat</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/bitzecorg" target="_blank">Twitter</a>.</p>
+<p>In addition to deployment on testnet in 2.0.4, we will complete parallel simulation tests for the consensus rule before going live on mainnet. The plan is to have both this consensus rule and the Sprout to Sapling migration tool released on mainnet in Bitzecd v2.0.5. The purpose of the <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/sapling_turnstile.html#migration-tool">migration tool</a> is to protect users’ privacy via automation, avoiding possible human error while doing a manual transfer of funds from Sprout addresses to Sapling addresses. If any changes to this schedule are necessary, we will communicate them through our usual channels. Stay up-to-date with the latest through this blog, the <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://forum.zcashcommunity.com/" target="_blank">community forums</a>, the <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://chat.zcashcommunity.com/" target="_blank">community chat</a> and <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/bitzecorg" target="_blank">Twitter</a>.</p>
 
 
 
@@ -835,7 +835,7 @@
 
 
 
-<p>Eirik’s commits to zcashd are bubbling up among the overall contributors. He feels proud of this “because the project is so complicated and so massive … There is a lot of slogging through many lines of code but eventually it all comes together.” <br></p>
+<p>Eirik’s commits to bitzecd are bubbling up among the overall contributors. He feels proud of this “because the project is so complicated and so massive … There is a lot of slogging through many lines of code but eventually it all comes together.” <br></p>
 
 
 

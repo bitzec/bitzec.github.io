@@ -26,11 +26,11 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Security Announcement 2019-03-19 - Bitzec" />
-<meta property="og:description" content="Synopsis: A bug in the Zcashd wallet could result in Sprout z-addresses displaying an incorrect balance. Sapling z-addresses are not &hellip;" />
+<meta property="og:description" content="Synopsis: A bug in the Bitzecd wallet could result in Sprout z-addresses displaying an incorrect balance. Sapling z-addresses are not &hellip;" />
 <meta property="og:url" content="https://bitzec.github.io/support/security/announcements/security-announcement-2019-03-19/" />
 <meta property="og:site_name" content="Bitzec" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="Synopsis: A bug in the Zcashd wallet could result in Sprout z-addresses displaying an incorrect balance. Sapling z-addresses are not [&hellip;]" />
+<meta name="twitter:description" content="Synopsis: A bug in the Bitzecd wallet could result in Sprout z-addresses displaying an incorrect balance. Sapling z-addresses are not [&hellip;]" />
 <meta name="twitter:title" content="Security Announcement 2019-03-19 - Bitzec" />
 <meta name="twitter:site" content="@zcashco" />
 <meta name="twitter:creator" content="@zcashco" />
@@ -163,11 +163,11 @@ _gaq.push(['_trackPageview']);
 	<div class="row justify-content-center">
 		<div class="col col-lg-10">
 			<div class="entry-content">
-				<p><b>Synopsis: </b>A bug in the Zcashd wallet could result in Sprout z-addresses displaying an incorrect balance. Sapling z-addresses are not impacted by this issue. This would occur if someone sending funds to a Sprout z-address intentionally sent a different amount in the note commitment of a Sprout output than the value provided in the ciphertext (the encrypted message from the sender).</p>
+				<p><b>Synopsis: </b>A bug in the Bitzecd wallet could result in Sprout z-addresses displaying an incorrect balance. Sapling z-addresses are not impacted by this issue. This would occur if someone sending funds to a Sprout z-address intentionally sent a different amount in the note commitment of a Sprout output than the value provided in the ciphertext (the encrypted message from the sender).</p>
 <p>A code fix for the wallet has been written and the integration into an official Bitzecrelease is targeted for our next release (version 2.0.4, expected March 25th).</p>
-<p><b>Who is affected: </b>Users that receive payments to their Sprout z-addresses using the Zcashd wallet are vulnerable. Users who do not receive payments to Sprout z-addresses are unaffected.</p>
+<p><b>Who is affected: </b>Users that receive payments to their Sprout z-addresses using the Bitzecd wallet are vulnerable. Users who do not receive payments to Sprout z-addresses are unaffected.</p>
 <p><b>What can Sprout users do to protect themselves?</b> Sprout users should suspend their trust in the receipt of funds to Sprout z-addresses until they upgrade to zcash v2.0.4, which is expected to be released on March 25th. If users need the fix earlier, they can manually build their own daemon with the code available now: <a href="https://github.com/zcash/zcash/pull/3897" target="_blank" rel="noopener noreferrer">https://github.com/zcash/zcash/pull/3897</a>.</p>
-<p>Once a fix has been applied, users are strongly advised to issue a rescan of the blockchain with &#8220;zcashd -rescan&#8221;.</p>
+<p>Once a fix has been applied, users are strongly advised to issue a rescan of the blockchain with &#8220;bitzecd -rescan&#8221;.</p>
 <p><b>Acknowledgements: </b>Thank you to Alexis Enston for bringing this to our attention.</p>
 			</div><!-- .entry-content -->
 		</div>
