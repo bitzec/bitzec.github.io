@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/blog/snark-explain7 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:14:47 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Explaining SNARKs Part VII: Pairings of Elliptic Curves - Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="snark-explain7/index.html" hreflang="en"/>
+		<link rel="alternate" href="../zh/blog/snark-explain7/index.html" hreflang="zh"/>
+<link rel="alternate" href="../fr/blog/snark-explain7/index.html" hreflang="fr"/>
+<link rel="alternate" href="../ja/blog/snark-explain7/index.html" hreflang="ja"/>
+<link rel="alternate" href="../ko_KR/blog/snark-explain7/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../pt/blog/snark-explain7/index.html" hreflang="pt"/>
+<link rel="alternate" href="../ru/blog/snark-explain7/index.html" hreflang="ru"/>
+<link rel="alternate" href="../es/blog/snark-explain7/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="snark-explain7/index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Explaining SNARKs Part VII: Pairings of Elliptic Curves - Zcash" />
+<meta property="og:description" content="&lt;&lt; Part VI In Part VI, we saw an outline of the Pinocchio zk-SNARK. We were missing two things &#8211; &hellip;" />
+<meta property="og:url" content="https://z.cash/blog/snark-explain7/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="article:tag" content="cryptography" />
+<meta property="article:tag" content="explainers" />
+<meta property="article:tag" content="zkSNARKs" />
+<meta property="article:section" content="Technical" />
+<meta property="article:published_time" content="2017-06-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-10-01T08:16:13+00:00" />
+<meta property="og:updated_time" content="2018-10-01T08:16:13+00:00" />
+<meta property="og:image" content="https://z.cash/wp-content/uploads/2018/10/ECVertical.png" />
+<meta property="og:image:secure_url" content="https://z.cash/wp-content/uploads/2018/10/ECVertical.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="&lt;&lt; Part VI In Part VI, we saw an outline of the Pinocchio zk-SNARK. We were missing two things &#8211; [&hellip;]" />
+<meta name="twitter:title" content="Explaining SNARKs Part VII: Pairings of Elliptic Curves - Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:image" content="https://z.cash/wp-content/uploads/2018/10/ECVertical.png" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/bitzecorg"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/blog/snark-explain7/#webpage","url":"https://z.cash/blog/snark-explain7/","inLanguage":"en-US","name":"Explaining SNARKs Part VII: Pairings of Elliptic Curves - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2017-06-07T00:00:00+00:00","dateModified":"2018-10-01T08:16:13+00:00"},{"@type":"Article","@id":"https://z.cash/blog/snark-explain7/#article","isPartOf":{"@id":"https://z.cash/blog/snark-explain7/#webpage"},"author":{"@id":"https://z.cash/blog/author/ariel-gabizon/#author","name":"Ariel Gabizon"},"publisher":{"@id":"https://z.cash/#organization"},"headline":"Explaining SNARKs Part VII: Pairings of Elliptic Curves","datePublished":"2017-06-07T00:00:00+00:00","dateModified":"2018-10-01T08:16:13+00:00","commentCount":0,"mainEntityOfPage":"https://z.cash/blog/snark-explain7/#webpage","keywords":"cryptography,explainers,zkSNARKs","articleSection":"Technical"},{"@type":"Person","@id":"https://z.cash/blog/author/ariel-gabizon/#author","name":"Ariel Gabizon","image":{"@type":"ImageObject","@id":"https://z.cash/#personlogo","url":"https://secure.gravatar.com/avatar/7d15dda151e55a3edc32294f9fc871a7?s=96&d=mm&r=g","caption":"Ariel Gabizon"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+
+<link rel='shortlink' href='../indexd7e0.html?p=4951' />
+<link rel="alternate" type="application/json+oembed" href="../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Fsnark-explain7%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Fsnark-explain7%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="post-template-default single single-post postid-4951 single-format-standard">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../index.html">
+              
+                <object type="image/svg+xml" data="../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4059"><a class="dropdown-item" href="../technology/index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3921"><a href="index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="snark-explain7/index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../ru/blog/snark-explain7/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../fr/blog/snark-explain7/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../zh/blog/snark-explain7/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../pt/blog/snark-explain7/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../ko_KR/blog/snark-explain7/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../ja/blog/snark-explain7/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../es/blog/snark-explain7/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+<div class="container">
+
+	<main id="primary" class="content-area" role="main">
+
+		
+<article id="post-4951">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="index.html"><span class="notranslate">Binary Digit Electronic Currency </span>Posts</a></div> / <div class="d-inline">Explaining SNARKs Part VII: Pairings of Elliptic Curves</div></div>
+				
+				
+				<h1 class="entry-title">Explaining SNARKs Part VII: Pairings of Elliptic Curves</h1><div class="entry-meta"><span class="notranslate"><a href="author/ariel-gabizon/index.html" title="Posts by Ariel Gabizon" class="author url fn" rel="author">Ariel Gabizon</a></span> <span class="meta-sep">|</span> <div class="d-inline">June <span class="notranslate">7, 2017</span></div> | <div class="d-inline">Updated</div>: <div class="d-inline">October <span class="notranslate">1, 2018</span></div></div><!-- .entry-meta -->			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				<p><a class="reference external" href="snark-explain6/index.html">&lt;&lt; Part VI</a></p>
+<p>In Part VI, we saw an outline of the Pinocchio zk-SNARK. We were missing two things &#8211; an HH that supports both addition and multiplication that is needed for the verifier&#8217;s checks, and a transition from an interactive protocol to a non-interactive proof system.</p>
+<p>In this post we will see that using elliptic curves we can obtain a limited, but sufficient for our purposes, form of HH that supports multiplication. We will then show that this limited HH also suffices to convert our protocol to the desired non-interactive system.</p>
+<p>We begin by introducing elliptic curves and explaining how they give us the necessary HH.</p>
+<h2>Elliptic curves and their pairings</h2>
+<p>Assume :math:`p` is a prime larger than :math:`3`, and take some :math:`u,v\in\mathbb{F}_p` such that :math:`4u^3+27v^2\neq 0`. We look at the equation</p>
+<p>:math:`Y^2=X^3 +u\cdot X +v`</p>
+<p>An elliptic curve :math:`{\mathcal C}` is the of set of points :math:`(x,y)` <a class="footnote-reference" href="#id6" id="id1">[1]</a> that satisfy such an equation. These curves give us an interesting way to construct groups. The group elements will be the points :math:`(x,y)\in \mathbb{F}^2_p` that are on the curve, i.e., that satisfy the equation, together with a special point :math:`{\mathcal O}`, that for technical reasons is sometimes refered to as the &#8220;point at infinity&#8221;, and serves as the identity element, i.e. the zero of the group.</p>
+<p>Now the question is how we add two points :math:`P=(x_1,y_1),Q=(x_2,y_2)` to get a third? The addition rule is derived from a somewhat abstract object called the <em>divisor class group</em> of the curve. For our purposes, all you have to know about this divisor class group is that it imposes the following constraint on the definition of addition: The sum of points on any line must be zero, i.e., :math:`{\mathcal O}`.</p>
+<p>Let&#8217;s see how the addition rule is derived from this constraint. Look at a vertical line, defined by an equation of the form :math:`X=c`. Suppose this line intersects the curve at a point :math:`P=(x_1,y_1)`. Because the curve equation is of the form :math:`Y^2=f(X)`, if :math:`(x_1,y_1)` is on the curve, so is the point :math:`Q:=(x_1,-y_1)`. Moreover, since it&#8217;s a vertical line and the curve equation is of degree two in :math:`Y`, we can be sure these are the only points where the line and curve intersect.</p>
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="../wp-content/uploads/2018/10/ECVertical.png" alt="" class="wp-image-5329"/></figure></div>
+
+
+<p>Thus, we must have :math:`P+Q={\mathcal O}` which means :math:`P=-Q`; that is, :math:`Q` is the inverse of :math:`P` in the group.</p>
+<p>Now let us look at points :math:`P` and :math:`Q` that have a different first coordinate &#8211; that is, :math:`x_1\neq x_2`, and see how to add them. We pass a line through :math:`P` and :math:`Q`.</p>
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="../wp-content/uploads/2018/10/ECCregular.png" alt="" class="wp-image-5330" srcset="https://z.cash/wp-content/uploads/2018/10/ECCregular.png 261w, https://z.cash/wp-content/uploads/2018/10/ECCregular-252x300.png 252w" sizes="(max-width: 261px) 100vw, 261px" /></figure></div>
+
+
+<p>Since the curve is defined by a degree three polynomial in :math:`X` and already intersects this (non-vertical) line at two points, it is guaranteed to intersect the line at a third point, that we denote :math:`R=(x,y)`, and no other points.</p>
+<p>So we must have :math:`P+Q+R={\mathcal O}`, which means :math:`P+Q=-R`; and we know by now that :math:`-R` is obtained from :math:`R` by flipping the second coordinate from :math:`y` to :math:`-y`.</p>
+<p>Thus, we have derived the addition rule for our group: Given points :math:`P` and :math:`Q`, pass a line through them, and then take the &#8220;mirror&#8221; point of the third intersection point of the line as the addition result. <a class="footnote-reference" href="#id7" id="id2">[2]</a></p>
+<p>This group is usually called :math:`{\mathcal C}(\mathbb{F}_p)` &#8211; as it consists of points on the curve :math:`{\mathcal C}` with coordinates in :math:`\mathbb{F}_p`; but let&#8217;s denote it by :math:`G_1` from now on. Assume for simplicity that the number of elements in :math:`G_1` is a prime number :math:`r`, and is different from :math:`p`. This is many times the case, for example in the curve that Bitzecis currently using. In this case, any element :math:`g\in G_1` different from :math:`{\mathcal O}` generates :math:`G_1`.</p>
+<p>The smallest integer :math:`k` such that :math:`r` divides :math:`p^k-1` is called the <em>embedding degree</em> of the curve. It is conjectured that when :math:`k` is not too small, say, at least :math:`6`, then the discrete logarithm problem in :math:`G_1`, i.e. finding :math:`\alpha` from :math:`g` and :math:`\alpha \cdot g`, is very hard. (In BN curves <a class="footnote-reference" href="#id8" id="id3">[3]</a> currently used by Zcash :math:`k=12`.)</p>
+<p>The multiplicative group of :math:`\mathbb{F}_{p^k}` contains a subgroup of order :math:`r` that we denote :math:`G_T`. We can look at curve points with coordinates in :math:`\mathbb{F}_{p^k}` and not just in :math:`\mathbb{F}_p`. Under the same addition rule, these points also form a group together with :math:`{\mathcal O}` called :math:`{\mathcal C}(\mathbb{F}_{p^k})`. Note that :math:`{\mathcal C}(\mathbb{F}_{p^k})` clearly contains :math:`G_1`. Besides :math:`G_1`, :math:`{\mathcal C}(\mathbb{F}_{p^k})` will contain an additional subgroup :math:`G_2` of order :math:`r` (in fact, :math:`r-1` additional subgroups of order :math:`r`).</p>
+<p>Fix generators :math:`g\in G_1,h\in G_2`. It turns out that there is an efficient map, called the <em>Tate reduced pairing</em>, taking a pair of elements from :math:`G_1` and :math:`G_2` into an element of :math:`G_T`,</p>
+<p>such that</p>
+<ol>
+<li>:math:`\mathrm{Tate}(g,h)=\mathbf{g}` for a generator :math:`\mathbf{g}` of :math:`G_T`, and</li>
+<li>given a pair of elements :math:`a,b \in \mathbb{F}_r`, we have :math:`\mathrm{Tate}(a\cdot g,b\cdot h)=\mathbf{g}^{ab}`.</li>
+</ol>
+<p>Defining :math:`\mathrm{Tate}` is a bit beyond the scope of this series, and relies on concepts from algebraic geometry, most prominently that  of <em>divisors</em>. Here&#8217;s a sketch of :math:`\mathrm{Tate}`&#8217;s definition: <a class="footnote-reference" href="#id9" id="id4">[4]</a></p>
+<p>For :math:`a\in\mathbb{F}_p`    the polynomial :math:`(X-a)^r` has a zero of multiplicity :math:`r` at the point :math:`a`, and no other zeroes. For a point :math:`P\in G_1`, divisors enable us to prove there exists a function :math:`f_P` from the curve to :math:`\mathbb{F}_p` that also has, in some precise sense, a zero of multiplicity :math:`r` at :math:`P` and no other zeroes. :math:`\mathrm{Tate}(P,Q)` is then defined as :math:`f_P(Q)^{(p^k-1)/r}`.</p>
+<p>It may not seem at all clear what this definition has to do with the stated properties, and indeed the proof that :math:`\mathrm{Tate}` has these properties is quite complex.</p>
+<p>Defining :math:`E_1(x) := x\cdot g, E_2(x):=x\cdot h, E(x):=x\cdot \mathbf{g}`, we get a weak version of an HH that supports both addition and multiplication: :math:`E_1,E_2,E` are HHs that support addition, and given the hidings :math:`E_1(x)`, :math:`E_2(y)` we can compute :math:`E(xy)`. In other words, if we have the &#8221;right&#8221; hidings of :math:`x` and :math:`y` we can get a (different) hiding of :math:`xy`. But for example, if we had hidings of :math:`x,y,z` we couldn&#8217;t get a hiding of :math:`xyz`.</p>
+<p>We move on to discussing non-interactive proof systems. We begin by explaining exactly what we mean by &#8216;non-interactive&#8217;.</p>
+<h2>Non-interactive proofs in the common reference string model</h2>
+<p>The strongest and most intuitive notion of a non-interactive proof is probably the following. In order to prove a certain claim, a prover broadcasts a single message to all parties, with no prior communication of any kind; and anyone reading this message would be convinced of the prover&#8217;s claim. This can be shown to be impossible in most cases. <a class="footnote-reference" href="#id10" id="id5">[5]</a></p>
+<p>A slightly relaxed notion of non-interactive proof is to allow a common reference string (CRS). In the CRS model, before any proofs are constructed, there is a setup phase where a string is constructed according to a certain randomized process and broadcast to all parties. This string is called the CRS and is then used to help construct and verify proofs. The assumption is that the randomness used in the creation of the CRS is not known to any party &#8211; as knowledge of this randomness might enable constructing proofs of false claims.</p>
+<p>We will explain how in the CRS model we can convert the verifiable blind evaluation protocol of <a href="snark-explain4/index.html">Part IV </a> into a non-interactive proof system. As the protocol of Part VI consisted of a few such subprotocols it can be turned into a non-interactive proof system in a similar way.</p>
+<h2>A non-interactive evaluation protocol</h2>
+<p>The non-interactive version of the evaluation protocol basically consists of publishing Bob&#8217;s first message as the CRS. Recall that the purpose of the protocol is to obtain the hiding :math:`E(P(s))` of Alice&#8217;s polynomial :math:`P` at a randomly chosen :math:`s\in\mathbb{F}_r`.</p>
+<p><strong>Setup</strong>: Random :math:`\alpha\in \mathbb{F}_r^*,s\in\mathbb{F}_r` are chosen and the CRS: </p>
+<p>:math:`(E_1(1),E_1(s),\ldots,E_1(s^d),` :math:`E_2(\alpha),E_2(\alpha s),\ldots,E_2(\alpha s^d))`</p>
+<p>is published.</p>
+<p><strong>Proof</strong>: Alice computes :math:`a=E_1(P(s))` and :math:`b=E_2(\alpha P(S))` using the elements of the CRS, and the fact that :math:`E_1` and :math:`E_2` <a href="snark-explain2/index.html">support linear combinations</a>.</p>
+<p><strong>Verification</strong>: Fix the :math:`x,y\in \mathbb{F}_r` such that :math:`a=E_1(x)` and :math:`b=E_2(y)`. Bob computes :math:`E(\alpha x)=\mathrm{Tate}(E_1(x),E_2(\alpha))` and :math:`E(y)=\mathrm{Tate}(E_1(1),E_2(y))`, and checks that they are equal. (If they are equal it implies :math:`\alpha x =y`.)</p>
+<p>As explained in Part IV, Alice can only construct :math:`a,b` that will pass the verification check if :math:`a` is the hiding of :math:`P(s)` for a polynomial :math:`P` of degree :math:`d` known to her. The main difference here is that Bob does not need to know :math:`\alpha` for the verification check, as he can use the pairing function to compute :math:`E(\alpha x)` only from :math:`E_1(x)` and :math:`E_2(\alpha)`. Thus, he does not need to construct and send the first message himself, and this message can simply be fixed in the CRS.</p>
+<table class="docutils footnote table table-responsive" frame="void" id="id6" rules="none">
+<colgroup><col class="label">
+<col></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td>
+<td>You may ask &#8216;The set of points from where?&#8217;. We mean the set of points with coordinates in the algebraic closure of :math:`\mathbb{F}_p`. Also, the curve has an affine and projective version. When we are referring to the projective version we also include the &#8220;point at infinity&#8221; :math:`{\mathcal O}` as an element of the curve.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote table table-responsive" frame="void" id="id7" rules="none">
+<colgroup><col class="label">
+<col></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td>
+<td>We did not address the case of adding :math:`P` to itself. This is done by using the line that is tangent to the curve at :math:`P`, and taking :math:`R` to be the second intersection point of this line with the curve.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote table table-responsive" frame="void" id="id8" rules="none">
+<colgroup><col class="label">
+<col></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td>
+<td><a class="reference external" href="https://eprint.iacr.org/2005/133.pdf">https://eprint.iacr.org/2005/133.pdf</a></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote table table-responsive" frame="void" id="id9" rules="none">
+<colgroup><col class="label">
+<col></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td>
+<td>The pairing Bitzecactually uses is the <a href="https://www.esat.kuleuven.be/cosic/publications/talk-96.pdf">optimal Ate pairing</a>, which is based on the Tate reduced pairing, and can be computed more efficiently than :math:`\mathrm{Tate}`.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote table table-responsive" frame="void" id="id10" rules="none">
+<colgroup><col class="label">
+<col></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td>
+<td>In computational complexity theory terms, one can show that only languages in <a href="https://en.wikipedia.org/wiki/BPP_(complexity)">BPP</a> have non-interactive zero-knowledge proofs in this strong sense. The type of claims we need to prove in Bitzectransactions, e.g. &#8216;I know a hash preimage of this string&#8217;, correspond to the complexity class <a href="https://en.wikipedia.org/wiki/NP_(complexity)">NP</a> which is believed to be much larger than BPP. </td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote table table-responsive" frame="void" id="id11" rules="none">
+<colgroup><col class="label">
+<col></colgroup>
+<tbody valign="top">
+<tr><td class="label">[6]</td>
+<td>The images used were taken from the following <a class="reference external" href="https://en.wikipedia.org/wiki/Elliptic_curve">article</a> and are used under the <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/">creative commons license</a>.</td>
+</tr>
+</tbody>
+</table>			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+			<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				<footer class="entry-footer"><span class="cat-tags-links"><div class="cat-links"><span class="screen-reader-text notranslate"></span><div class="d-inline"><a href="category/technical/index.html" rel="category tag">Technical</a></div></div><div class="tags-links"><span class="screen-reader-text notranslate">#</span><div class="d-inline"><a href="tag/cryptography/index.html" rel="tag">cryptography</a></div>, <div class="d-inline"><a href="tag/explainers/index.html" rel="tag">explainers</a></div>, <div class="d-inline"><a href="tag/zksnarks/index.html" rel="tag">zkSNARKs</a></div></span></footer> <!-- .entry-footer -->			</div>
+		</div>
+	
+</article><!-- #post-## -->
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10">
+		
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="new-release-1-0-9/index.html" rel="prev"><span class="nav-title">New Release: 1.0.9</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="pay-to-sudoku-revisited/index.html" rel="next"><span class="nav-title">Pay-to-sudoku Revisited</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
+    </nav>			</div>
+		</div>
+		
+	</main><!-- #main -->
+
+</div> <!-- end .container -->
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">BitzecCommunity</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://bitcoin.org/" class="nav-link align-self-center">Bitcoin Core</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">BitzecCommunity</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Binary Digit Electronic Currency</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3922"><a href="index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/bitzecorg" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/bitzecorg"><img class="alignnone size-medium wp-image-3444" src="../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../privacy-policy.html">Privacy Policy</a>  |  <a href="../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 Binary Digit Electronic Currency</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/blog/snark-explain7 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:14:51 GMT -->
+</html>

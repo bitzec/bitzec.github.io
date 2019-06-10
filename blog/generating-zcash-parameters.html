@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/blog/generating-zcash-parameters by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:11:34 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BitzecParameters And How They Will Be Generated - Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="generating-zcash-parameters/index.html" hreflang="en"/>
+		<link rel="alternate" href="../zh/blog/generating-zcash-parameters/index.html" hreflang="zh"/>
+<link rel="alternate" href="../fr/blog/generating-zcash-parameters/index.html" hreflang="fr"/>
+<link rel="alternate" href="../ja/blog/generating-zcash-parameters/index.html" hreflang="ja"/>
+<link rel="alternate" href="../ko_KR/blog/generating-zcash-parameters/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../pt/blog/generating-zcash-parameters/index.html" hreflang="pt"/>
+<link rel="alternate" href="../ru/blog/generating-zcash-parameters/index.html" hreflang="ru"/>
+<link rel="alternate" href="../es/blog/generating-zcash-parameters/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="generating-zcash-parameters/index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="BitzecParameters And How They Will Be Generated - Zcash" />
+<meta property="og:description" content="At its core, Zcash&#8217;s privacy technology relies on a novel cryptographic tool called a zkSNARK &#8211; a small zero-knowledge proof &hellip;" />
+<meta property="og:url" content="https://z.cash/blog/generating-zcash-parameters/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="article:tag" content="cryptography" />
+<meta property="article:tag" content="Parameter Generation" />
+<meta property="article:tag" content="zkSNARKs" />
+<meta property="article:section" content="Technical" />
+<meta property="article:published_time" content="2016-09-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-10-01T07:41:14+00:00" />
+<meta property="og:updated_time" content="2018-10-01T07:41:14+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="At its core, Zcash&#8217;s privacy technology relies on a novel cryptographic tool called a zkSNARK &#8211; a small zero-knowledge proof [&hellip;]" />
+<meta name="twitter:title" content="BitzecParameters And How They Will Be Generated - Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/bitzecorg"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/blog/generating-zcash-parameters/#webpage","url":"https://z.cash/blog/generating-zcash-parameters/","inLanguage":"en-US","name":"BitzecParameters And How They Will Be Generated - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2016-09-25T00:00:00+00:00","dateModified":"2018-10-01T07:41:14+00:00"},{"@type":"Article","@id":"https://z.cash/blog/generating-zcash-parameters/#article","isPartOf":{"@id":"https://z.cash/blog/generating-zcash-parameters/#webpage"},"author":{"@id":"https://z.cash/blog/author/ariel-gabizon/#author","name":"Ariel Gabizon"},"publisher":{"@id":"https://z.cash/#organization"},"headline":"BitzecParameters And How They Will Be Generated","datePublished":"2016-09-25T00:00:00+00:00","dateModified":"2018-10-01T07:41:14+00:00","commentCount":0,"mainEntityOfPage":"https://z.cash/blog/generating-zcash-parameters/#webpage","keywords":"cryptography,Parameter Generation,zkSNARKs","articleSection":"Technical"},{"@type":"Person","@id":"https://z.cash/blog/author/ariel-gabizon/#author","name":"Ariel Gabizon","image":{"@type":"ImageObject","@id":"https://z.cash/#personlogo","url":"https://secure.gravatar.com/avatar/7d15dda151e55a3edc32294f9fc871a7?s=96&d=mm&r=g","caption":"Ariel Gabizon"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../wp-json/index.html' />
+
+<link rel='shortlink' href='../indexbed2.html?p=4887' />
+<link rel="alternate" type="application/json+oembed" href="../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Fgenerating-zcash-parameters%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Fgenerating-zcash-parameters%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="post-template-default single single-post postid-4887 single-format-standard">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../index.html">
+              
+                <object type="image/svg+xml" data="../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4059"><a class="dropdown-item" href="../technology/index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3921"><a href="index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="generating-zcash-parameters/index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../ru/blog/generating-zcash-parameters/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../fr/blog/generating-zcash-parameters/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../zh/blog/generating-zcash-parameters/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../pt/blog/generating-zcash-parameters/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../ko_KR/blog/generating-zcash-parameters/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../ja/blog/generating-zcash-parameters/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../es/blog/generating-zcash-parameters/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+<div class="container">
+
+	<main id="primary" class="content-area" role="main">
+
+		
+<article id="post-4887">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="index.html"><span class="notranslate">Binary Digit Electronic Currency </span>Posts</a></div> / <div class="d-inline">BitzecParameters And How They Will Be Generated</div></div>
+				
+				
+				<h1 class="entry-title">BitzecParameters And How They Will Be Generated</h1><div class="entry-meta"><span class="notranslate"><a href="author/ariel-gabizon/index.html" title="Posts by Ariel Gabizon" class="author url fn" rel="author">Ariel Gabizon</a></span> <span class="meta-sep">|</span> <div class="d-inline">September <span class="notranslate">25, 2016</span></div></div><!-- .entry-meta -->			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				<p>At its core, Zcash&#8217;s privacy technology relies on a novel cryptographic tool called a zkSNARK &#8211; a small <a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof">zero-knowledge proof</a> that is cheap to verify. Bitzecwill be the first to employ this powerful tool on a large scale. For these zkSNARKs to work, a setup phase is required where the &#8220;system parameters&#8221; are generated. This setup phase is similar to the setup phase of a public-key cryptosystem, but with a catch: As in the public-key cryptosystem, a pair (:math:`\mathsf{privkey},` :math:`\mathsf{pubkey)}` is generated, but then :math:`\mathsf{privkey}` is <em>destroyed</em>. Indeed, it will be essential for the integrity of the system that after the setup phase <em>nobody</em> possesses :math:`\mathsf{privkey}.`</p>
+<p>:math:`\mathsf{pubkey}` corresponds to the required system parameters. :math:`\mathsf{privkey}` corresponds to what has been called the &#8220;toxic waste&#8221; <a href="snark-parameters/index.html">here</a>, and possessing it enables counterfeiting new coins (but does not enable violating the privacy of other users&#8217; transactions).</p>
+<p>To reduce risk, Bitzechas designed a multi-player protocol where :math:`\mathsf{pubkey}` will be generated. The protocol has the property that :math:`\mathsf{privkey}` now corresponds to the concatenation of all participants&#8217; secret randomness. Thus, :math:`\mathsf{privkey}` will be destroyed unless <em>all</em> of the participants are dishonest or compromised.</p>
+<p>The purpose of this post is to give a simplified explanation of what :math:`\mathsf{pubkey}` looks like, and how the protocol for generating it works.</p>
+<h2>What :math:`\mathsf{pubkey}` looks like</h2>
+<p>Suppose :math:`g` is a generator of a group :math:`G` where the discrete log is hard. We assume :math:`G` has order :math:`r` for some prime :math:`r,` and we write group operations additively. So for :math:`s\in \mathbb{F}`, where :math:`\mathbb{F}` is the field of size :math:`r`, we can write :math:`s\cdot g` to denote scalar multiplication of :math:`g` by :math:`s`; i.e. :math:`s\cdot g` is obtained by adding :math:`s` copies of :math:`g`. A simplified version of (:math:`\mathsf{privkey},` :math:`\mathsf{pubkey)}` is that :math:`\mathsf{privkey}` is simply a uniformly random element :math:`s\in \mathbb{F}^*` and :math:`\mathsf{pubkey}` is the sequence of group elements</p>
+<blockquote><p>:math:`\mathsf{pubkey}=` :math:`(g,s\cdot g, s^2\cdot g,\ldots, s^d\cdot g)`</p></blockquote>
+<p>Above, :math:`\mathbb{F}^*` denotes the set of all non-zero elements of :math:`\mathbb{F}.`</p>
+<h2>How :math:`\mathsf{pubkey}` is generated</h2>
+<p>We&#8217;ll say a few words later about <em>why</em> :math:`\mathsf{pubkey}` looks like this and how it is used, but let&#8217;s concentrate for now on designing the protocol for generating :math:`\mathsf{pubkey}.`</p>
+<p>Let&#8217;s fix :math:`d=2` for simplicity; and also omit the first :math:`g` element from :math:`\mathsf{pubkey}`, as it&#8217;s straightforward to generate that. Suppose we have two parties, Alice and Bob, that wish to generate a valid public key :math:`\mathsf{pubkey}=` :math:`(s\cdot g, s^2\cdot g)` for the system. They wish to do so in a way that will ensure neither of them will know :math:`s.` Let&#8217;s make it simpler first: suppose they just want to generate :math:`s\cdot g` (again, in a way that neither will know :math:`s)`. They use the following protocol:</p>
+<ol>
+<li>Alice chooses a random :math:`a\in \mathbb{F}^*`, and sends :math:`M_1:= a\cdot g` to Bob.</li>
+<li>Bob then chooses a random :math:`b\in \mathbb{F}^*` and multiplies :math:`M_1` by :math:`b`. He sends back the message :math:`M:= b\cdot M_1` as their joint output.</li>
+</ol>
+<p>At the end of the protocol, we have :math:`M=b\cdot a \cdot g = (a b)\cdot g`. Let&#8217;s denote :math:`s:= a b`.</p>
+<p>Note that</p>
+<ul>
+<li>Bob does not learn :math:`a` from the message :math:`M_1,` as we are assuming the discrete log is hard in :math:`G`. Same for Alice and :math:`b.` In particular, neither knows :math:`s` which is the product of :math:`a` and :math:`b`.</li>
+<li>For any fixed :math:`a\in \mathbb{F}^*`, :math:`a b` is a random element of :math:`\mathbb{F}^*` when :math:`b` is random. So even if Alice cheats in the sense that she didn&#8217;t choose :math:`a` randomly as she was supposed to, e.g. she always chooses :math:`a=4`, :math:`s` will be random. Same is true for Bob cheating and not choosing a random :math:`b.`</li>
+</ul>
+<p>So as long as <em>one of them</em> follows the protocol correctly, :math:`M=s\cdot g` will be of the right form.</p>
+<p>Now let&#8217;s try to use a similar idea for generating :math:`(s\cdot g, s^2\cdot g)`:</p>
+<ul>
+<li>Alice chooses a random :math:`a\in \mathbb{F}^*,` and sends :math:`(A,B)` where :math:`A:= a\cdot g` and :math:`B := a^2\cdot g.`</li>
+<li>Bob chooses a random :math:`b\in \mathbb{F}^*,` and sends :math:`M=(b\cdot A, b^2\cdot B).`</li>
+</ul>
+<p>If Alice and Bob follow the protocol, we get :math:`M= (b a \cdot g, b^2 a^2 \cdot g) = ( a b\cdot g, (a b)^2\cdot g).` So this vector is of the right form for :math:`s:= a b.`</p>
+<p>Here&#8217;s one problem: What if Bob cheats and multiplies :math:`B` by some :math:`c\neq b^2`? So we get :math:`(a b\cdot g, a^2 c \cdot g),` which is not of the form :math:`(s\cdot g, s^2\cdot g)` for any :math:`s.` We need to somehow check that our output vector <em>is</em> of the form :math:`(s\cdot g, s^2\cdot g)` for some :math:`s.` In many groups, this is conjectured not to be efficiently doable &#8211; this is what&#8217;s called the square decisional Diffie-Hellman assumption. However, in our setting we are working with a group that has a <em>bilinear pairing</em>. This is a map :math:`e:G\times G\to G_T,` into a group :math:`G_T` also of order :math:`r` with generator :math:`\mathbf{g},` written multiplicatively, such that</p>
+<p>:math:`e(a\cdot g, b\cdot g) = \mathbf{g}^{a b}`</p>
+<p>for any :math:`a,b\in\mathbb{F}.` This gives us the following way to check the output :math:`M` has the right form. We simply check if</p>
+<p>:math:`e(g,B) = e(A,A).`</p>
+<p>Let&#8217;s see that if nobody cheated, this check will pass. When nobody cheats we have :math:`A=s\cdot g,` and :math:`B=s^2\cdot g.` So</p>
+<p>:math:`e(g,B) = e(g,s^2\cdot g) =\mathbf{g}^{s^2}`,</p>
+<p>and also</p>
+<p>:math:`e(A,A) = e(s\cdot g,s\cdot g) = \mathbf{g}^{s^2}.`</p>
+<p>One can do a similar computation to see that when :math:`M` is not of this form, these two values will differ and the test will fail.</p>
+<h2>How :math:`\mathsf{pubkey}` is used</h2>
+<p>Recall that a <em>polynomial</em> :math:`P` of degree :math:`d` over :math:`\mathbb{F}` is an expression of the form</p>
+<p>:math:`P(X) = a_0 + a_1\cdot X + a_2\cdot X^2 + \ldots + a_d\cdot X^d`</p>
+<p>We can <em>evaluate</em> a polynomial at a point :math:`s\in \mathbb{F}` by substituting :math:`s` for :math:`X,` and computing the resultant sum. A useful fact is that if :math:`P` and :math:`Q` are different polynomials of degree at most :math:`d,` they can agree on at most :math:`d` points. In Bitzecthe sender needs to construct two degree :math:`d` polynomials :math:`P` and :math:`Q` in a certain way, and a lot of mathematical magic ensures that they can make them the same polynomial, i.e., get :math:`P=Q,` only if the transaction is valid.</p>
+<p>:math:`\mathsf{pubkey}` can now be used to test if :math:`P` and :math:`Q` are equal at a point :math:`s` <em>not known by the sender</em>. Say</p>
+<p>:math:`P(X) = a_0 + a_1\cdot X + a_2\cdot X^2 + \ldots + a_d\cdot X^d`</p>
+<p>and</p>
+<p>:math:`Q(X) = b_0 + b_1\cdot X + b_2\cdot X^2 + \ldots + b_d\cdot X^d`</p>
+<p>Using :math:`\mathsf{pubkey}=` :math:`(g,s\cdot g, s^2\cdot g,\ldots, s^d\cdot g),` the verifier can compute</p>
+<p>:math:`P(s)\cdot g = a_0\cdot g + a_1 s \cdot g + a_2s^2 \cdot g + \ldots + a_d s^d\cdot g`</p>
+<p>and compute :math:`Q(s)\cdot g` similarly. The verifier can then check if they are equal.</p>
+<p>Since the sender of a non-valid transaction has to construct distinct :math:`P` and :math:`Q` without knowing :math:`s,` the chance that :math:`P(s)=Q(s)` is very small.</p>
+<h2>Disclaimer</h2>
+<p>Please note, this post is a significantly simplified presentation of the underlying protocol. A detailed description can be found in the <a class="reference external" href="https://github.com/zcash/mpc/blob/master/whitepaper.pdf">whitepaper</a>.</p>
+<h2>References</h2>
+<p>Our zkSNARKS use SCIPR Lab&#8217;s <a class="reference external" href="https://github.com/scipr-lab/libsnark">implementation</a> of the <a class="reference external" href="https://eprint.iacr.org/2013/279.pdf">Pinnochio protocol</a>, which in turn is based on the <a class="reference external" href="https://eprint.iacr.org/2012/215.pdf">work</a> of Gennaro, Gentry, Parno and Raykova. Our protocol for parameter generation builds on a <a class="reference external" href="https://www.ieee-security.org/TC/SP2015/papers-archived/6949a287.pdf">previous work</a> of Ben-Sasson, Chiesa, Green, Tromer and Virza.</p>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+			<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				<footer class="entry-footer"><span class="cat-tags-links"><div class="cat-links"><span class="screen-reader-text notranslate"></span><div class="d-inline"><a href="category/technical/index.html" rel="category tag">Technical</a></div></div><div class="tags-links"><span class="screen-reader-text notranslate">#</span><div class="d-inline"><a href="tag/cryptography/index.html" rel="tag">cryptography</a></div>, <div class="d-inline"><a href="tag/parameter-generation/index.html" rel="tag">Parameter Generation</a></div>, <div class="d-inline"><a href="tag/zksnarks/index.html" rel="tag">zkSNARKs</a></div></span></footer> <!-- .entry-footer -->			</div>
+		</div>
+	
+</article><!-- #post-## -->
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10">
+		
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="continued-funding-and-transparency/index.html" rel="prev"><span class="nav-title">Continued Funding and Transparency</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="open-source-miner-challenge/index.html" rel="next"><span class="nav-title">Accepting Submissions: BitzecOpen Source Miner Challenge</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
+    </nav>			</div>
+		</div>
+		
+	</main><!-- #main -->
+
+</div> <!-- end .container -->
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Bitzec Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://bitcoin.org/" class="nav-link align-self-center">Bitcoin Core</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Bitzec Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Binary Digit Electronic Currency</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3922"><a href="index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/bitzecorg" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/bitzecorg"><img class="alignnone size-medium wp-image-3444" src="../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../privacy-policy.html">Privacy Policy</a>  |  <a href="../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 Binary Digit Electronic Currency</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/blog/generating-zcash-parameters by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:11:37 GMT -->
+</html>

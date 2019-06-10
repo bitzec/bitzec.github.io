@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  
+<!-- Mirrored from z.cash/blog/bolt-private-payment-channels/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:29:20 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BOLT: Private Payment Channels - Zcash</title>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [[':math:`','`'], ['\\(','\\)']]}});</script>
+<script type="text/javascript">window.liveSettings={"settings":"","wp":true,"api_key":"bb719378f22e47378e55763619af08d4","detectlang":function() { return "en";}};</script>
+<script type="text/javascript" src="../../../cdn.transifex.com/live.js"></script>
+<link rel="alternate" href="index.html" hreflang="en"/>
+		<link rel="alternate" href="../../zh/blog/bolt-private-payment-channels/index.html" hreflang="zh"/>
+<link rel="alternate" href="../../fr/blog/bolt-private-payment-channels/index.html" hreflang="fr"/>
+<link rel="alternate" href="../../ja/blog/bolt-private-payment-channels/index.html" hreflang="ja"/>
+<link rel="alternate" href="../../ko_KR/blog/bolt-private-payment-channels/index.html" hreflang="ko-kr"/>
+<link rel="alternate" href="../../pt/blog/bolt-private-payment-channels/index.html" hreflang="pt"/>
+<link rel="alternate" href="../../ru/blog/bolt-private-payment-channels/index.html" hreflang="ru"/>
+<link rel="alternate" href="../../es/blog/bolt-private-payment-channels/index.html" hreflang="es"/>
+
+<!-- This site is optimized with the Yoast SEO plugin v11.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="BOLT: Private Payment Channels - Zcash" />
+<meta property="og:description" content="Matthew Green and I have written a paper introducing BOLT (Blind Off-chain Lightweight Transactions), which offers a fast, private payment &hellip;" />
+<meta property="og:url" content="https://z.cash/blog/bolt-private-payment-channels/" />
+<meta property="og:site_name" content="Zcash" />
+<meta property="article:tag" content="bitcoin" />
+<meta property="article:tag" content="BOLT" />
+<meta property="article:tag" content="privacy" />
+<meta property="article:section" content="General" />
+<meta property="article:published_time" content="2016-08-01T00:00:00+00:00" />
+<meta property="og:image" content="https://z.cash/wp-content/uploads/2016/08/bolt2.png" />
+<meta property="og:image:secure_url" content="https://z.cash/wp-content/uploads/2016/08/bolt2.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Matthew Green and I have written a paper introducing BOLT (Blind Off-chain Lightweight Transactions), which offers a fast, private payment [&hellip;]" />
+<meta name="twitter:title" content="BOLT: Private Payment Channels - Zcash" />
+<meta name="twitter:site" content="@zcashco" />
+<meta name="twitter:image" content="https://z.cash/wp-content/uploads/2016/08/bolt2.png" />
+<meta name="twitter:creator" content="@zcashco" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://z.cash/#organization","name":"Zcash","url":"https://z.cash/","sameAs":["https://twitter.com/bitzecorg"],"logo":{"@type":"ImageObject","@id":"https://z.cash/#logo","url":"https://z.cash/wp-content/uploads/2018/10/zcash-logo-fullcolor-512sq.png","width":512,"height":512,"caption":"Zcash"},"image":{"@id":"https://z.cash/#logo"}},{"@type":"WebSite","@id":"https://z.cash/#website","url":"https://z.cash/","name":"Zcash","publisher":{"@id":"https://z.cash/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://z.cash/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://z.cash/blog/bolt-private-payment-channels/#webpage","url":"https://z.cash/blog/bolt-private-payment-channels/","inLanguage":"en-US","name":"BOLT: Private Payment Channels - Zcash","isPartOf":{"@id":"https://z.cash/#website"},"datePublished":"2016-08-01T00:00:00+00:00","dateModified":"2016-08-01T00:00:00+00:00"},{"@type":"Article","@id":"https://z.cash/blog/bolt-private-payment-channels/#article","isPartOf":{"@id":"https://z.cash/blog/bolt-private-payment-channels/#webpage"},"author":{"@id":"https://z.cash/blog/author/ian-miers/#author","name":"Ian Miers"},"publisher":{"@id":"https://z.cash/#organization"},"headline":"BOLT: Private Payment Channels","datePublished":"2016-08-01T00:00:00+00:00","dateModified":"2016-08-01T00:00:00+00:00","commentCount":0,"mainEntityOfPage":"https://z.cash/blog/bolt-private-payment-channels/#webpage","keywords":"bitcoin,BOLT,privacy","articleSection":"General"},{"@type":"Person","@id":"https://z.cash/blog/author/ian-miers/#author","name":"Ian Miers","image":{"@type":"ImageObject","@id":"https://z.cash/#personlogo","url":"https://secure.gravatar.com/avatar/113cac87e662e7150d6d48eb3efac502?s=96&d=mm&r=g","caption":"Ian Miers"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='http://cdnjs.cloudflare.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='stylesheet' id='wp-quicklatex-format-css'  href='../../wp-content/plugins/wp-quicklatex/css/quicklatex-format8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='../../wp-includes/css/dist/block-library/style.min8fdb.css?ver=9d2f4e90b5e71ce59d4715533a48fd20' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighter-local-css'  href='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.css?ver=3.10.0' type='text/css' media='all' />
+<script type='text/javascript' src='../../wp-includes/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../../wp-includes/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/dist/bundle6296.js?ver=1556110944'></script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/jquery.countdown.min3601.js?ver=2.2.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/dist/vendor/moment.mind4d7.js?ver=2.22.2'></script>
+<script type='text/javascript'>
+moment.locale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+</script>
+<script type='text/javascript' src='../../wp-content/themes/zcash-wordpress-theme-2018/assets/js/vendor/moment-timezone-with-data.min68b3.js?ver=1'></script>
+<script type='text/javascript' src='../../wp-content/plugins/wp-quicklatex/js/wp-quicklatex-frontend5152.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='../../wp-json/index.html' />
+
+<link rel='shortlink' href='../../index6ac8.html?p=4871' />
+<link rel="alternate" type="application/json+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Fbolt-private-payment-channels%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../../404.html?url=https%3A%2F%2Fz.cash%2Fblog%2Fbolt-private-payment-channels%2F&amp;format=xml" />
+
+<!-- Goolytics - Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-91560402-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Goolytics - Simple Google Analytics End -->
+
+<link rel="alternate" type="application/rss+xml" title="BitzecRSS 2.0 Feed" href="../../feed/index.html" /><script type="text/javascript">var algolia = {"debug":false,"application_id":"FTWBDGMWJQ","search_api_key":"66f33dc37411ec9bebbcfc6f79adcd8c","powered_by_enabled":true,"query":"","autocomplete":{"sources":[],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"zecc_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]}}};</script><link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-32x32.png" sizes="32x32" />
+<link rel="icon" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="../../wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-180x180.png" />
+<meta name="msapplication-TileImage" content="https://z.cash/wp-content/uploads/2018/10/cropped-zcash-logo-fullcolor-512sq-270x270.png" />
+  </head>
+
+    <body class="post-template-default single single-post postid-4871 single-format-standard">
+    <div class="sticky" id="sticky-headers">
+      <div id="security-alert-wrap"></div>
+      <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+          <nav class="navbar navbar-expand-md navbar-light justify-content-between">
+            <a class="navbar-brand" href="../../index.html">
+              
+                <object type="image/svg+xml" data="../../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
+                </object>
+
+                                  <object type="image/svg+xml" data="../../wp-content/uploads/2019/03/zcash-logo-horizontal-white.svg" width="75" height="30" class="logo scrolled align-self-center" style="pointer-events: none;">
+                  </object>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+<ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../../index.html" class="nav-link align-self-center">Home</a></li>
+<li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4056"><a class="dropdown-item" href="../../the-basics/index.html" class="nav-link align-self-center">The Basics</a></li>
+	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
+	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
+	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
+</ul>
+</li>
+<li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
+<ul class="dropdown-menu depth_0">
+	<li  id="menu-item-4059" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4059"><a class="dropdown-item" href="../../technology/index.html" class="nav-link align-self-center">How It Works</a></li>
+	<li  id="menu-item-4060" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4060"><a class="dropdown-item" href="../../upgrade/index.html" class="nav-link align-self-center">Network Information</a></li>
+</ul>
+</li>
+<li  id="menu-item-3924" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3924"><a href="../../support/index.html" class="nav-link align-self-center">Support</a></li>
+<li  id="menu-item-3921" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3921"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3900" class="search-toggle d-none menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-3900"><a class="nav-link align-self-center">Search</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="language-current"><i class="globe-icon mobile-only"></i>Language</a><ul class="dropdown-menu depth_0">
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="index.html">English</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ru/blog/bolt-private-payment-channels/index.html">Русский</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../fr/blog/bolt-private-payment-channels/index.html">Français</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../zh/blog/bolt-private-payment-channels/index.html">中文</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../pt/blog/bolt-private-payment-channels/index.html">Português</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ko_KR/blog/bolt-private-payment-channels/index.html">한국어</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../ja/blog/bolt-private-payment-channels/index.html">日本語</a></li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a class="dropdown-item" href="../../es/blog/bolt-private-payment-channels/index.html">Español</a></li>
+			</ul></li></ul>              </div>
+            </div>
+          </nav>
+        </div>
+        <!--
+        <div id="searchbox">
+          <div class="container">
+            <div class="row justify-content-between align-content-center">
+                            </div>
+          </div>
+        </div>
+      -->
+    	</header>
+    </div>
+
+<div class="container">
+
+	<main id="primary" class="content-area" role="main">
+
+		
+<article id="post-4871">
+
+	<header class="entry-header">
+		<div class="row justify-content-center">
+			<div class="col col-lg-10">
+									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="../index.html"><span class="notranslate">Binary Digit Electronic Currency </span>Posts</a></div> / <div class="d-inline">BOLT: Private Payment Channels</div></div>
+				
+				
+				<h1 class="entry-title">BOLT: Private Payment Channels</h1><div class="entry-meta"><span class="notranslate"><a href="../author/ian-miers/index.html" title="Posts by Ian Miers" class="author url fn" rel="author">Ian Miers</a></span> <span class="meta-sep">|</span> <div class="d-inline">August <span class="notranslate">1, 2016</span></div></div><!-- .entry-meta -->			</div>
+		</div>
+	</header><!-- .entry-header -->
+
+				
+	<div class="row justify-content-center">
+		<div class="col col-lg-10">
+			<div class="entry-content">
+				<p>Matthew Green and I have written a paper introducing BOLT (Blind Off-chain Lightweight Transactions), which offers a fast, private payment channel protocol inspired by the Lightning Network. We believe that this will make Bitzecmore scalable and practical, while maintaining its strong privacy protections.</p>
+<p>TL;DR: Using BOLT, multiple payments on the same channel cannot be linked together, even by colluding parties. Payments occur in milliseconds and do not require block confirmation. All a merchant learns is that he is being paid on some channel he has open. Payments can be routed via third parties, avoiding the need for a customer and merchant to directly have a channel, while maintaining privacy against malicious third parties by both keeping the participants anonymous (even if the third party colludes), and hiding the value transferred. All of this requires that the channel be funded with private funds, otherwise malicious parties can violate your privacy by forcing channel closure. A pre-print of the paper can be found at <a class="reference external" href="https://eprint.iacr.org/2016/701">http://eprint.iacr.org/2016/701</a>.</p>
+<div class="section" id="the-problem">
+<h2>The Problem</h2>
+<p>Blockchain-based cryptocurrencies work by recording every transaction in public on a blockchain. This has the distinct advantage of eliminating the need for trusted parties. But it has serious privacy, scalability, and latency problems because <em>you are recording every transaction in public on a blockchain</em>. You need the space to record every transaction in the blockchain (see the whole Bitcoin block size debate), recording the transaction in a block takes minutes, and of course the recording is public, so people can figure out a lot about what you are doing.</p>
+</div>
+<div class="section" id="payment-channels">
+<h2>Payment channels</h2>
+<p>Payment channel protocols, such as the Lightning Network, address the scale and latency issues by using the blockchain only to escrow funds and resolve disputes. Other than that, users exchange what are essentially blockchain-enforced IOUs, which aren’t recorded on the blockchain unless there is a dispute.</p>
+<p>How does this work? Alice and Bob both agree to an initial IOU splitting funds they put in the channel (e.g. they each put in $50 and the IOU is Alice: $50, Bob: $50). This money is held in escrow on the blockchain and released only by a valid IOU signed by both Alice and Bob. For Alice to pay Bob $5, she verifiably destroys her old IOU, and she and Bob sign a new IOU “Alice: $45, Bob: $55.” They can do this repeatedly until either party wants to cash out. At this point, either Alice or Bob can post the latest IOU to the blockchain (or both can post, in the event of a dispute). Thus only channel opening and closure are recorded on the blockchain.</p>
+</div>
+<div class="section" id="channels-are-not-private">
+<h2>Channels are not private</h2>
+<p>Channel opening and closure leaves a record identifying the customer, merchant, and the initial and final split of funds. These are often the very things that must be hidden.</p>
+<p>Suppose Tor (or another anonymity service) took micropayments to pay for bandwidth. Effectively,  every webpage Alice views via Tor  would require a micropayment via a payment channel, at say a tenth-of-a-cent per page view. If we can see that Alice has a payment channel with Tor for $1.00 that closes with a zero balance every month, then we know she is a heavy Tor user. If Alice is an activist or a journalist, this may bring her to the attention of the authorities as someone with “something to hide”  even if she is careful to only use Tor from coffee shops or the like. And If Alice lives in e.g. Turkey, that might be a very bad idea.</p>
+<p>Fortunately, this is exactly the sort of problem that Bitzecwas designed to solve. By using Bitzecinstead of an all-transparent ledger like Bitcoin or Ethereum, the blockchain no longer contains information linking channel opening and closure back to Alice. But Bitzeconly handles privacy for on-chain payments; it does not deal with the IOUs.</p>
+<p>The problem is these IOUs form a unique identifier which can be used to track Alice much like a cookie.  Anyone who observes these (e.g. the Tor exit node) will not <em>a priori</em> know who the identifier belongs to—her actual identity is still protected by the anonymity service—but they can still observe page views and patterns because multiple payments on a payment channel are inherently linkable. This might be enough to uniquely identify Alice (e.g. if she looks at documents related to newspaper articles she wrote), or it could reveal other information—like what subject she is writing an article on. Thus Bitzecis <em>part</em> of the solution, but Bitzecitself does not a private payment channel make.</p>
+</div>
+<div class="section" id="bolt-private-payment-channels">
+<h2>BOLT: Private Payment Channels</h2>
+<p>Enter BOLT, which Matt and I have been working on for the past few months. BOLT eliminates the linkage between payments within a channel. This ensures that Alice’s payments are hidden within the set of <em>all</em> payments made to that recipient.</p>
+<p>We have designed two protocols, one that is non-interactive but only allows payment from Alice to Bob of fixed values, and one that allows bidirectional payments of arbitrary values but requires interaction. We will focus on the bidirectional protocol here.</p>
+<p>The basic idea of the protocol is to build private IOUs. We do this using two pieces of technology: blind signatures and commitments. Commitments allow Alice to hide the value of the IOU (which could identify it). Blind signatures convince Bob the IOU is authentic —because he must have signed it—but ensure that he cannot recognize the signature or IOU specifically out of any of the set of IOUs he signed.</p>
+<div class="figure align-right">
+<img alt="BOLT Diagram" src="../../wp-content/uploads/2016/08/bolt2.png"/></div>
+<p>Alice pays Bob by proving she has such an IOU, invalidating it (by signing it with the Revocation key), and getting Bob to sign a new IOU with a balance that is the same as the old one less the amount of payment. Similarly, when Bob pays Alice the amount is added to the new IOU. The actual balance and signature remains hidden from Bob, ensuring he cannot tell if two distinct payments came from the same channel or different ones.</p>
+<p>The real challenge is invalidating the old IOU and signing the new one atomically. And—this is the hard part—doing it without leaking which channel Alice is using. If Alice invalidates the old IOU first, and Bob refuses to sign the new IOU, Alice cannot close the channel so she loses her money. If Bob signs the new IOU before the old one is invalidated, then Alice can defraud Bob:  She can then take the new IOU Bob signed and use it for a series of payments, but then cash out the original IOU keeping all her money. In normal payment channels, this cannot happen because Bob will recognize Alice’s subsequent fraudulent payments. Doing so for private channels, however, is impossible.</p>
+<p><img alt="BOLT Diagram" src="../../wp-content/uploads/2016/08/bolt.png"/></p>
+<p>To solve this, we separate the process of generating IOUs for channel closure from allowing the IOUs to be used for future transactions. An IOU is a commitment to both the balance and a one-time-use public key called the revocation key. We assume Alice has an existing (blindly) signed IOU from channel establishment.  ① Alice first creates a new IOU and proves that it pays Bob $5 more than some IOU Bob signed previously. ② Alice then provably reveals the revocation public key of the old IOU and gets ③ Bob to sign the new IOU for closure (after of course proving the new IOU is correctly formed with respect to the old one). ④ Then she signs a message invalidating the old IOU with the revocation key and gives the message + signature to Bob. This is safe because she can now close the channel with the new IOU no matter what happens. ⑤ After ensuring the old IOU is revoked, Bob now signs the new IOU as valid for use in the next payment. This is safe because the old IOU is invalid and thus Bob is assured Alice can never revert back to an old state where she has more money. Alice can now use the new IOU in the next BOLT payment.</p>
+<p>From Bob&#8217;s perspective, he knows that he has received a payment (of $5 in this example) on one of his payment channels (or rather, he <em>will</em> receive $5 more when that payment channel is closed) but he doesn&#8217;t know which payment channel was actually used for the payment : we’ve hidden the actual IOU, its balance, and Bob’s signature on it from him and these are the only ways he could identify the channel.</p>
+<p>The interesting part is all of this is simple, fast, and uses very well understood crypto. A prototype will be released soon, but we believe it will take less than 50 ms and 10 MB of memory to execute this protocol.</p>
+</div>
+<div class="section" id="indirect-payment-channels">
+<h2>Indirect Payment Channels</h2>
+<p>So far, we require Alice and Bob to have a payment channel. But what if they don’t?</p>
+<p>Like Lightning, BOLT allows payments when there is no direct channel between parties, provided they share an intermediary (e.g. Coinbase). We do this by making the IOUs’ usage for channel closure conditional on the other transactions going through. Unlike Lightning, a single intermediary learns neither the participants involved nor the amount transferred. To do this, it’s crucial that the channels themselves are funded anonymously, as the third party can abort and observe who closes their channel. If the channel itself is anonymous, this information is worthless.</p>
+<p>It is likely we can generalize BOLT’s indirect payments to payments via multiple intermediaries, as in Lightning, but at the moment BOLT does not do so.</p>
+</div>
+<div class="section" id="can-bolt-work-without-zcash">
+<h2>Can BOLT work without Zcash?</h2>
+<p>We can set up BOLT to work with most cryptocurrencies provided we can add the primitives. We might even be able to do this without any changes to Bitcoin, though at the cost of using hash-based commitments and generic circuit-based multi-party computation (MPC) for blind signing with ECDSA. But any real privacy provided by BOLT fundamentally depends on channel establishment and closure being anonymous.</p>
+<p>In Bitcoin, funding a channel is not private: there is a record of who you opened the channel with, the amount, and what it closed for. BOLT alone does not solve this problem—it only makes payments on the same channel unlinkable to each other.  Worse, if a merchant or third party can force an abort in the BOLT protocol, then they can identify which channel you are using. They can only do this once, so multiple payments on the same channel cannot be linked, but if you did not open the channel anonymously, then that (aborted) payment can be linked to you.</p>
+<p>To avoid this, you need anonymous funds to create the channel. Indeed, the privacy requirements for funding a channel are as high as those for normal payments. So you want as strong privacy as you would for normal payments. And Bitzecis the best way to get strongly private funds.</p>
+<p>I’d like to thank Sean Bowe, one of the Bitzecdevelopers, for suggesting the idea of combining Lightning and Zerocash. And Sean, Maureen, Matthew, Daira, Jack, and the anonymous leopard for feedback on this blog post.</p>
+</div>
+			</div><!-- .entry-content -->
+		</div>
+	</div>
+
+			<div class="row justify-content-center">
+			<div class="col col-lg-10">
+				<footer class="entry-footer"><span class="cat-tags-links"><div class="cat-links"><span class="screen-reader-text notranslate"></span><div class="d-inline"><a href="../category/general/index.html" rel="category tag">General</a></div></div><div class="tags-links"><span class="screen-reader-text notranslate">#</span><div class="d-inline"><a href="../tag/bitcoin/index.html" rel="tag">bitcoin</a></div>, <div class="d-inline"><a href="../tag/bolt/index.html" rel="tag">BOLT</a></div>, <div class="d-inline"><a href="../tag/privacy/index.html" rel="tag">privacy</a></div></span></footer> <!-- .entry-footer -->			</div>
+		</div>
+	
+</article><!-- #post-## -->
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10">
+		
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../zksnarks-in-ethereum/index.html" rel="prev"><span class="nav-title">zkSNARKs in Ethereum</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../new-alpha-release-optimization-and-nonmalleability/index.html" rel="next"><span class="nav-title">New Alpha Release: Optimization and Non-malleability</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
+    </nav>			</div>
+		</div>
+		
+	</main><!-- #main -->
+
+</div> <!-- end .container -->
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            <p class="h5">Bitzec Community</p>
+<ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://bitcoin.org/" class="nav-link align-self-center">Bitcoin Core</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Bitzec Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Binary Digit Electronic Currency</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3922"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
+<li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../../about/index.html" class="nav-link align-self-center">About</a></li>
+<li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../../team/index.html" class="nav-link align-self-center">Team</a></li>
+<li  id="menu-item-4234" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4234"><a href="../../jobs/index.html" class="nav-link align-self-center">Careers</a></li>
+<li  id="menu-item-4378" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4378"><a target="_blank" href="https://twitter.com/bitzecorg" class="nav-link align-self-center">Twitter</a></li>
+<li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../../contact/index.html" class="nav-link align-self-center">Contact</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+            
+<p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
+<li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
+<li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
+<li  id="menu-item-4226" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4226"><a href="../../press/index.html" class="nav-link align-self-center">Media Kit</a></li>
+<li  id="menu-item-4225" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4225"><a href="../../copyright-policy/index.html" class="nav-link align-self-center">Copyright Policy</a></li>
+<li  id="menu-item-4375" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4375"><a href="../../trademark-policy/index.html" class="nav-link align-self-center">Trademark policy</a></li>
+<li  id="menu-item-3927" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3927"><a href="../../compliance/index.html" class="nav-link align-self-center">Compliance</a></li>
+<li  id="menu-item-7113" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-7113"><a href="../../listing-fee-marketing-policy/index.html" class="nav-link align-self-center">Listing Policy</a></li>
+</ul>          </div>
+          <div class="col-12 col-sm-6 col-md-3 col-xl-4" id="sendgrid_mc_email_subscribe">
+            <div class="footer-widget-area">
+              <p>Newsletter Signup</p>
+              <div id="sendgrid-subscription-widget" class="sendgrid-subscription-widget" data-emailerror="Please enter a valid email address" data-checkboxerror="Please tick the box to accept our conditions">
+                <div class="sg-response" id="sg-response"></div>
+                <form id="sg-widget" action="https://sendgrid-signup.z.cash/confirmEmail" method="post" class="mc_email_form" style="padding-top: 10px;">
+                  <div class="sendgrid_mc_fields">
+                    <div class="sendgrid_mc_input_div">
+                      <input id="sg_email" class="sendgrid_mc_input sendgrid_mc_input_email" type="email" name="email" placeholder="Email*" required>
+                    </div>
+                  </div>
+                  <div class="sendgrid_mc_button_div">
+                    <input type="submit" id="sg-submit-btn" class="sendgrid_mc_button" value="Sign up">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class = "footer-widget-area">			<div class="textwidget"><p><a href="https://twitter.com/bitzecorg"><img class="alignnone size-medium wp-image-3444" src="../../wp-content/uploads/2018/09/icon-twitter.png" alt="Twitter icon" /></a></p>
+</div>
+		</div>          </div>
+        </div>
+        <div class="row">
+          <div id="site-info" class="col text-center">
+            <p><a href="../../privacy-policy.html">Privacy Policy</a>  |  <a href="../../sitemap.html">Sitemap</a>  |  <span class="notranslate">&copy; 2019 Binary Digit Electronic Currency</span></p>
+          </div>
+        </div>
+      </div> <!-- end container -->
+    </footer>
+
+    
+    <script type='text/javascript' src='../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/mootools-core-yc12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-content/plugins/enlighter/resources/EnlighterJS.min12f9.js?ver=3.10.0'></script>
+<script type='text/javascript' src='../../wp-includes/js/wp-embed.min8fdb.js?ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script>  </body>
+
+<!-- Mirrored from z.cash/blog/bolt-private-payment-channels/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:29:22 GMT -->
+</html>
