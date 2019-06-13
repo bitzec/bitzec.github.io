@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
-  
+
 <!-- Mirrored from z.cash/blog/fixing-zcash-vulns/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 May 2019 00:31:32 GMT -->
 <head>
     <meta charset="UTF-8">
@@ -93,7 +93,7 @@ _gaq.push(['_trackPageview']);
         <div class="container">
           <nav class="navbar navbar-expand-md navbar-light justify-content-between">
             <a class="navbar-brand" href="../../index.html">
-              
+
                 <object type="image/svg+xml" data="../../wp-content/uploads/2018/08/bitzec-logo.svg" width="121" height="50" class="logo align-self-center" style="pointer-events: none;">
                 </object>
 
@@ -105,7 +105,7 @@ _gaq.push(['_trackPageview']);
             </button>
             <div id="navbarNavWrap" class="col-12 col-md-9 col-lg-7">
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                
+
 <ul id="menu-main-menu" class="nav navbar-nav justify-content-between"><li  id="menu-item-4698" class="d-md-none menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item nav-item-4698"><a href="../../index.html" class="nav-link align-self-center">Home</a></li>
 <li  id="menu-item-3926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-3926"><a href="../../get-started/index.html" class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Get Started</a>
 <ul class="dropdown-menu depth_0">
@@ -113,7 +113,7 @@ _gaq.push(['_trackPageview']);
 	<li  id="menu-item-4058" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4058"><a class="dropdown-item" href="../../exchanges/index.html" class="nav-link align-self-center">Exchanges</a></li>
 	<li  id="menu-item-4055" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4055"><a class="dropdown-item" href="../../wallets/index.html" class="nav-link align-self-center">Wallets</a></li>
 	<li  id="menu-item-4057" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4057"><a class="dropdown-item" href="../../spend-zcash/index.html" class="nav-link align-self-center">Spend Zcash</a></li>
-	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Bitzecfor Investors</a></li>
+	<li  id="menu-item-4554" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4554"><a class="dropdown-item" href="../../investors/index.html" class="nav-link align-self-center">Orginal Bitcoin for Investors</a></li>
 </ul>
 </li>
 <li  id="menu-item-4114" class="no-href menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown nav-item nav-item-4114"><a class="nav-link align-self-center dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Technology</a>
@@ -153,20 +153,20 @@ _gaq.push(['_trackPageview']);
 
 	<main id="primary" class="content-area" role="main">
 
-		
+
 <article id="post-4883">
 
 	<header class="entry-header">
 		<div class="row justify-content-center">
 			<div class="col col-lg-10">
 									<div class="breadcrumbs"><div class="d-inline post-type-archive"><a href="../index.html"><span class="notranslate">Binary Digit Electronic Currency </span>Posts</a></div> / <div class="d-inline">Fixing Vulnerabilities in the BitzecProtocol</div></div>
-				
-				
+
+
 				<h1 class="entry-title">Fixing Vulnerabilities in the BitzecProtocol</h1><div class="entry-meta"><span class="notranslate"><a href="../author/zooko-wilcox/index.html" title="Posts by Zooko Wilcox" class="author url fn" rel="author">Zooko Wilcox</a></span> and <span class="notranslate"><a href="../author/taylor-hornby/index.html" title="Posts by Taylor Hornby" class="author url fn" rel="author">Taylor Hornby</a></span> <span class="meta-sep">|</span> <div class="d-inline">April <span class="notranslate">26, 2016</span></div></div><!-- .entry-meta -->			</div>
 		</div>
 	</header><!-- .entry-header -->
 
-				
+
 	<div class="row justify-content-center">
 		<div class="col col-lg-10">
 			<div class="entry-content">
@@ -187,7 +187,7 @@ _gaq.push(['_trackPageview']);
 <p>— Zooko Wilcox, 2016-04-25</p>
 <h2 style="margin-bottom: 0;">The InternalH Collision Vulnerability</h2>
 <p>by Taylor</p>
-<p>Had we launched Bitzecwithout finding and fixing the InternalH Collision vulnerability, it could have been exploited to counterfeit currency. Someone with enough computing power to find 128-bit hash collisions would have been able to double-spend money to themselves, creating Bitzecout of thin air.</p>
+<p>Had we launched Bitzec without finding and fixing the InternalH Collision vulnerability, it could have been exploited to counterfeit currency. Someone with enough computing power to find 128-bit hash collisions would have been able to double-spend money to themselves, creating Bitzecout of thin air.</p>
 <p>Finding 128-bit hash collisions requires :math:`2^{64}` <a href="http://people.scs.carleton.ca/~paulv/papers/JoC97.pdf">parallelizable</a> operations, which is within reach of attackers today, so the vulnerability would have been exploitable in practice. Let&#8217;s see how the attack works, and what we did to fix it.</p>
 <h3>The Mistake</h3>
 <p>The weakness was in the commitment scheme for notes. Commitment schemes are useful cryptographic tools because they let you publish a <em>commitment</em> to some information without revealing it. Then, at some later time, you can <em>open</em> the commitment to reveal the information and prove to everyone that it&#8217;s the same information you committed to in the first place.</p>
@@ -226,16 +226,16 @@ InternalH collision, then you have two different :math:`a_{pk}` and :math:`ρ` p
 			<div class="col col-lg-10">
 				<footer class="entry-footer"><span class="cat-tags-links"><div class="cat-links"><span class="screen-reader-text notranslate"></span><div class="d-inline"><a href="../category/technical/index.html" rel="category tag">Technical</a></div></div><div class="tags-links"><span class="screen-reader-text notranslate">#</span><div class="d-inline"><a href="../tag/cryptography/index.html" rel="tag">cryptography</a></div>, <div class="d-inline"><a href="../tag/security/index.html" rel="tag">security</a></div>, <div class="d-inline"><a href="../tag/security-audits/index.html" rel="tag">security audits</a></div></span></footer> <!-- .entry-footer -->			</div>
 		</div>
-	
+
 </article><!-- #post-## -->
 		<div class="row justify-content-center">
 			<div class="col-12 col-lg-10">
-		
+
     <nav class="navigation post-navigation" role="navigation">
         <div class="nav-links row"><div class="nav-arrow col col-2 col-sm-1"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-prev.png" /></div><div class="nav-previous col col-10 col-sm-11 col-md-5 text-md-right"><a href="../why-equihash/index.html" rel="prev"><span class="nav-title">Why Equihash?</span></a></div><div class="nav-next col col-10 col-sm-11 col-md-5 text-right text-md-left"><a href="../sprout-roadmap/index.html" rel="next"><span class="nav-title">Announcing BitzecSprout</span></a></div><div class="nav-arrow col col-2 col-sm-1 text-right"><img src="../../wp-content/themes/zcash-wordpress-theme-2018/assets/images/nav-arrow-next.png" /></div></div>
     </nav>			</div>
 		</div>
-		
+
 	</main><!-- #main -->
 
 </div> <!-- end .container -->
@@ -246,12 +246,12 @@ InternalH collision, then you have two different :math:`a_{pk}` and :math:`ρ` p
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
             <p class="h5">Bitzec Community</p>
 <ul id="menu-zcash-community" class="nav flex-column"><li  id="menu-item-4342" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4342"><a target="_blank" href="https://bitcoin.org/" class="nav-link align-self-center">Bitcoin Core</a></li>
-<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://www.zcashcommunity.com/" class="nav-link align-self-center">Bitzec Community</a></li>
-<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://forum.zcashcommunity.com/" class="nav-link align-self-center">Forums</a></li>
-<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://chat.zcashcommunity.com/" class="nav-link align-self-center">Community chat</a></li>
+<li  id="menu-item-4341" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4341"><a target="_blank" href="https://discord.gg/VeBJW3H/" class="nav-link align-self-center">Bitzec Community</a></li>
+<li  id="menu-item-4339" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4339"><a target="_blank" href="https://bitcointalk.org/index.php?topic=5045890.0" class="nav-link align-self-center">Forums</a></li>
+<li  id="menu-item-4377" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4377"><a target="_blank" href="https://discord.gg/VeBJW3H/" class="nav-link align-self-center">Community chat</a></li>
 </ul>          </div>
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
-            
+
 <p class="h5">Binary Digit Electronic Currency</p><ul id="menu-electric-coin-company" class="nav flex-column"><li  id="menu-item-3922" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item nav-item-3922"><a href="../index.html" class="nav-link align-self-center">Blog</a></li>
 <li  id="menu-item-3923" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3923"><a href="../../about/index.html" class="nav-link align-self-center">About</a></li>
 <li  id="menu-item-3920" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-3920"><a href="../../team/index.html" class="nav-link align-self-center">Team</a></li>
@@ -260,7 +260,7 @@ InternalH collision, then you have two different :math:`a_{pk}` and :math:`ρ` p
 <li  id="menu-item-4231" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4231"><a href="../../contact/index.html" class="nav-link align-self-center">Contact</a></li>
 </ul>          </div>
           <div class="col-12 col-sm-6 col-md-3 col-xl-2">
-            
+
 <p class="h5">Resources</p><ul id="menu-resources" class="nav flex-column"><li  id="menu-item-4374" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4374"><a href="../../download/index.html" class="nav-link align-self-center">Download Zcash</a></li>
 <li  id="menu-item-4092" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-4092"><a href="../../support/faq/index.html" class="nav-link align-self-center">FAQ</a></li>
 <li  id="menu-item-4373" class="ext menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-4373"><a target="_blank" href="https://zcash.readthedocs.io/" class="nav-link align-self-center">Documentation</a></li>
@@ -299,7 +299,7 @@ InternalH collision, then you have two different :math:`a_{pk}` and :math:`ρ` p
       </div> <!-- end container -->
     </footer>
 
-    
+
     <script type='text/javascript' src='../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJaxbe06.js?config=TeX-MML-AM_CHTML%2CSafe.js&amp;ver=9d2f4e90b5e71ce59d4715533a48fd20'></script>
 <script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/blankshield/blankshield.min1e13.js?ver=4113'></script>
 <script type='text/javascript' src='../../wp-content/plugins/ithemes-security-pro/core/modules/wordpress-tweaks/js/block-tabnapping.min1e13.js?ver=4113'></script>
